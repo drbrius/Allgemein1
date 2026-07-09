@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CalcMate – Free Online Calculators | Kostenlose Online-Rechner</title>
+  <meta name="description" content="Free online calculators in English, German, French and Italian: percentage, VAT, BMI, rule of three, compound interest and more. No sign-up required.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    // Redirect returning visitors to their chosen language,
+    // first-time visitors to their browser language.
+    (function () {
+      var supported = ["de", "en", "fr", "it"];
+      var lang;
+      try { lang = localStorage.getItem("calcmate-lang"); } catch (e) { /* blocked */ }
+      if (!lang) {
+        var nav = (navigator.language || "en").slice(0, 2).toLowerCase();
+        if (supported.indexOf(nav) !== -1) lang = nav;
+      }
+      if (lang && supported.indexOf(lang) !== -1) {
+        location.replace(lang + "/");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="lang-landing">
+    <div class="card">
+      <a class="logo" href="./" style="justify-content:center"><span class="logo-mark">∑</span>CalcMate</a>
+      <h1 style="font-size:1.3rem;margin:1rem 0 0.25rem">Choose your language</h1>
+      <p style="color:var(--text-muted);margin:0">Wähle deine Sprache · Choisissez votre langue · Scegli la tua lingua</p>
+      <ul class="lang-list">
+        <li><a href="de/" hreflang="de" lang="de">🇩🇪 Deutsch – Kostenlose Online-Rechner</a></li>
+        <li><a href="en/" hreflang="en" lang="en">🇬🇧 English – Free Online Calculators</a></li>
+        <li><a href="fr/" hreflang="fr" lang="fr">🇫🇷 Français – Calculatrices en ligne gratuites</a></li>
+        <li><a href="it/" hreflang="it" lang="it">🇮🇹 Italiano – Calcolatrici online gratuite</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
