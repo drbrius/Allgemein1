@@ -275,16 +275,35 @@
       else cat = I18N.bmi_obese;
       return "BMI = " + fmt(bmi, 1) + " — " + cat;
     },
-    /* Slope: horizontal length + height -> percent, angle, slope length */
+    /* Slope: from length+height, percent or degrees -> percent, angle, height, slope length */
     "slope": function (f) {
-      var l = val(f, "len"), h = val(f, "height");
-      if (isNaN(l) || isNaN(h) || l <= 0 || h < 0) {
-        setOut(f, "percent", "–"); setOut(f, "angle", "–"); setOut(f, "hyp", "–");
+      var mode = f.elements.mode.value;
+      var show = { lh: ["len", "height"], pct: ["pct", "len"], deg: ["deg", "len"] }[mode];
+      f.querySelectorAll("[data-field]").forEach(function (el) {
+        el.hidden = show.indexOf(el.getAttribute("data-field")) === -1;
+      });
+      var l = val(f, "len");
+      var ratio = NaN, h = NaN;
+      if (mode === "lh") {
+        h = val(f, "height");
+        if (l > 0 && h >= 0) ratio = h / l;
+      } else if (mode === "pct") {
+        var p = val(f, "pct");
+        if (p >= 0) ratio = p / 100;
+      } else {
+        var d = val(f, "deg");
+        if (d >= 0 && d < 90) ratio = Math.tan(d * Math.PI / 180);
+      }
+      if (isNaN(ratio)) {
+        setOut(f, "percent", "–"); setOut(f, "angle", "–");
+        setOut(f, "height", "–"); setOut(f, "hyp", "–");
         return;
       }
-      setOut(f, "percent", fmt((h / l) * 100, 2) + " %");
-      setOut(f, "angle", fmt(Math.atan2(h, l) * 180 / Math.PI, 2) + "°");
-      setOut(f, "hyp", fmt(Math.sqrt(l * l + h * h), 2));
+      if (mode !== "lh" && l > 0) h = ratio * l;
+      setOut(f, "percent", fmt(ratio * 100, 2) + " %");
+      setOut(f, "angle", fmt(Math.atan(ratio) * 180 / Math.PI, 2) + "°");
+      setOut(f, "height", isNaN(h) ? "–" : fmt(h, 2));
+      setOut(f, "hyp", (l > 0 && !isNaN(h)) ? fmt(Math.sqrt(l * l + h * h), 2) : "–");
     },
     /* Compound interest */
     "interest": function (f) {
