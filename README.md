@@ -4,9 +4,9 @@ A modern, free calculator website inspired by [rechneronline.de](https://rechner
 
 ## Features
 
-- **6 calculators**: basic calculator (with keypad, parentheses and percent), percentage calculator (3 modes), VAT calculator (net ↔ gross), rule of three (direct and inverse), BMI calculator, compound interest calculator
+- **7 calculators**: basic calculator (with keypad, parentheses and percent), percentage calculator (3 modes), VAT calculator (net ↔ gross), rule of three (direct and inverse), slope calculator (length + height → percent, angle, slope length, with triangle diagram), BMI calculator, compound interest calculator
 - **4 languages** on separate, fully translated URLs: [`/de/`](de/), [`/en/`](en/), [`/fr/`](fr/), [`/it/`](it/)
-- **Modern design**: responsive layout, automatic dark mode, no external fonts or trackers
+- **Light, minimal design**: responsive layout, flat white theme, no external fonts or trackers
 - **SEO optimised**:
   - Unique `<title>` and meta description per language
   - `hreflang` alternate links (incl. `x-default`) on every page and in the sitemap

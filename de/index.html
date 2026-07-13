@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kostenlose Online-Rechner – Prozent, MwSt, BMI &amp; mehr | CalcMate</title>
-  <meta name="description" content="Kostenlose Online-Rechner ohne Anmeldung: Taschenrechner, Prozentrechner, Mehrwertsteuer-Rechner, Dreisatz, BMI und Zinseszins. Schnell, modern und gratis.">
+  <meta name="description" content="Kostenlose Online-Rechner ohne Anmeldung: Taschenrechner, Prozentrechner, Mehrwertsteuer-Rechner, Dreisatz, Gefälle, BMI und Zinseszins. Schnell, modern und gratis.">
   <link rel="canonical" href="https://drbrius.github.io/Allgemein1/de/">
   <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/">
   <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/">
@@ -29,7 +29,7 @@
     "operatingSystem": "Any",
     "inLanguage": "de",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-    "description": "Kostenlose Online-Rechner ohne Anmeldung: Taschenrechner, Prozentrechner, Mehrwertsteuer-Rechner, Dreisatzrechner, BMI-Rechner und Zinseszinsrechner."
+    "description": "Kostenlose Online-Rechner ohne Anmeldung: Taschenrechner, Prozentrechner, Mehrwertsteuer-Rechner, Dreisatzrechner, Gefälle-Rechner, BMI-Rechner und Zinseszinsrechner."
   }
   </script>
   <script type="application/ld+json">
@@ -51,6 +51,11 @@
         "@type": "Question",
         "name": "Wie wird die Mehrwertsteuer berechnet?",
         "acceptedAnswer": { "@type": "Answer", "text": "Um die MwSt aufzuschlagen, multipliziere den Nettopreis mit (1 + Steuersatz ÷ 100). Um sie aus einem Bruttopreis herauszurechnen, teile durch denselben Faktor. Der MwSt-Rechner beherrscht beide Richtungen." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie berechnet man ein Gefälle in Prozent?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Teile die Höhe (den Höhenunterschied) durch die horizontale Länge und multipliziere mit 100: Gefälle (%) = Höhe ÷ Länge × 100. Beispiel: 12 m Höhe auf 100 m Länge ergeben ein Gefälle von 12 %. Der Winkel ist der Arkustangens von Höhe ÷ Länge." }
       },
       {
         "@type": "Question",
@@ -77,7 +82,7 @@
   <main class="wrap">
     <section class="hero">
       <h1>Kostenlose Online-Rechner – schnell, modern, ohne Anmeldung</h1>
-      <p>Alltagsrechnungen einfach gemacht: Prozente, Mehrwertsteuer, Dreisatz, BMI, Zinseszins und ein klassischer Taschenrechner – alles gratis, direkt im Browser.</p>
+      <p>Alltagsrechnungen einfach gemacht: Prozente, Mehrwertsteuer, Dreisatz, Gefälle, BMI, Zinseszins und ein klassischer Taschenrechner – alles gratis, direkt im Browser.</p>
     </section>
 
     <nav class="calc-nav" aria-label="Rechner">
@@ -85,6 +90,7 @@
       <a href="#prozentrechner">％ Prozent</a>
       <a href="#mwst">🧾 MwSt</a>
       <a href="#dreisatz">⚖️ Dreisatz</a>
+      <a href="#gefaelle">📐 Gefälle</a>
       <a href="#bmi">❤️ BMI</a>
       <a href="#zinseszins">📈 Zinseszins</a>
     </nav>
@@ -194,6 +200,33 @@
       </form>
     </section>
 
+    <section id="gefaelle" class="calc-section">
+      <h2><span class="icon">📐</span>Gefälle-Rechner</h2>
+      <p>Berechne Gefälle bzw. Steigung in Prozent und Grad – aus der horizontalen Länge und der Höhe (dem Höhenunterschied). Praktisch für Dach, Rampe, Straße oder Abwasserrohr.</p>
+      <svg class="slope-figure" viewBox="0 0 360 190" role="img" aria-label="Rechtwinkliges Dreieck: horizontale Länge unten, Höhe rechts, Winkel α links">
+        <polygon points="30,160 310,160 310,50" fill="#eef2fc"/>
+        <line x1="30" y1="160" x2="310" y2="160" stroke="#1c2430" stroke-width="2"/>
+        <line x1="310" y1="160" x2="310" y2="50" stroke="#1c2430" stroke-width="2"/>
+        <line x1="30" y1="160" x2="310" y2="50" stroke="#4f6df5" stroke-width="2.5"/>
+        <path d="M 296 160 L 296 146 L 310 146" fill="none" stroke="#9aa3b5" stroke-width="1.5"/>
+        <path d="M 64 160 A 34 34 0 0 0 61.6 147.6" fill="none" stroke="#6b7385" stroke-width="1.5"/>
+        <text x="78" y="156" font-size="14" fill="#6b7385">α</text>
+        <text x="170" y="182" font-size="14" fill="#6b7385" text-anchor="middle">Länge</text>
+        <text x="318" y="110" font-size="14" fill="#6b7385">Höhe</text>
+      </svg>
+      <form class="calc-form" data-calc="slope" novalidate>
+        <div class="fields">
+          <label>Länge (m)<input type="text" inputmode="decimal" name="len" placeholder="100"></label>
+          <label>Höhe (m)<input type="text" inputmode="decimal" name="height" placeholder="12"></label>
+        </div>
+        <dl class="result-list">
+          <div><dt>Gefälle</dt><dd data-out="percent">–</dd></div>
+          <div><dt>Winkel α</dt><dd data-out="angle">–</dd></div>
+          <div><dt>Schräglänge (m)</dt><dd data-out="hyp">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
     <section id="bmi" class="calc-section">
       <h2><span class="icon">❤️</span>BMI-Rechner</h2>
       <p>Berechne deinen Body-Mass-Index (BMI) aus Gewicht und Körpergröße. Der BMI ist ein schneller Richtwert für ein gesundes Körpergewicht: Werte zwischen 18,5 und 25 gelten bei Erwachsenen als Normalgewicht.</p>
@@ -235,6 +268,10 @@
       <details>
         <summary>Wie wird die Mehrwertsteuer berechnet?</summary>
         <p>Um die MwSt aufzuschlagen, multipliziere den Nettopreis mit (1 + Steuersatz ÷ 100). Um sie aus einem Bruttopreis herauszurechnen, teile durch denselben Faktor. Der MwSt-Rechner beherrscht beide Richtungen.</p>
+      </details>
+      <details>
+        <summary>Wie berechnet man ein Gefälle in Prozent?</summary>
+        <p>Teile die Höhe (den Höhenunterschied) durch die horizontale Länge und multipliziere mit 100: Gefälle (%) = Höhe ÷ Länge × 100. Beispiel: 12 m Höhe auf 100 m Länge ergeben ein Gefälle von 12 %. Der Winkel ist der Arkustangens von Höhe ÷ Länge.</p>
       </details>
       <details>
         <summary>Wie wird der BMI berechnet?</summary>

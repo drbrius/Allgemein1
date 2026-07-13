@@ -275,6 +275,17 @@
       else cat = I18N.bmi_obese;
       return "BMI = " + fmt(bmi, 1) + " — " + cat;
     },
+    /* Slope: horizontal length + height -> percent, angle, slope length */
+    "slope": function (f) {
+      var l = val(f, "len"), h = val(f, "height");
+      if (isNaN(l) || isNaN(h) || l <= 0 || h < 0) {
+        setOut(f, "percent", "–"); setOut(f, "angle", "–"); setOut(f, "hyp", "–");
+        return;
+      }
+      setOut(f, "percent", fmt((h / l) * 100, 2) + " %");
+      setOut(f, "angle", fmt(Math.atan2(h, l) * 180 / Math.PI, 2) + "°");
+      setOut(f, "hyp", fmt(Math.sqrt(l * l + h * h), 2));
+    },
     /* Compound interest */
     "interest": function (f) {
       var p = val(f, "principal"), r = val(f, "rate"), y = val(f, "years");
