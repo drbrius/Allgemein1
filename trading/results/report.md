@@ -18,7 +18,7 @@ Data: 1985-10-01 to 2026-07-16, 10276 daily bars (Yahoo Finance).
 | expectancy_pct | 0.64 | 0.65 | 0.73 |
 | avg_bars_held | 3.5 | 3.4 | 3.3 |
 | strategy_cagr_pct | 2.52 | 2.47 | 3.12 |
-| buyhold_cagr_pct | 14.13 | 12.38 | 20.33 |
+| buyhold_cagr_pct | 14.14 | 12.38 | 20.37 |
 | max_drawdown_pct | -23.9 | -23.9 | -8.7 |
 | buyhold_max_dd_pct | -82.9 | -82.9 | -35.6 |
 | exposure_pct | 7.3 | 7.2 | 7.3 |
@@ -38,7 +38,7 @@ Data: 1992-01-02 to 2026-07-16, 8695 daily bars (Yahoo Finance).
 | expectancy_pct | 0.36 | 0.44 | 0.19 |
 | avg_bars_held | 3.6 | 3.7 | 3.6 |
 | strategy_cagr_pct | 1.46 | 1.64 | 0.91 |
-| buyhold_cagr_pct | 8.66 | 7.58 | 11.6 |
+| buyhold_cagr_pct | 8.66 | 7.58 | 11.59 |
 | max_drawdown_pct | -15.3 | -15.3 | -12.5 |
 | buyhold_max_dd_pct | -53.8 | -53.8 | -37.1 |
 | exposure_pct | 7.7 | 7.1 | 9.4 |

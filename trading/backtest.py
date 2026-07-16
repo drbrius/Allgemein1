@@ -31,10 +31,11 @@ class Trade:
 @dataclass
 class BacktestResult:
     name: str
-    params: StrategyParams
+    params: object
     trades: list[Trade] = field(default_factory=list)
     equity: pd.Series | None = None  # strategy equity curve (start = 1.0)
     buyhold: pd.Series | None = None
+    periods_per_year: float = TRADING_DAYS  # bars per year, for annualizing Sharpe
 
     # ---- trade statistics -------------------------------------------------
     @property
@@ -112,16 +113,24 @@ class BacktestResult:
         daily = self.equity.pct_change().dropna()
         if daily.std() == 0:
             return float("nan")
-        return float(daily.mean() / daily.std() * np.sqrt(TRADING_DAYS))
+        return float(daily.mean() / daily.std() * np.sqrt(self.periods_per_year))
 
 
 def run_backtest(
     df: pd.DataFrame,
-    params: StrategyParams,
+    params,
     name: str = "",
     cost_bps: float = 2.0,
+    signal_builder=build_signals,
+    periods_per_year: float = TRADING_DAYS,
 ) -> BacktestResult:
-    data = build_signals(df, params)
+    """Run the engine over any bar size.
+
+    `params` must provide max_hold_bars and stop_loss_pct; `signal_builder`
+    must return df plus boolean entry_signal / exit_signal columns evaluated
+    on each bar's close.
+    """
+    data = signal_builder(df, params)
     cost = cost_bps / 10_000.0
 
     closes = data["close"].to_numpy()
@@ -129,7 +138,7 @@ def run_backtest(
     exits = data["exit_signal"].to_numpy()
     dates = data.index
 
-    result = BacktestResult(name=name, params=params)
+    result = BacktestResult(name=name, params=params, periods_per_year=periods_per_year)
     equity = np.ones(len(data))
     cash = 1.0
     units = 0.0  # index units held
@@ -140,7 +149,7 @@ def run_backtest(
         if units > 0.0:
             bars_held = i - entry_i
             stopped = px <= closes[entry_i] * (1.0 - params.stop_loss_pct / 100.0)
-            if exits[i] or stopped or bars_held >= params.max_hold_days:
+            if exits[i] or stopped or bars_held >= params.max_hold_bars:
                 cash = units * px * (1.0 - cost)
                 result.trades.append(
                     Trade(

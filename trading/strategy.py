@@ -43,14 +43,14 @@ class StrategyParams:
     entry_rsi: float = 5.0    # enter when RSI(2) below this
     exit_rsi: float = 65.0    # exit when RSI(2) above this
     exit_sma: int = 5         # ... or close back above this SMA
-    max_hold_days: int = 10   # time stop (catastrophe guard)
+    max_hold_bars: int = 10   # time stop in bars (= trading days on daily data)
     stop_loss_pct: float = 8.0  # catastrophe stop: exit if close falls this % below entry
 
     def label(self) -> str:
         return (
             f"SMA{self.trend_sma} trend / RSI{self.rsi_len}<{self.entry_rsi:g} entry / "
             f"RSI>{self.exit_rsi:g} or close>SMA{self.exit_sma} exit / "
-            f"{self.max_hold_days}d time stop / {self.stop_loss_pct:g}% stop loss"
+            f"{self.max_hold_bars}d time stop / {self.stop_loss_pct:g}% stop loss"
         )
 
 
