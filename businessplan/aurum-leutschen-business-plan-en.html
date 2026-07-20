@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AURUM LEUTSCHEN — Business Plan &amp; Project Dossier</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  :root {
+    --ink:    #0e1013;
+    --coal:   #171a1f;
+    --paper:  #f8f5ee;
+    --cream:  #fdfbf6;
+    --gold:   #bfa04f;
+    --gold-2: #e9d79f;
+    --gold-3: #8a6f2e;
+    --taupe:  #71695a;
+    --hair:   #ddd5c2;
+    --hair-d: rgba(233,215,159,.28);
+    --body:   #23262b;
+  }
+
+  body { font-family: "Inter", "Helvetica Neue", Arial, sans-serif; font-size: 9.6pt; line-height: 1.62; color: var(--body); }
+
+  .sheet {
+    width: 210mm; height: 296.6mm;
+    position: relative; overflow: hidden;
+    page-break-after: always;
+    background: var(--paper);
+  }
+  .sheet.dark { background: var(--ink); color: #e8e3d6; }
+  .pad { padding: 17mm 19mm 26mm 19mm; height: 100%; }
+
+  /* ---------- typography ---------- */
+  .serif, h1, h2, h3 { font-family: "EB Garamond", Georgia, serif; font-weight: 400; }
+  .label {
+    font-family: "Inter", sans-serif; font-size: 7pt; font-weight: 600;
+    letter-spacing: 2.6px; text-transform: uppercase; color: var(--gold-3);
+  }
+  .dark .label { color: var(--gold-2); }
+  h2.chap { font-size: 24pt; letter-spacing: .2px; color: var(--ink); margin: 2.5mm 0 2mm 0; line-height: 1.15; }
+  .dark h2.chap { color: #f0ead9; }
+  .chap-rule { height: 1px; background: linear-gradient(90deg, var(--gold), rgba(191,160,79,.15)); margin: 4mm 0 7mm 0; }
+  h3 { font-size: 13.5pt; color: var(--ink); margin: 6mm 0 2.2mm 0; }
+  .dark h3 { color: var(--gold-2); }
+  p { margin-bottom: 3mm; text-align: justify; }
+  .lede { font-family: "EB Garamond", Georgia, serif; font-size: 12pt; line-height: 1.55; color: #3a3e45; text-align: left; }
+  .dark .lede { color: #cfc8b6; }
+  ul { list-style: none; margin: 1mm 0 3.5mm 0; }
+  ul li { padding-left: 5.5mm; position: relative; margin-bottom: 1.6mm; }
+  ul li::before { content: "—"; position: absolute; left: 0; color: var(--gold); }
+  ol { margin: 1mm 0 3.5mm 5mm; }
+  ol li { margin-bottom: 1.6mm; padding-left: 1.5mm; }
+  strong { color: var(--ink); font-weight: 600; }
+  .dark strong { color: #fff; }
+
+  /* ---------- footer ---------- */
+  .foot {
+    position: absolute; bottom: 9mm; left: 19mm; right: 19mm;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid var(--hair); padding-top: 2.6mm;
+    font-size: 6.6pt; letter-spacing: 2px; text-transform: uppercase; color: var(--taupe);
+  }
+  .dark .foot { border-top-color: var(--hair-d); color: #9a937f; }
+  .foot .g { color: var(--gold-3); }
+  .dark .foot .g { color: var(--gold-2); }
+
+  /* ---------- tables ---------- */
+  table.lux { width: 100%; border-collapse: collapse; margin: 2mm 0 5mm 0; font-size: 8.4pt; }
+  table.lux th {
+    text-align: left; font-size: 6.6pt; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase;
+    color: var(--taupe); border-bottom: 1.2px solid var(--ink); padding: 1.8mm 2.5mm 1.4mm 0;
+  }
+  table.lux td { padding: 1.9mm 2.5mm 1.7mm 0; border-bottom: 1px solid var(--hair); vertical-align: top; }
+  table.lux tr.sum td { border-top: 1.4px solid var(--gold); border-bottom: none; font-weight: 600; color: var(--ink); background: rgba(191,160,79,.07); }
+  table.lux tr.sub td { font-weight: 600; color: var(--ink); background: rgba(191,160,79,.05); }
+  table.lux td.r, table.lux th.r { text-align: right; white-space: nowrap; }
+  table.lux td:last-child, table.lux th:last-child { padding-right: 0; }
+  .dark table.lux th { color: #a89f88; border-bottom-color: var(--gold); }
+  .dark table.lux td { border-bottom-color: var(--hair-d); }
+
+  .small { font-size: 7.4pt; color: var(--taupe); line-height: 1.5; }
+  .dark .small { color: #9a937f; }
+
+  /* ---------- components ---------- */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); margin: 4mm 0 6mm 0; border-top: 1px solid var(--ink); }
+  .stat { border-bottom: 1px solid var(--hair); padding: 4mm 3mm 3.4mm 0; }
+  .stat + .stat { }
+  .stat .v { font-family: "EB Garamond", Georgia, serif; font-size: 21pt; color: var(--ink); line-height: 1.05; }
+  .stat .v em { font-style: normal; color: var(--gold-3); }
+  .stat .k { font-size: 6.6pt; letter-spacing: 1.8px; text-transform: uppercase; color: var(--taupe); margin-top: 1.2mm; }
+
+  .callout {
+    border-left: 2px solid var(--gold); background: rgba(191,160,79,.08);
+    padding: 3.4mm 5mm; margin: 4mm 0; font-size: 9.2pt;
+  }
+  .note { border-left: 2px solid #a39a83; background: rgba(163,154,131,.10); padding: 2.8mm 4.5mm; margin: 3.5mm 0; font-size: 7.6pt; color: #4c4a42; }
+
+  figure { margin: 3mm 0 4mm 0; }
+  figure img { width: 100%; display: block; border: 1px solid var(--hair); }
+  figcaption { font-size: 7.2pt; color: var(--taupe); margin-top: 1.8mm; letter-spacing: .3px; }
+
+  .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 7mm; }
+
+  svg text { font-family: "Inter", sans-serif; }
+  svg .st { font-family: "EB Garamond", Georgia, serif; }
+
+  /* ---------- cover ---------- */
+  .cover-frame {
+    position: absolute; inset: 9mm; border: 1px solid rgba(233,215,159,.35);
+    pointer-events: none;
+  }
+  .cover-frame::after { content: ""; position: absolute; inset: 1.6mm; border: 1px solid rgba(233,215,159,.14); }
+  .mono {
+    width: 17mm; height: 17mm; border: 1px solid var(--gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "EB Garamond", Georgia, serif; font-size: 13.5pt; color: var(--gold-2); letter-spacing: 1px;
+  }
+  .gold-text {
+    background: linear-gradient(105deg, #f3e6bb 0%, #c9a952 38%, #f7ecc8 55%, #a8863b 78%, #e3cf94 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .toc-item { display: flex; align-items: baseline; padding: 2.5mm 0; border-bottom: 1px solid var(--hair); font-size: 10pt; }
+  .toc-item .n { font-family: "EB Garamond", Georgia, serif; color: var(--gold-3); width: 11mm; font-size: 11.5pt; }
+  .toc-item .t { flex: 1; letter-spacing: .2px; }
+  .toc-item .p { font-size: 7pt; color: var(--taupe); letter-spacing: 1.5px; }
+
+  .swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4mm; margin: 3mm 0 5mm 0; }
+  .swatch .chip { height: 17mm; border: 1px solid rgba(0,0,0,.14); }
+  .swatch .name { font-size: 6.6pt; letter-spacing: 1.4px; text-transform: uppercase; color: var(--taupe); margin-top: 1.6mm; line-height: 1.45; }
+
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin: 4mm 0; }
+  .pillar { border: 1px solid var(--hair); border-top: 2px solid var(--gold); background: var(--cream); padding: 4.5mm 4.5mm 4mm 4.5mm; }
+  .pillar .num { font-family: "EB Garamond", Georgia, serif; font-size: 17pt; color: var(--gold-3); }
+  .pillar h4 { font-family: "EB Garamond", Georgia, serif; font-size: 12.5pt; font-weight: 400; color: var(--ink); margin: 1mm 0 1.6mm 0; }
+  .pillar p { font-size: 8.2pt; text-align: left; margin: 0; color: #45494f; }
+</style>
+</head>
+<body>
+
+<!-- ================================================== 1 · COVER -->
+<div class="sheet dark">
+  <div class="cover-frame"></div>
+  <div style="padding: 26mm 24mm; height:100%; display:flex; flex-direction:column;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div class="mono">AL</div>
+      <div class="label" style="color:#9a937f;">Private &amp; Confidential</div>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+      <div class="label" style="margin-bottom:7mm;">Business Plan &amp; Project Dossier — English Edition</div>
+      <img src="img/title-gold.png" alt="Aurum Leutschen" style="width:152mm; display:block;">
+      <div style="height:1px; width:52mm; background:linear-gradient(90deg,var(--gold),transparent); margin:9mm 0;"></div>
+      <div class="serif" style="font-size:15.5pt; color:#ddd5c0; line-height:1.5;">
+        Gold Refinery &nbsp;·&nbsp; Three-Level Underground Vault &nbsp;·&nbsp; Security House
+      </div>
+      <p style="margin-top:6mm; max-width:120mm; text-align:left; color:#a49c88; font-size:9pt;">
+        An integrated precious-metals estate on Lake Zurich's Gold Coast — refining, assaying and
+        safeguarding gold at institutional scale, behind the discreet façade of a premium industrial gallery.
+      </p>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+      <div class="small" style="letter-spacing:1.6px; text-transform:uppercase;">
+        Parcel No. 1172 · Leutschen / Wolleraustrasse<br>8807 Freienbach · Canton Schwyz · Switzerland
+      </div>
+      <div class="small" style="text-align:right; letter-spacing:1.6px; text-transform:uppercase;">
+        Version 2.0 · July 2026<br><span style="color:var(--gold-2)">Total investment CHF 81 million</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================== 2 · CONTENTS -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Aurum Leutschen — Dossier</div>
+    <h2 class="chap">Contents</h2>
+    <div class="chap-rule"></div>
+    <div class="twocol">
+      <div>
+        <div class="toc-item"><span class="n">01</span><span class="t">Executive Summary</span><span class="p">P.03</span></div>
+        <div class="toc-item"><span class="n">02</span><span class="t">Vision &amp; The Three Pillars</span><span class="p">P.04</span></div>
+        <div class="toc-item"><span class="n">03</span><span class="t">The Site — Parcel No. 1172</span><span class="p">P.05</span></div>
+        <div class="toc-item"><span class="n">04</span><span class="t">Architecture &amp; Master Plan</span><span class="p">P.07</span></div>
+        <div class="toc-item"><span class="n">05</span><span class="t">The Vault — Three Levels Below Grade</span><span class="p">P.09</span></div>
+        <div class="toc-item"><span class="n">06</span><span class="t">Refinery Operations</span><span class="p">P.11</span></div>
+        <div class="toc-item"><span class="n">07</span><span class="t">Security House &amp; Defence in Depth</span><span class="p">P.13</span></div>
+      </div>
+      <div>
+        <div class="toc-item"><span class="n">08</span><span class="t">Regulatory Framework &amp; Compliance</span><span class="p">P.14</span></div>
+        <div class="toc-item"><span class="n">09</span><span class="t">Market &amp; Competitive Landscape</span><span class="p">P.15</span></div>
+        <div class="toc-item"><span class="n">10</span><span class="t">Business Model &amp; Revenue Engines</span><span class="p">P.16</span></div>
+        <div class="toc-item"><span class="n">11</span><span class="t">Capital Expenditure &amp; Financing</span><span class="p">P.17</span></div>
+        <div class="toc-item"><span class="n">12</span><span class="t">Five-Year Financial Plan</span><span class="p">P.18</span></div>
+        <div class="toc-item"><span class="n">13</span><span class="t">Delivery Timeline</span><span class="p">P.19</span></div>
+        <div class="toc-item"><span class="n">14</span><span class="t">Risk Analysis &amp; Mitigation</span><span class="p">P.20</span></div>
+        <div class="toc-item"><span class="n">15</span><span class="t">Annex — Cadastral (PLR) Extract</span><span class="p">P.21</span></div>
+      </div>
+    </div>
+    <div style="margin-top:10mm;" class="note">
+      This dossier is an indicative project and feasibility study prepared for planning purposes. All areas, costs,
+      revenues and dates are planning assumptions to be verified by specialist planners, authorities, insurers and
+      surveyors. Architectural reference: FORMS Gallery, Freienbach (formsgallery.com) — a converted industrial hall
+      finished to a premium standard. Source of site data: PLR cadastre extract, Canton Schwyz, 20 July 2026.
+    </div>
+    <table class="lux" style="margin-top:8mm;">
+      <tr><th style="width:34%">Document</th><th>Key Facts</th></tr>
+      <tr><td>Property</td><td>Parcel No. 1172, Freienbach SZ (BFS 1322) · E-GRID CH932677383838 · 6,014 m²</td></tr>
+      <tr><td>Zoning</td><td>Industrial Zone 1 (100%) · Noise sensitivity level IV</td></tr>
+      <tr><td>Land price</td><td>CHF 12,000,000 (CHF 1,995 per m²)</td></tr>
+      <tr><td>Total investment</td><td>≈ CHF 81 million incl. land, buildings, vault, plant and security systems</td></tr>
+      <tr><td>Vault</td><td>Three underground levels, ≈ 2,100 m², capacity in excess of 1,200 tonnes of gold</td></tr>
+    </table>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.02</span></div>
+</div>
+
+<!-- ================================================== 3 · EXECUTIVE SUMMARY -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 01</div>
+    <h2 class="chap">Executive Summary</h2>
+    <div class="chap-rule"></div>
+    <p class="lede">
+      Aurum Leutschen unites a boutique gold refinery, an institutional-scale underground vault and a
+      permanently manned security house on a single industrial estate in Freienbach, Canton Schwyz —
+      thirty minutes from Zurich, in the heart of Switzerland's wealth-management corridor.
+    </p>
+    <div class="stats">
+      <div class="stat"><div class="v">6,014 <em>m²</em></div><div class="k">Freehold site · Industrial Zone 1</div></div>
+      <div class="stat"><div class="v">CHF 12<em>m</em></div><div class="k">Land acquisition price</div></div>
+      <div class="stat"><div class="v">CHF 81<em>m</em></div><div class="k">Total investment (indicative)</div></div>
+      <div class="stat"><div class="v">100 <em>t/a</em></div><div class="k">Refining capacity at build-out</div></div>
+      <div class="stat"><div class="v">1,200+ <em>t</em></div><div class="k">Vault capacity · 3 levels below grade</div></div>
+      <div class="stat"><div class="v">≈ 60</div><div class="k">Jobs at full operation</div></div>
+    </div>
+    <p>
+      The site is exceptionally well suited: 100% <strong>Industrial Zone 1</strong> with <strong>noise sensitivity
+      level IV</strong> (heavy-impact operations permitted), direct access to the A3 motorway at Pfäffikon SZ,
+      a low-tax cantonal environment, and immediate proximity to one of Europe's densest clusters of family
+      offices and asset managers. The architectural language follows the neighbouring FORMS Gallery — a calm,
+      monolithic industrial volume with a premium interior; security remains invisible from the street.
+    </p>
+    <p>
+      Three mutually reinforcing revenue engines drive the business: <strong>toll refining and urban-mining
+      recycling</strong>, high-margin <strong>custody in the three-level vault</strong> — engineered for more than
+      1,200 tonnes of segregated and allocated gold — and <strong>trading and branded bar products</strong>.
+      On conservative assumptions the operation reaches ≈ CHF 56 million revenue in year five at a 46% EBITDA
+      margin, with EBITDA break-even in the first full year of operation.
+    </p>
+    <div class="callout">
+      <strong>The investment case in one sentence:</strong> a permit-ready industrial site in one of the world's
+      premier gold and wealth regions, developed into an LBMA-track refinery wrapped around one of
+      Switzerland's largest privately owned bullion vaults — a hard-asset business with recurring revenues
+      and formidable barriers to entry.
+    </div>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.03</span></div>
+</div>
+
+<!-- ================================================== 4 · VISION -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 02</div>
+    <h2 class="chap">Vision &amp; The Three Pillars</h2>
+    <div class="chap-rule"></div>
+    <p>
+      Switzerland is the global centre of gold refining: a substantial share of the world's gold passes through
+      Swiss refineries, and four of the world's largest refiners are domiciled here. At the same time, demand for
+      <em>physical, segregated custody outside the banking system</em> is growing structurally — driven by family
+      offices, UHNW individuals, bullion dealers and fund platforms. Between the industrial mega-refineries in
+      Ticino and Neuchâtel and small regional assay houses lies a gap:
+      <strong>a premium operator in Greater Zurich combining refining, assaying, minting and institutional-scale
+      vaulting at a single address.</strong>
+    </p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="num">I</div>
+        <h4>The Refinery</h4>
+        <p>Melting, sampling, fire assay and ICP analytics; refining to 999.9 fine via aqua regia and Wohlwill
+        electrolysis; casting and minting of bars from 1 g to 12.5 kg; hallmarking under Swiss precious-metals law.
+        Build-out capacity 100 tonnes of fine gold per annum, LBMA Good Delivery as mid-term objective.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">II</div>
+        <h4>The Vault</h4>
+        <p>Three fully underground levels (≈ 2,100 m²) engineered to the highest EN 1143-1 resistance grades:
+        client suites and 600 safe-deposit boxes on Level −1, segregated private vault rooms on Level −2, and a
+        high-density bulk vault for more than 1,000 tonnes of palletised Good Delivery bars on Level −3.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">III</div>
+        <h4>The Security House</h4>
+        <p>A 24/7, permanently double-staffed security command at the single point of entry: vehicle interlock,
+        armoured-transport dock, visitor identification, redundant alarm routing to a certified receiving centre
+        and the Schwyz cantonal police. Defence in depth across six security zones.</p>
+      </div>
+    </div>
+    <h3>Positioning</h3>
+    <p>
+      Aurum Leutschen positions itself as <strong>«The Vault of Zurich's Gold Coast»</strong> — the discreet Swiss
+      address where gold is refined, certified, insured and safeguarded across its entire life cycle: acquisition,
+      assay, refining, minting, certification, custody and delivery. Metal received for refining flows directly
+      into the vault without ever leaving the secured perimeter; vaulted metal can be re-refined, re-cast and
+      re-certified in-house — a closed loop no bank and no standalone warehouse can offer.
+    </p>
+    <div class="callout">
+      Mid-term objectives: accreditation as a Swiss federally licensed melter and trade assayer, ISO/IEC 17025
+      laboratory accreditation, ISO 27001 for information security — and, at build-out, admission to the
+      LBMA Good Delivery List.
+    </div>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.04</span></div>
+</div>
+
+<!-- ================================================== 5 · SITE I -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 03</div>
+    <h2 class="chap">The Site — Parcel No. 1172</h2>
+    <div class="chap-rule"></div>
+    <p class="lede">
+      Six thousand square metres of freehold industrial land on Wolleraustrasse in the Leutschen district of
+      Freienbach — fully zoned for heavy industrial use, free of protective easements, minutes from the A3.
+    </p>
+    <h3>Cadastral facts <span class="small" style="font-size:7.4pt;">(PLR extract, Canton Schwyz, 20 July 2026)</span></h3>
+    <table class="lux">
+      <tr><th style="width:36%">Attribute</th><th>Value</th></tr>
+      <tr><td>Parcel / type</td><td>No. 1172 / real property (Liegenschaft)</td></tr>
+      <tr><td>E-GRID</td><td>CH932677383838</td></tr>
+      <tr><td>Municipality</td><td>Freienbach SZ (BFS No. 1322), Leutschen district / Wolleraustrasse</td></tr>
+      <tr><td>Area</td><td>6,014 m²</td></tr>
+      <tr><td>Zoning</td><td><strong>Industrial Zone 1 — 100%</strong> (Freienbach building code 1994, amended 2005 / 2019 / 2022)</td></tr>
+      <tr><td>Noise sensitivity</td><td><strong>Level IV — 100%</strong> (heavy-impact operations permitted; Noise Abatement Ordinance)</td></tr>
+      <tr><td>Contaminated-sites register</td><td>Entry 29_B130 on 4,950 m² (82.3%): <strong>“polluted, requiring neither monitoring nor remediation”</strong> — no harmful effects expected</td></tr>
+      <tr><td>Not affected by</td><td>Groundwater protection zones, forest setback lines, national road / railway building lines, planning or project zones</td></tr>
+      <tr class="sum"><td>Purchase price</td><td>CHF 12,000,000 — CHF 1,995 per m²</td></tr>
+    </table>
+    <h3>Why this location</h3>
+    <ul>
+      <li><strong>Ideal planning law.</strong> Industrial Zone 1 with sensitivity level IV is the best possible zoning for a smelting operation — furnaces, extraction plants and 24/7 logistics without conflict on the parcel itself.</li>
+      <li><strong>Valuables logistics.</strong> Clear, supervised single access from Wolleraustrasse; A3 junction within minutes; Zurich Airport ≈ 40 minutes — short, plannable armoured-transport routes with alternates.</li>
+      <li><strong>The client next door.</strong> Pfäffikon SZ, Wollerau and Zug form one of the highest densities of family offices and asset managers in Europe — the custody client base sits within sight of the vault.</li>
+      <li><strong>Tax and legal environment.</strong> Canton Schwyz offers among the lowest corporate tax burdens in Switzerland and levies no real-estate transfer tax; a stable, ownership-friendly jurisdiction.</li>
+      <li><strong>Manageable legacy.</strong> The register entry “polluted, not requiring remediation” imposes no clean-up duty; excavation simply carries a disposal premium — priced into the capital budget.</li>
+    </ul>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.05</span></div>
+</div>
+
+<!-- ================================================== 6 · SITE II -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 03 · Continued</div>
+    <h2 class="chap">Situation Plan</h2>
+    <div class="chap-rule"></div>
+    <figure>
+      <img src="img/situationsplan.png" alt="Cadastral situation plan, parcel 1172">
+      <figcaption>Fig. 1 — Official cadastral survey: Parcel No. 1172 (outlined in red) between Wolleraustrasse and the
+      Leutschen district. Existing structures on the parcel will be demolished. Source: PLR cadastre, Canton Schwyz.</figcaption>
+    </figure>
+    <div class="twocol" style="margin-top:5mm;">
+      <div>
+        <h3 style="margin-top:0;">Due diligence before closing</h3>
+        <ul>
+          <li>Land-register excerpt: easements, annotations, priority notices</li>
+          <li>Historical site investigation (Contaminated Sites Ordinance) plus soil borings</li>
+          <li>Geotechnical report — deep three-level basement, groundwater regime near the lake, dewatering concept</li>
+          <li>Utilities &amp; grid capacity confirmation (≈ 1.2 MW connected load)</li>
+          <li>Pre-application rulings from the municipality and the Central Office for Precious Metals Control</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-top:0;">Transaction structure</h3>
+        <ul>
+          <li>Conditional purchase deed or purchase option tied to building permit and melter's licence milestones</li>
+          <li>Retention against latent soil-disposal cost overruns</li>
+          <li>Acquisition via special-purpose vehicle (PropCo / OpCo split) for financing flexibility</li>
+          <li>No transfer tax in Canton Schwyz; notarial and land-register fees only</li>
+        </ul>
+        <div class="callout" style="margin-top:4mm;">
+          <strong>Land value floor.</strong> At CHF 1,995 per m², the entry price sits within the observed range for
+          serviced industrial land on the upper Lake Zurich shore — the land itself anchors the downside of the
+          investment case.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.06</span></div>
+</div>
+
+<!-- ================================================== 7 · ARCHITECTURE I -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 04</div>
+    <h2 class="chap">Architecture — A Gallery, Not a Fortress</h2>
+    <div class="chap-rule"></div>
+    <p class="lede">
+      The design reference is the FORMS Gallery in Freienbach: a former industrial hall transformed, with a
+      reduced material palette and precise detailing, into a premium design destination. Aurum Leutschen
+      translates that attitude into a new build — the security is absolute, and invisible.
+    </p>
+    <h3>Design principles</h3>
+    <ul>
+      <li><strong>One calm, monolithic volume.</strong> A single hall with an integrated two-storey head building; precise joint layout, deep reveals, no “bunker look” — the strongest rooms in the canton hide beneath a serene façade.</li>
+      <li><strong>The head building as a gallery.</strong> Reception, client lounge, private viewing suites and a bar-product showroom finished to gallery standard — trust, rendered in space.</li>
+      <li><strong>Industrial precision inside.</strong> Column-free refinery hall on an 8-metre grid, 5-tonne crane runway, services routed in floor channels, north-facing glazed sheds for daylight.</li>
+      <li><strong>Quiet sustainability.</strong> Full-roof photovoltaics (≈ 400 kWp), furnace waste-heat recovery, rainwater retention, Minergie standard for the head building.</li>
+    </ul>
+    <h3>Material palette</h3>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:linear-gradient(160deg,#c6c2b8,#a9a49a);"></div><div class="name">Board-marked concrete plinth</div></div>
+      <div class="swatch"><div class="chip" style="background:linear-gradient(160deg,#2e3238,#1b1e23);"></div><div class="name">Anodised metal façade, vertical rib</div></div>
+      <div class="swatch"><div class="chip" style="background:linear-gradient(135deg,#8a6f2e,#d9bd72 45%,#a8863b);"></div><div class="name">Brass entrance portal &amp; signage</div></div>
+      <div class="swatch"><div class="chip" style="background:linear-gradient(160deg,#54422e,#3c2f21);"></div><div class="name">Smoked oak, client suites</div></div>
+      <div class="swatch"><div class="chip" style="background:linear-gradient(160deg,#20242a,#101318);"></div><div class="name">Blackened steel, vault thresholds</div></div>
+    </div>
+    <p>
+      Externally the building reads as a refined industrial gallery on Wolleraustrasse; the brass-lined entrance
+      portal is the only gesture toward what the house contains. All security build-up — blast-resistant plinth,
+      RC4+ glazing, interlock lobbies, the vault itself — is embedded within the envelope and below grade.
+    </p>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.07</span></div>
+</div>
+
+<!-- ================================================== 8 · ARCHITECTURE II / MASTER PLAN -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 04 · Continued</div>
+    <h2 class="chap">Master Plan &amp; Area Schedule</h2>
+    <div class="chap-rule"></div>
+    <figure>
+    <svg viewBox="0 0 900 430" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="900" height="430" fill="#f3efe4"/>
+      <polygon points="70,58 640,20 856,146 828,292 558,416 92,416" fill="#ece7d7" stroke="#bfa04f" stroke-width="2.5" stroke-dasharray="10 5"/>
+      <text x="82" y="50" font-size="13" fill="#8a6f2e" letter-spacing="2">PARCEL NO. 1172 · 6,014 M²</text>
+      <line x1="18" y1="44" x2="640" y2="6" stroke="#71695a" stroke-width="1.6"/>
+      <text x="26" y="28" font-size="11.5" fill="#71695a" transform="rotate(-4 26 28)" letter-spacing="2">WOLLERAUSTRASSE</text>
+      <!-- head building -->
+      <rect x="150" y="78" width="205" height="46" fill="#3b4149"/>
+      <text x="252" y="98" font-size="10" fill="#e9d79f" text-anchor="middle" letter-spacing="1.5">HEAD BUILDING “GALLERY”</text>
+      <text x="252" y="113" font-size="8.5" fill="#b8b2a2" text-anchor="middle">reception · lounge · offices · showroom (2 storeys)</text>
+      <!-- hall -->
+      <rect x="150" y="124" width="380" height="182" fill="#171a1f"/>
+      <text x="340" y="200" font-size="15" fill="#f0ead9" text-anchor="middle" letter-spacing="3">REFINERY HALL</text>
+      <text x="340" y="220" font-size="9.5" fill="#bfa04f" text-anchor="middle">≈ 1,900 m² GFA · melting · electrolysis · assay laboratory</text>
+      <!-- vault -->
+      <rect x="558" y="150" width="222" height="128" fill="none" stroke="#bfa04f" stroke-width="2.5" stroke-dasharray="6 4"/>
+      <text x="669" y="196" font-size="12.5" fill="#8a6f2e" text-anchor="middle" letter-spacing="2">THE VAULT</text>
+      <text x="669" y="214" font-size="9" fill="#8a6f2e" text-anchor="middle">3 levels below grade · ≈ 2,100 m²</text>
+      <text x="669" y="230" font-size="9" fill="#8a6f2e" text-anchor="middle">capacity &gt; 1,200 t</text>
+      <!-- security house -->
+      <rect x="112" y="326" width="118" height="64" fill="#bfa04f"/>
+      <text x="171" y="354" font-size="10.5" fill="#0e1013" text-anchor="middle" letter-spacing="1.5">SECURITY</text>
+      <text x="171" y="370" font-size="10.5" fill="#0e1013" text-anchor="middle" letter-spacing="1.5">HOUSE 24/7</text>
+      <!-- vehicle lock -->
+      <rect x="248" y="326" width="178" height="64" fill="#5b636d"/>
+      <text x="337" y="354" font-size="9.5" fill="#f3efe4" text-anchor="middle" letter-spacing="1">VEHICLE INTERLOCK +</text>
+      <text x="337" y="370" font-size="9.5" fill="#f3efe4" text-anchor="middle" letter-spacing="1">ARMOURED-TRANSPORT DOCK</text>
+      <!-- parking -->
+      <rect x="444" y="326" width="248" height="64" fill="#ddd7c6"/>
+      <text x="568" y="362" font-size="9" fill="#5a564b" text-anchor="middle" letter-spacing="1">STAFF / VISITOR PARKING · ≈ 30 BAYS + EV</text>
+      <!-- arrows / perimeter -->
+      <defs><marker id="arr2" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#8a3b2a"/></marker></defs>
+      <line x1="98" y1="36" x2="168" y2="320" stroke="#8a3b2a" stroke-width="2.4" marker-end="url(#arr2)"/>
+      <text x="50" y="196" font-size="9.5" fill="#8a3b2a" transform="rotate(76 50 196)" letter-spacing="1">SINGLE CONTROLLED ACCESS</text>
+      <text x="700" y="408" font-size="9" fill="#8a3b2a" letter-spacing="1">— PERIMETER FENCE + DETECTION —</text>
+    </svg>
+    <figcaption>Fig. 2 — Development concept (schematic, not to scale). The hall fronts the street with the head
+    building; the vault lies entirely below grade with its own access core; the security house commands the single entry.</figcaption>
+    </figure>
+    <h3>Area schedule (indicative)</h3>
+    <table class="lux">
+      <tr><th>Use</th><th class="r">GFA m²</th><th>Notes</th></tr>
+      <tr><td>Refinery hall — melting, electrolysis, parting</td><td class="r">1,450</td><td>column-free, 5 t crane, 8 m clear height</td></tr>
+      <tr><td>Assay laboratory / QA</td><td class="r">250</td><td>ICP-OES, XRF, fire assay; ISO 17025 target</td></tr>
+      <tr><td>Goods reception, interlocks, vault forecourt</td><td class="r">300</td><td>person/vehicle traps, certified weighing room</td></tr>
+      <tr><td>Head building — reception, lounge, offices, showroom</td><td class="r">650</td><td>two storeys, gallery-standard fit-out</td></tr>
+      <tr><td>Plant — scrubbers, HVAC, transformer, UPS, generator</td><td class="r">400</td><td>partly roof-level plant</td></tr>
+      <tr><td>Vault, Levels −1 / −2 / −3</td><td class="r">2,100</td><td>fully below grade, dedicated access core, 2 goods lifts</td></tr>
+      <tr><td>Security house incl. command room</td><td class="r">160</td><td>free-standing at the gate, staffed 24/7</td></tr>
+      <tr class="sum"><td>Total gross floor area</td><td class="r">≈ 5,310</td><td>footprint above grade ≈ 2,350 m² → site coverage ≈ 39%</td></tr>
+    </table>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.08</span></div>
+</div>
+
+<!-- ================================================== 9 · VAULT SHOWPIECE (DARK) -->
+<div class="sheet dark">
+  <div class="pad">
+    <div class="label">Chapter 05</div>
+    <h2 class="chap">The Vault — Three Levels Below Grade</h2>
+    <div style="height:1px; background:linear-gradient(90deg,var(--gold),rgba(191,160,79,.1)); margin:4mm 0 6mm 0;"></div>
+    <p class="lede" style="color:#cfc8b6;">
+      A vertical treasury: ≈ 2,100 square metres of certified vault space descending fourteen metres into the
+      ground — engineered for more than 1,200 tonnes of gold, from a single private safe-deposit box to
+      institutional reserve positions.
+    </p>
+    <figure style="margin-top:5mm;">
+    <svg viewBox="0 0 900 470" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="900" height="470" fill="#0e1013"/>
+      <!-- ground line -->
+      <line x1="30" y1="120" x2="870" y2="120" stroke="#e9d79f" stroke-width="1.6"/>
+      <text x="34" y="112" font-size="9.5" fill="#9a937f" letter-spacing="2">GRADE ±0.00</text>
+      <!-- above-grade silhouette -->
+      <polyline points="120,120 120,58 320,58 320,42 560,42 560,120" fill="none" stroke="#6f6a5e" stroke-width="1.3"/>
+      <text x="212" y="92" font-size="9" fill="#6f6a5e" letter-spacing="1.5">HEAD BUILDING</text>
+      <text x="430" y="80" font-size="9" fill="#6f6a5e" letter-spacing="1.5">REFINERY HALL</text>
+      <!-- access core -->
+      <rect x="600" y="120" width="70" height="300" fill="none" stroke="#bfa04f" stroke-width="1.3"/>
+      <text x="635" y="280" font-size="8.5" fill="#bfa04f" text-anchor="middle" transform="rotate(-90 635 280)" letter-spacing="2">ACCESS CORE · 2 GOODS LIFTS 5 T · STAIR</text>
+      <!-- Level -1 -->
+      <rect x="140" y="140" width="460" height="86" fill="none" stroke="#e9d79f" stroke-width="1.6"/>
+      <text x="158" y="168" font-size="13" fill="#e9d79f" class="st">Level −1 · The Client Floor</text>
+      <text x="158" y="188" font-size="9" fill="#a89f88">600 safe-deposit boxes &amp; lockers · private viewing suites · audit room · handling vestibule</text>
+      <text x="158" y="205" font-size="9" fill="#a89f88">≈ 700 m² · depth −4.5 m</text>
+      <!-- Level -2 -->
+      <rect x="140" y="236" width="460" height="86" fill="none" stroke="#cdb46a" stroke-width="1.6"/>
+      <text x="158" y="264" font-size="13" fill="#e9d79f" class="st">Level −2 · Segregated Vaults</text>
+      <text x="158" y="284" font-size="9" fill="#a89f88">40+ private vault rooms &amp; cages · kilobar shelving · institutional segregated storage</text>
+      <text x="158" y="301" font-size="9" fill="#a89f88">≈ 700 m² · depth −9.0 m</text>
+      <!-- Level -3 -->
+      <rect x="140" y="332" width="460" height="86" fill="rgba(191,160,79,.10)" stroke="#bfa04f" stroke-width="2"/>
+      <text x="158" y="360" font-size="13" fill="#f0e4b8" class="st">Level −3 · The Bulk Vault</text>
+      <text x="158" y="380" font-size="9" fill="#bdb49a">high-density palletised storage of 12.5 kg Good Delivery bars · &gt; 1,000 tonnes</text>
+      <text x="158" y="397" font-size="9" fill="#bdb49a">≈ 700 m² · depth −13.5 m · time-locked, dual-custody only</text>
+      <!-- depth ticks -->
+      <line x1="112" y1="120" x2="112" y2="418" stroke="#55503f" stroke-width="1"/>
+      <line x1="104" y1="226" x2="120" y2="226" stroke="#55503f" stroke-width="1"/><text x="98" y="230" font-size="8" fill="#9a937f" text-anchor="end">−4.5 m</text>
+      <line x1="104" y1="322" x2="120" y2="322" stroke="#55503f" stroke-width="1"/><text x="98" y="326" font-size="8" fill="#9a937f" text-anchor="end">−9.0 m</text>
+      <line x1="104" y1="418" x2="120" y2="418" stroke="#55503f" stroke-width="1"/><text x="98" y="422" font-size="8" fill="#9a937f" text-anchor="end">−13.5 m</text>
+      <!-- envelope -->
+      <rect x="128" y="128" width="484" height="302" fill="none" stroke="#8a6f2e" stroke-width="1" stroke-dasharray="3 4"/>
+      <text x="700" y="150" font-size="9" fill="#8a6f2e" letter-spacing="1">MONOLITHIC SECURITY-</text>
+      <text x="700" y="164" font-size="9" fill="#8a6f2e" letter-spacing="1">CONCRETE ENVELOPE</text>
+      <text x="700" y="178" font-size="9" fill="#8a6f2e" letter-spacing="1">EN 1143-1, TOP GRADES</text>
+      <text x="700" y="205" font-size="9" fill="#6f6a5e" letter-spacing="1">SEISMIC + BODY-SOUND</text>
+      <text x="700" y="219" font-size="9" fill="#6f6a5e" letter-spacing="1">SENSORS IN ALL WALLS,</text>
+      <text x="700" y="233" font-size="9" fill="#6f6a5e" letter-spacing="1">FLOORS AND CEILINGS</text>
+      <text x="700" y="260" font-size="9" fill="#6f6a5e" letter-spacing="1">EN 50131 GRADE 4</text>
+      <text x="700" y="274" font-size="9" fill="#6f6a5e" letter-spacing="1">ALARMS, REDUNDANT</text>
+      <text x="700" y="288" font-size="9" fill="#6f6a5e" letter-spacing="1">SIGNAL PATHS</text>
+      <text x="700" y="315" font-size="9" fill="#6f6a5e" letter-spacing="1">INERT-GAS FIRE</text>
+      <text x="700" y="329" font-size="9" fill="#6f6a5e" letter-spacing="1">SUPPRESSION · UPS +</text>
+      <text x="700" y="343" font-size="9" fill="#6f6a5e" letter-spacing="1">GENERATOR AUTARKY</text>
+    </svg>
+    <figcaption style="color:#8f8875;">Fig. 3 — Vault cross-section (schematic). Each level is an independently certified vault compartment behind its own EN 1143-1 door; the bulk vault operates under a strict time-lock and dual-custody regime.</figcaption>
+    </figure>
+    <div class="stats" style="border-top-color:var(--gold); margin-top:4mm;">
+      <div class="stat" style="border-bottom-color:var(--hair-d);"><div class="v" style="color:#f0ead9;">2,100 <em style="color:var(--gold-2)">m²</em></div><div class="k" style="color:#9a937f;">Net vault area on three levels</div></div>
+      <div class="stat" style="border-bottom-color:var(--hair-d);"><div class="v" style="color:#f0ead9;">1,200+ <em style="color:var(--gold-2)">t</em></div><div class="k" style="color:#9a937f;">Total gold capacity</div></div>
+      <div class="stat" style="border-bottom-color:var(--hair-d);"><div class="v" style="color:#f0ead9;">600</div><div class="k" style="color:#9a937f;">Safe-deposit boxes &amp; suites</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.09</span></div>
+</div>
+
+<!-- ================================================== 10 · VAULT SPECS -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 05 · Continued</div>
+    <h2 class="chap">Vault Engineering &amp; Custody Services</h2>
+    <div class="chap-rule"></div>
+    <h3>Engineering standard (planning basis)</h3>
+    <table class="lux">
+      <tr><th style="width:30%">Element</th><th>Specification</th></tr>
+      <tr><td>Structure</td><td>Monolithic special security concrete with embedded reinforcement systems; each level a certified <strong>EN 1143-1</strong> compartment (target grades in the X–XIII band, fixed with insurer and VdS/SES experts); diaphragm-wall pit, waterproof concrete tank, dewatering during construction</td></tr>
+      <tr><td>Doors</td><td>Vault doors per compartment class with day gates, multi-point boltwork, time locks; four-eyes opening without exception</td></tr>
+      <tr><td>Detection</td><td><strong>EN 50131 Grade 4</strong> intrusion system; seismic, body-sound and volumetric coverage of every enclosing surface; redundant transmission (IP + cellular) to a certified alarm receiving centre</td></tr>
+      <tr><td>Access</td><td>Dedicated access core: person traps with biometrics + badge + PIN, interlocked in series; two 5 t goods lifts; movement logging to the second</td></tr>
+      <tr><td>Resilience</td><td>Autonomous ventilation, aspirating smoke detection, inert-gas suppression, flood sensors, UPS + generator; command room electromagnetically shielded</td></tr>
+      <tr><td>Storage systems</td><td>L−3: high-density pallet racking for 12.5 kg bars (&gt; 1,000 t); L−2: vault rooms, cages and kilobar shelving; L−1: 600 boxes in four sizes plus walk-in suites</td></tr>
+    </table>
+    <h3>Custody services &amp; target pricing</h3>
+    <table class="lux">
+      <tr><th>Service</th><th>Description</th><th class="r">Target rate</th></tr>
+      <tr><td>Segregated custody</td><td>Physically separated position per client, all-risk insured (Lloyd's market), bar-list reporting</td><td class="r">0.20 – 0.50% p.a.</td></tr>
+      <tr><td>Allocated pooled custody</td><td>Numbered-bar allocation for dealers, funds and platforms</td><td class="r">from 0.12% p.a.</td></tr>
+      <tr><td>Safe-deposit boxes &amp; suites</td><td>Private clients and family offices, discreet access by appointment</td><td class="r">CHF 1,200 – 15,000 p.a.</td></tr>
+      <tr><td>Handling &amp; audit</td><td>In/out movements, bar testing with certificates, Big-4-ready inventory audits, courier organisation</td><td class="r">per event</td></tr>
+      <tr><td>Bonded warehouse option</td><td>Application for an open customs warehouse (OZL) — customs- and VAT-neutral storage for international clients</td><td class="r">—</td></tr>
+    </table>
+    <div class="callout">
+      <strong>The closed loop.</strong> Unlike bank safe-deposit or standalone vault operators, stored metal never
+      needs to leave the perimeter: legacy gold can be assayed, refined to 999.9, recast as certified bars and
+      returned to the client's compartment — without a single transport risk.
+    </div>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.10</span></div>
+</div>
+
+<!-- ================================================== 11 · REFINERY I -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 06</div>
+    <h2 class="chap">Refinery Operations</h2>
+    <div class="chap-rule"></div>
+    <h3>Capacity stages</h3>
+    <table class="lux">
+      <tr><th>Stage</th><th>Period</th><th class="r">Fine gold p.a.</th><th>Focus</th></tr>
+      <tr><td>Stage 1</td><td>Operating years 1–2</td><td class="r">25 – 40 t</td><td>recycling / legacy gold, semi-finished goods, bar &amp; coin conversion</td></tr>
+      <tr><td>Stage 2</td><td>Operating years 3–4</td><td class="r">55 – 70 t</td><td>+ bank material, industrial residues, electronics concentrates</td></tr>
+      <tr><td>Stage 3</td><td>From year 5</td><td class="r">up to 100 t</td><td>+ doré from certified mines; LBMA Good Delivery capability</td></tr>
+    </table>
+    <h3>Process chain</h3>
+    <ol>
+      <li><strong>Intake &amp; identification.</strong> Reception through the goods interlock, certified weighing, unbroken chain of custody, KYC and provenance screening <em>before</em> acceptance.</li>
+      <li><strong>Melting &amp; sampling.</strong> Induction furnaces (2 × 150 kg, 1 × 50 kg), homogenisation, standards-compliant sampling.</li>
+      <li><strong>Assay.</strong> Fire assay (cupellation) as the reference method, supported by XRF and ICP-OES; laboratory accreditation to ISO/IEC 17025 targeted; 48-hour assay commitment.</li>
+      <li><strong>Refining.</strong> Wet-chemical refining (aqua regia) for high-grade feed and <strong>Wohlwill electrolysis</strong> for 999.9 fine gold; Moebius silver electrolysis as a side line; recovery of PGM values.</li>
+      <li><strong>Casting &amp; minting.</strong> Cast and minted bars from 1 g to 1 kg, 12.5 kg standard bars, granules for industry; hallmarking, serial numbers, certificates, sealed packaging.</li>
+      <li><strong>Transfer.</strong> Direct transfer into the vault via the internal valuables lock — or dispatch through the armoured-transport dock.</li>
+    </ol>
+    <h3>People</h3>
+    <p>
+      Build-up from ≈ 34 FTE in year one to ≈ 60 FTE at full operation: metallurgists and refinery operators,
+      assayers and laboratory staff, vault and security officers, client relationship managers, compliance and
+      administration. Recruiting draws on the Zurich/Zug labour market; key hires (head of refining, head of
+      compliance, security director) are committed before financial close.
+    </p>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.11</span></div>
+</div>
+
+<!-- ================================================== 12 · REFINERY II -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 06 · Continued</div>
+    <h2 class="chap">Environment, Energy &amp; Safety</h2>
+    <div class="chap-rule"></div>
+    <ul>
+      <li><strong>Air.</strong> Multi-stage off-gas treatment (scrubbers, NOx abatement, filtration) compliant with the Swiss Air Pollution Control Ordinance; continuous emissions monitoring.</li>
+      <li><strong>Water.</strong> Closed process loops; neutralisation and precipitation plant; heavy-metal limits per the Water Protection Ordinance; indirect-discharge permit.</li>
+      <li><strong>Chemicals.</strong> Dedicated acid store (hazmat room, containment, gas detection) per chemical and SUVA regulations; Major Accidents Ordinance screening with the cantonal environment office.</li>
+      <li><strong>Noise.</strong> Sensitivity level IV at the site; dominant sources (re-coolers, extraction) nonetheless attenuated to state of the art in deference to the residential zones across the street.</li>
+      <li><strong>Energy.</strong> ≈ 1.2 MW connected load (furnaces, electrolysis); ≈ 400 kWp rooftop PV; furnace waste-heat recovery for space and water heating; UPS and generator backing for security and critical process systems.</li>
+      <li><strong>Occupational safety.</strong> SUVA sector solution, explosion-protection zoning, PPE regime, occupational-health monitoring for recycling feed (lead, mercury).</li>
+      <li><strong>Excavation.</strong> The contaminated-sites entry (29_B130) requires a disposal concept for excavated material — coordinated with the cantonal environment office; premium priced into CAPEX.</li>
+    </ul>
+    <div class="callout">
+      The environmental case is a commercial asset: documented emissions discipline, renewable self-supply and a
+      transparent responsible-sourcing regime are prerequisites for LBMA accreditation — and for the institutional
+      custody clientele next door.
+    </div>
+    <h3>Digital backbone</h3>
+    <ul>
+      <li>ERP with lot-level genealogy: every gram traceable from intake to bar serial number</li>
+      <li>Client portal: holdings, bar lists, audit certificates, insurance confirmations in real time</li>
+      <li>Segregated OT / IT / security networks; 24/7 monitoring; ISO 27001 as target standard</li>
+    </ul>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.12</span></div>
+</div>
+
+<!-- ================================================== 13 · SECURITY -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 07</div>
+    <h2 class="chap">Security House &amp; Defence in Depth</h2>
+    <div class="chap-rule"></div>
+    <h3>Six-zone model</h3>
+    <table class="lux">
+      <tr><th style="width:12%">Zone</th><th style="width:26%">Domain</th><th>Measures (extract)</th></tr>
+      <tr><td>0</td><td>Approach</td><td>Open sightlines, vehicle-impact protection (bollards), exterior video analytics, lighting concept</td></tr>
+      <tr><td>1</td><td>Perimeter</td><td>Security fence with climb/dig protection, fence-mounted detection, AI-assisted motion analytics, no visual cover</td></tr>
+      <tr><td>2</td><td>Yard &amp; vehicle lock</td><td>Double-gate interlock; armoured-transport dock as a fully enclosed lock — the vehicle enters completely, gates close, only then does handover begin</td></tr>
+      <tr><td>3</td><td>Building envelope</td><td>Penetration-resistant plinth, RC4+ and bullet-resistant glazing in the head building, entry solely through person traps</td></tr>
+      <tr><td>4</td><td>Production &amp; value rooms</td><td>Interlocked lobbies, four-eyes principle, movement logging, certified containers for daily working stocks</td></tr>
+      <tr><td>5</td><td>The Vault</td><td>Highest protection tier per Chapter 05; time-lock regime; dual custody without exception</td></tr>
+    </table>
+    <h3>The security house</h3>
+    <ul>
+      <li><strong>24/7 command room</strong>, permanently double-staffed (own personnel plus a certified security contractor), connected to a recognised alarm receiving centre with direct escalation to the Schwyz cantonal police.</li>
+      <li><strong>Access management:</strong> identification, visitor and contractor administration, badge issuance, mail and parcel screening.</li>
+      <li><strong>Vehicle marshalling:</strong> every vehicle controlled before Zone 2; separated flows for visitors, staff and valuables transport.</li>
+      <li><strong>Crisis organisation:</strong> defined playbooks (robbery, extortion, cyber, fire, natural hazard), redundant fallback command position inside the main building, regular red-team exercises.</li>
+    </ul>
+    <h3>People &amp; process security</h3>
+    <ul>
+      <li>Pre-employment screening for all staff; role-based least-privilege access; rotation in sensitive functions</li>
+      <li>Four-eyes principle enforced by systems for every movement of value — no single-person access anywhere</li>
+      <li>Insurance concept — all-risk cover for holdings (Lloyd's market), business liability, transit cover — signed off with insurer and VdS/SES surveyors</li>
+    </ul>
+    <div class="note">This chapter describes the concept at planning level (standards, zones, organisation). Detailed engineering is developed confidentially with certified security planners, the insurer and the authorities, and is deliberately not part of this document.</div>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.13</span></div>
+</div>
+
+<!-- ================================================== 14 · REGULATORY -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 08</div>
+    <h2 class="chap">Regulatory Framework &amp; Compliance</h2>
+    <div class="chap-rule"></div>
+    <table class="lux">
+      <tr><th style="width:28%">Domain</th><th>Requirement / authority</th></tr>
+      <tr><td>Melter's licence</td><td>Precious Metals Control Act (PMCA/PMCO); licence from the Central Office for Precious Metals Control (Federal Office for Customs and Border Security) for commercial melting of banking precious metals</td></tr>
+      <tr><td>Trade assayer licence</td><td>For fineness determination and hallmarking of melt products; sworn assayers, registered melter's marks</td></tr>
+      <tr><td>Anti-money-laundering</td><td>AMLA status as financial intermediary for trading/custody of banking precious metals: SRO affiliation or FINMA supervision; KYC/AML processes, provenance evidence, transaction monitoring</td></tr>
+      <tr><td>Responsible sourcing</td><td>LBMA Responsible Gold Guidance and OECD Due Diligence Guidance; annual independent assurance — prerequisite for the Good Delivery objective</td></tr>
+      <tr><td>Building permit</td><td>Municipality of Freienbach (building code, Industrial Zone 1 conformity); cantonal agencies (environment, civil engineering)</td></tr>
+      <tr><td>Environment</td><td>Air Pollution Control Ordinance; Water Protection Ordinance; Contaminated Sites Ordinance — disposal evidence for excavation on registered site 29_B130; Major Accidents Ordinance screening; VOC levy</td></tr>
+      <tr><td>Fire &amp; labour</td><td>VKF fire-protection concept with QA lead; SUVA/EKAS directives; Labour Act plan approval for the industrial operation</td></tr>
+      <tr><td>Customs / VAT</td><td>Import/export handling for precious metals; open customs warehouse (OZL) option; VAT exemption for banking gold per the VAT Ordinance</td></tr>
+      <tr><td>Armed security</td><td>Cantonal licensing for armed guarding services (if deployed), Schwyz concordat rules</td></tr>
+    </table>
+    <p class="small">
+      The permitting path is steered by specialist counsel in precious-metals and financial-market law. The
+      critical items — melter's licence, AMLA affiliation and Labour Act approval — run in parallel with the
+      construction phase (see Chapter 13), each de-risked through pre-application rulings before the land purchase
+      is notarised.
+    </p>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.14</span></div>
+</div>
+
+<!-- ================================================== 15 · MARKET -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 09</div>
+    <h2 class="chap">Market &amp; Competitive Landscape</h2>
+    <div class="chap-rule"></div>
+    <h3>Demand</h3>
+    <ul>
+      <li><strong>Refining.</strong> Switzerland refines a substantial share of the world's gold; imports of raw and legacy gold have run above 2,000 tonnes per annum for years. Urban-mining recycling — jewellery, watch-industry offcuts, electronics concentrates — grows structurally.</li>
+      <li><strong>Custody.</strong> Elevated gold prices, geopolitical fragmentation and diversification away from bank balance sheets drive demand for insured, segregated storage in Switzerland. The upper Lake Zurich shore hosts one of the densest family-office clusters in Europe.</li>
+      <li><strong>Price basis (planning assumption).</strong> Gold at CHF 90,000 per kilogram, held flat; sensitivities at ±20% in Chapter 12.</li>
+    </ul>
+    <h3>Competitive set</h3>
+    <table class="lux">
+      <tr><th style="width:26%">Operator type</th><th style="width:30%">Examples</th><th>Aurum Leutschen differentiation</th></tr>
+      <tr><td>LBMA mega-refiners</td><td>Valcambi, PAMP, Argor-Heraeus, Metalor</td><td>focused on mine-scale volume; we offer flexible lot sizes, 48-hour assays, personal service — and the vault on site</td></tr>
+      <tr><td>Regional assay houses</td><td>various SMEs</td><td>mostly without 999.9 electrolysis, without institutional vaulting, without an LBMA pathway</td></tr>
+      <tr><td>Vault / freeport operators</td><td>providers in Zurich, Geneva, Zug</td><td>storage only; we close the loop — assay, refine, recast and store without transport risk</td></tr>
+      <tr><td>Banks</td><td>safe deposit, metal accounts</td><td>metal accounts carry bank balance-sheet risk; we are physical, segregated, bank-independent, auditable</td></tr>
+    </table>
+    <h3>Target clients, years one to five</h3>
+    <ol>
+      <li>Bullion and legacy-gold dealers in Switzerland and the EU — refining plus storage</li>
+      <li>Watch and jewellery industry — conversion, alloys, granules</li>
+      <li>Family offices and UHNW individuals within 50 km — custody, suites, boxes</li>
+      <li>Fund/ETP platforms and fiduciaries — allocated holdings, audit services</li>
+      <li>Later: mining companies with certified provenance (doré), after LBMA admission</li>
+    </ol>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.15</span></div>
+</div>
+
+<!-- ================================================== 16 · BUSINESS MODEL -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 10</div>
+    <h2 class="chap">Business Model &amp; Revenue Engines</h2>
+    <div class="chap-rule"></div>
+    <table class="lux">
+      <tr><th style="width:26%">Engine</th><th>Mechanics</th><th class="r">Share of Y5 revenue</th></tr>
+      <tr><td>1 · Toll refining &amp; conversion</td><td>Fee per gram by material class (legacy/scrap higher, doré lower); blended planning assumption CHF 0.30 per gram of fine gold</td><td class="r">≈ 43%</td></tr>
+      <tr><td>2 · Custody &amp; vault services</td><td>Storage fee, blended ≈ 0.20% p.a. of custodied value, plus handling, audits, boxes and suites</td><td class="r">≈ 51%</td></tr>
+      <tr><td>3 · Trading &amp; products</td><td>Bid/offer margin on branded bars, legacy-gold purchase, by-metal revenues (Ag, PGM)</td><td class="r">≈ 6%</td></tr>
+    </table>
+    <h3>Value drivers</h3>
+    <ul>
+      <li><strong>Loop lock-in.</strong> Refining clients become custody clients and vice versa; switching costs compound with every stored bar list and every audit trail.</li>
+      <li><strong>Recurring, price-geared revenue.</strong> Custody is subscription income with &gt; 90% retention that scales with the gold price — the three-level vault turns storage capacity into the dominant earnings engine.</li>
+      <li><strong>Hard-asset backing.</strong> Lakeside-region industrial land plus a special-purpose building create a tangible value floor beneath the operating case.</li>
+      <li><strong>Capacity ladder.</strong> Refining scales through shift work before capital is spent; vault levels are fitted out in phases as custody mandates land.</li>
+    </ul>
+    <div class="callout">
+      <strong>Why the bigger vault changes the equation.</strong> With more than 1,200 tonnes of capacity across
+      three levels, custody — not refining — becomes the principal profit pool at maturity: recurring, insured,
+      collateral-grade revenue from an asset that cannot be replicated without years of permitting and
+      construction.
+    </div>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.16</span></div>
+</div>
+
+<!-- ================================================== 17 · CAPEX -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 11</div>
+    <h2 class="chap">Capital Expenditure &amp; Financing</h2>
+    <div class="chap-rule"></div>
+    <table class="lux">
+      <tr><th>Position</th><th class="r">CHF m</th><th>Notes</th></tr>
+      <tr><td>Land acquisition, Parcel No. 1172</td><td class="r">12.00</td><td>per offer; CHF 1,995/m²</td></tr>
+      <tr><td>Acquisition costs (notary, land register)</td><td class="r">0.10</td><td>no transfer tax in Canton Schwyz</td></tr>
+      <tr><td>Demolition of existing structures</td><td class="r">0.90</td><td>incl. pollutant survey and disposal</td></tr>
+      <tr><td>Deep excavation &amp; pit support, 3-level basement</td><td class="r">5.80</td><td>diaphragm walls, dewatering; disposal premium for registered site 29_B130</td></tr>
+      <tr><td>Shell &amp; fit-out, hall + head building (≈ 3,050 m² above grade)</td><td class="r">13.80</td><td>façade to “FORMS” standard, sheds, crane runway</td></tr>
+      <tr><td>Vault, three levels (≈ 2,100 m², EN 1143-1)</td><td class="r">19.50</td><td>security concrete, vault doors, deposit systems, 2 goods lifts</td></tr>
+      <tr><td>Security house, perimeter, vehicle lock, dock</td><td class="r">2.20</td><td>fence + detection, bollards, gates</td></tr>
+      <tr><td>Building services — HVAC, electrical, PV, UPS, generator</td><td class="r">5.40</td><td>incl. 400 kWp PV, waste-heat recovery</td></tr>
+      <tr><td>Refinery process plant (furnaces, electrolysis, off-gas, lab)</td><td class="r">9.20</td><td>incl. ICP/XRF analytics, neutralisation plant</td></tr>
+      <tr><td>Security systems (Grade 4 alarms, video, access, traps)</td><td class="r">4.20</td><td>redundant command technology across 3 vault levels</td></tr>
+      <tr><td>Planning, fees, permits, owner's engineering</td><td class="r">4.60</td><td>≈ 11% of construction cost</td></tr>
+      <tr><td>Contingency</td><td class="r">3.30</td><td>≈ 5% of project total</td></tr>
+      <tr class="sum"><td>Total investment</td><td class="r">81.00</td><td>±15% accuracy at study stage</td></tr>
+    </table>
+    <h3>Target financing structure</h3>
+    <table class="lux">
+      <tr><th>Source</th><th class="r">CHF m</th><th class="r">Share</th><th>Notes</th></tr>
+      <tr><td>Sponsor / investor equity</td><td class="r">33.0</td><td class="r">41%</td><td>of which CHF 12m for the land (phase 1)</td></tr>
+      <tr><td>Mortgage / construction loan (secured)</td><td class="r">36.0</td><td class="r">44%</td><td>secured on land and special-purpose building</td></tr>
+      <tr><td>Equipment leasing / supplier credit</td><td class="r">12.0</td><td class="r">15%</td><td>process and security technology</td></tr>
+      <tr class="sum"><td>Total</td><td class="r">81.0</td><td class="r">100%</td><td></td></tr>
+    </table>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.17</span></div>
+</div>
+
+<!-- ================================================== 18 · FINANCIAL PLAN -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 12</div>
+    <h2 class="chap">Five-Year Financial Plan</h2>
+    <div class="chap-rule"></div>
+    <h3>Planning assumptions</h3>
+    <ul>
+      <li>Gold price CHF 90,000/kg, held flat (sensitivities below) · refining yield Ø CHF 0.30 per gram of fine gold</li>
+      <li>Custody yield blended ≈ 0.20% p.a. on custodied value · staff build-up 34 → 60 FTE at Ø CHF 135,000 full cost</li>
+      <li>Depreciation: buildings 33 years, plant 10 years, security technology 12 years (≈ CHF 4.6m p.a.)</li>
+    </ul>
+    <h3>Indicative profit &amp; loss (CHF m)</h3>
+    <table class="lux">
+      <tr><th>Position</th><th class="r">Year 1</th><th class="r">Year 2</th><th class="r">Year 3</th><th class="r">Year 4</th><th class="r">Year 5</th></tr>
+      <tr><td>Refined fine gold (t)</td><td class="r">25</td><td class="r">40</td><td class="r">55</td><td class="r">70</td><td class="r">80</td></tr>
+      <tr><td>Average custodied holdings (t)</td><td class="r">20</td><td class="r">40</td><td class="r">75</td><td class="r">115</td><td class="r">160</td></tr>
+      <tr><td>Revenue — refining</td><td class="r">7.5</td><td class="r">12.0</td><td class="r">16.5</td><td class="r">21.0</td><td class="r">24.0</td></tr>
+      <tr><td>Revenue — custody &amp; vault services</td><td class="r">3.6</td><td class="r">7.2</td><td class="r">13.5</td><td class="r">20.7</td><td class="r">28.8</td></tr>
+      <tr><td>Revenue — trading &amp; products</td><td class="r">1.5</td><td class="r">2.0</td><td class="r">2.5</td><td class="r">3.0</td><td class="r">3.5</td></tr>
+      <tr class="sub"><td>Total revenue</td><td class="r">12.6</td><td class="r">21.2</td><td class="r">32.5</td><td class="r">44.7</td><td class="r">56.3</td></tr>
+      <tr><td>Personnel</td><td class="r">−4.6</td><td class="r">−5.8</td><td class="r">−6.8</td><td class="r">−7.6</td><td class="r">−8.2</td></tr>
+      <tr><td>Energy, chemicals, consumables</td><td class="r">−2.6</td><td class="r">−3.6</td><td class="r">−4.6</td><td class="r">−5.6</td><td class="r">−6.2</td></tr>
+      <tr><td>Insurance (holdings &amp; operations)</td><td class="r">−2.0</td><td class="r">−3.1</td><td class="r">−4.7</td><td class="r">−6.4</td><td class="r">−8.1</td></tr>
+      <tr><td>Security, maintenance, admin, marketing</td><td class="r">−3.3</td><td class="r">−4.4</td><td class="r">−5.7</td><td class="r">−7.0</td><td class="r">−7.9</td></tr>
+      <tr class="sub"><td>EBITDA</td><td class="r">0.1</td><td class="r">4.3</td><td class="r">10.7</td><td class="r">18.1</td><td class="r">25.9</td></tr>
+      <tr><td class="small">EBITDA margin</td><td class="r small">1%</td><td class="r small">20%</td><td class="r small">33%</td><td class="r small">40%</td><td class="r small">46%</td></tr>
+      <tr><td>Depreciation</td><td class="r">−4.6</td><td class="r">−4.6</td><td class="r">−4.6</td><td class="r">−4.6</td><td class="r">−4.6</td></tr>
+      <tr><td>Financing cost</td><td class="r">−1.9</td><td class="r">−1.9</td><td class="r">−1.8</td><td class="r">−1.7</td><td class="r">−1.6</td></tr>
+      <tr class="sum"><td>Earnings before tax</td><td class="r">−6.4</td><td class="r">−2.2</td><td class="r">4.3</td><td class="r">11.8</td><td class="r">19.7</td></tr>
+    </table>
+    <p class="small">
+      All figures indicative planning values at study stage; no price appreciation of gold assumed; utilisation of
+      the vault at year five equals only ≈ 13% of bulk capacity — the structural upside remains substantial.
+    </p>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.18</span></div>
+</div>
+
+<!-- ================================================== 19 · SENSITIVITIES + TIMELINE -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 12 · Continued — Chapter 13</div>
+    <h2 class="chap">Sensitivities &amp; Delivery Timeline</h2>
+    <div class="chap-rule"></div>
+    <h3>Key readings &amp; sensitivities</h3>
+    <ul>
+      <li>EBITDA break-even in the first operating year; net profit from year three; cumulative free cash flow covers start-up losses by the end of year four.</li>
+      <li>Payback on the CHF 81m programme ≈ 8–9 years — before any residual land or gold-price appreciation.</li>
+      <li><strong>Gold −20%:</strong> year-five custody revenue falls to ≈ CHF 23m, EBITDA to ≈ CHF 20m — the case holds, as refining volume is price-inelastic.</li>
+      <li><strong>Volumes −25%:</strong> year-five EBITDA ≈ CHF 15m; refinery break-even utilisation lies near 22 t p.a.</li>
+      <li><strong>Custody upside:</strong> every additional 100 t of average holdings adds ≈ CHF 18m of high-margin annual revenue at the blended rate.</li>
+    </ul>
+    <h3>Timeline</h3>
+    <table class="lux">
+      <tr><th style="width:24%">Phase</th><th style="width:22%">Period</th><th>Milestones</th></tr>
+      <tr><td>0 · Due diligence &amp; acquisition</td><td>Q3 – Q4 2026</td><td>land-register and contamination DD, geotechnical report, conditional deed, transfer of title</td></tr>
+      <tr><td>1 · Design</td><td>Q4 2026 – Q3 2027</td><td>architect commission, preliminary and building project, security concept with insurer/VdS, environmental reports</td></tr>
+      <tr><td>2 · Permitting</td><td>Q3 2027 – Q1 2028</td><td>building application Freienbach, Labour Act approval, melter's licence and AMLA affiliation launched</td></tr>
+      <tr><td>3 · Demolition &amp; construction</td><td>Q2 2028 – Q1 2030</td><td>demolition, deep pit (disposal evidence), 3-level vault structure, shell, fit-out, plant installation</td></tr>
+      <tr><td>4 · Commissioning</td><td>Q1 – Q2 2030</td><td>acceptances (fire, SUVA, insurer, precious-metals control), test runs, certification audits</td></tr>
+      <tr><td>5 · Operation</td><td>from Q3 2030</td><td>commercial start of refining and custody; LBMA track record building from year three of operation</td></tr>
+    </table>
+    <div class="callout">
+      <strong>Critical path:</strong> the building permit and the melter's licence. Both are de-risked through
+      pre-application rulings — municipality of Freienbach and the Central Office for Precious Metals Control —
+      before the land purchase is notarised, ideally via a conditional deed or purchase option.
+    </div>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.19</span></div>
+</div>
+
+<!-- ================================================== 20 · RISKS -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 14</div>
+    <h2 class="chap">Risk Analysis &amp; Mitigation</h2>
+    <div class="chap-rule"></div>
+    <table class="lux">
+      <tr><th style="width:24%">Risk</th><th style="width:11%">Likelihood</th><th style="width:11%">Impact</th><th>Mitigation</th></tr>
+      <tr><td>Permitting delay (building / melter / AMLA)</td><td>medium</td><td>high</td><td>pre-application rulings, conditional deed, specialist counsel, early authority engagement</td></tr>
+      <tr><td>Construction cost overrun</td><td>medium</td><td>medium</td><td>GC award with cost ceiling, 5% contingency, phased fit-out of vault levels and plant</td></tr>
+      <tr><td>Geotechnical / groundwater surprises (14 m pit)</td><td>medium</td><td>medium</td><td>borings before closing, diaphragm-wall design, dewatering concept, insurance-backed guarantees</td></tr>
+      <tr><td>Soil-disposal surprises</td><td>medium</td><td>medium</td><td>historical investigation + borings pre-purchase; disposal budget; retention in the deed</td></tr>
+      <tr><td>Gold price slump</td><td>medium</td><td>medium</td><td>fee-based revenues, no open proprietary positions, sensitivity-tested case</td></tr>
+      <tr><td>Security incident</td><td>low</td><td>very high</td><td>defence in depth, full-value insurance, crisis playbooks, regular red-team audits</td></tr>
+      <tr><td>Compliance / provenance reputation</td><td>medium</td><td>high</td><td>strict responsible-sourcing regime, refusal criteria, independent audits, transparency reporting</td></tr>
+      <tr><td>Talent scarcity (metallurgy / security)</td><td>medium</td><td>medium</td><td>early key hires, training partnerships, equity participation, regional attractiveness</td></tr>
+      <tr><td>Interest / financing risk</td><td>medium</td><td>medium</td><td>long fixed-rate tranches, moderate leverage (44% mortgage), sponsor commitment for overruns</td></tr>
+    </table>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.20</span></div>
+</div>
+
+<!-- ================================================== 21 · ANNEX -->
+<div class="sheet">
+  <div class="pad">
+    <div class="label">Chapter 15</div>
+    <h2 class="chap">Annex — Cadastral (PLR) Extract</h2>
+    <div class="chap-rule"></div>
+    <p class="small">
+      Source: extract from the Cadastre of Public-Law Restrictions on Landownership (PLR/ÖREB), Canton Schwyz,
+      extract No. 11b1d3f5-42d9-4237-bfe4-6ca4ef258411 of 20 July 2026; responsible office: Office for
+      Geoinformation, Schwyz. Official survey status: 6 July 2026.
+    </p>
+    <div class="twocol">
+      <figure>
+        <img src="img/zonenplan.png" alt="Zoning plan">
+        <figcaption>Fig. 4 — Zoning: Parcel 1172 lies 100% within Industrial Zone 1 (residential zones W2/W4 across the street).</figcaption>
+      </figure>
+      <figure>
+        <img src="img/kbs.png" alt="Contaminated sites register">
+        <figcaption>Fig. 5 — Contaminated-sites register: entry 29_B130 on 4,950 m² — “polluted, requiring neither monitoring nor remediation”.</figcaption>
+      </figure>
+    </div>
+    <figure>
+      <img src="img/laerm.png" alt="Noise sensitivity levels" style="max-height:88mm; object-fit:cover; object-position:center;">
+      <figcaption>Fig. 6 — Noise sensitivity: level IV across the entire parcel (6,014 m², 100%).</figcaption>
+    </figure>
+    <h3>Legal basis (selection)</h3>
+    <ul class="small" style="font-size:7.4pt;">
+      <li>Spatial Planning Act (SR 700); Planning and Building Act, Canton Schwyz (SRSZ 400.100); Freienbach building code (1994, amended 2005/2019/2022)</li>
+      <li>Environmental Protection Act (SR 814.01); Contaminated Sites Ordinance (SR 814.680); Noise Abatement Ordinance (SR 814.41)</li>
+      <li>Precious Metals Control Act (SR 941.31) and Ordinance; Anti-Money-Laundering Act (SR 955.0)</li>
+    </ul>
+  </div>
+  <div class="foot"><span>Aurum Leutschen · Project Dossier</span><span class="g">Confidential</span><span>P.21</span></div>
+</div>
+
+<!-- ================================================== 22 · BACK COVER -->
+<div class="sheet dark">
+  <div class="cover-frame"></div>
+  <div style="padding:26mm 24mm; height:100%; display:flex; flex-direction:column; justify-content:space-between;">
+    <div></div>
+    <div style="text-align:center;">
+      <div class="mono" style="margin:0 auto 8mm auto;">AL</div>
+      <img src="img/title-gold-small.png" alt="Aurum Leutschen" style="width:88mm; display:block; margin:0 auto;">
+      <div class="label" style="margin-top:3mm; color:#9a937f;">Refined. Certified. Safeguarded.</div>
+    </div>
+    <div class="small" style="text-align:justify; color:#7d7767; font-size:6.8pt; line-height:1.6;">
+      DISCLAIMER — This dossier is a project study prepared for planning purposes only. It constitutes neither an
+      offer nor financial, legal or tax advice, and contains no assurance of future results. All cost, revenue,
+      capacity and schedule figures are indicative planning assumptions subject to confirmation by specialist
+      planners, surveyors, insurers and the competent authorities. The PLR cadastre extract is of purely
+      informative character; the legally binding documents and the land register prevail. Security specifications
+      are described at concept level only; detailed engineering remains confidential. Version 2.0 · English
+      edition · July 2026.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
