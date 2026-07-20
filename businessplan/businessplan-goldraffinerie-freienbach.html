@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8">
+<title>Businessplan – Goldraffinerie &amp; Hochsicherheits-Wertlager Freienbach</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 16mm 20mm 16mm;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10.2pt;
+    line-height: 1.55;
+    color: #23262b;
+  }
+  :root {
+    --gold: #B08D2F;
+    --gold-light: #C9A227;
+    --gold-pale: #F4EAD0;
+    --anthracite: #1F2328;
+    --grey: #5c636c;
+    --line: #d8d3c4;
+  }
+  h1, h2, h3, h4, .display { font-family: Georgia, "Times New Roman", serif; color: var(--anthracite); }
+  h2 {
+    font-size: 17pt; font-weight: normal;
+    border-bottom: 2.5px solid var(--gold);
+    padding-bottom: 5px; margin-bottom: 14px;
+  }
+  h2 .num { color: var(--gold); font-size: 12pt; letter-spacing: 1px; display: block; margin-bottom: 1px; font-family: Helvetica, Arial, sans-serif; text-transform: uppercase; }
+  h3 { font-size: 12.5pt; margin: 16px 0 6px 0; }
+  h4 { font-size: 10.8pt; margin: 12px 0 4px 0; font-family: Helvetica, Arial, sans-serif; font-weight: bold; }
+  p { margin-bottom: 8px; text-align: justify; }
+  ul, ol { margin: 4px 0 10px 18px; }
+  li { margin-bottom: 3px; }
+  section.page { page-break-before: always; }
+  .keep { page-break-inside: avoid; }
+
+  /* ---------- Deckblatt ---------- */
+  .cover { page-break-after: always; text-align: left; padding-top: 40mm; }
+  .cover .rule { height: 4px; background: linear-gradient(90deg, var(--gold), #e6cf7a); width: 100%; margin: 10mm 0 12mm 0; }
+  .cover .proj { font-family: Helvetica, Arial, sans-serif; text-transform: uppercase; letter-spacing: 4px; color: var(--gold); font-size: 11pt; margin-bottom: 8mm; }
+  .cover h1 { font-size: 30pt; font-weight: normal; line-height: 1.2; margin-bottom: 6mm; }
+  .cover .sub { font-size: 13pt; color: var(--grey); font-family: Georgia, serif; font-style: italic; margin-bottom: 18mm; }
+  .cover table.meta { border-collapse: collapse; font-size: 10pt; }
+  .cover table.meta td { padding: 3.5px 26px 3.5px 0; vertical-align: top; }
+  .cover table.meta td:first-child { color: var(--grey); text-transform: uppercase; font-size: 8pt; letter-spacing: 1px; padding-top: 5.5px; }
+  .cover .conf { margin-top: 22mm; font-size: 8.5pt; color: var(--grey); border-top: 1px solid var(--line); padding-top: 4mm; }
+
+  /* ---------- Tabellen ---------- */
+  table.data { width: 100%; border-collapse: collapse; margin: 8px 0 14px 0; font-size: 9.3pt; page-break-inside: avoid; }
+  table.data th {
+    background: var(--anthracite); color: #fff; text-align: left;
+    padding: 5px 8px; font-weight: 600; font-size: 8.6pt; letter-spacing: .4px;
+  }
+  table.data td { padding: 4.5px 8px; border-bottom: 1px solid #e3e0d6; vertical-align: top; }
+  table.data tr.sum td { border-top: 2px solid var(--gold); border-bottom: 2.5px double var(--anthracite); font-weight: bold; background: var(--gold-pale); }
+  table.data tr.sub td { font-weight: bold; background: #f4f2ea; }
+  table.data td.r, table.data th.r { text-align: right; white-space: nowrap; }
+  .small { font-size: 8.3pt; color: var(--grey); }
+
+  /* ---------- Boxen ---------- */
+  .facts {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;
+    margin: 10px 0 14px 0; page-break-inside: avoid;
+  }
+  .fact {
+    border: 1px solid var(--line); border-top: 3px solid var(--gold);
+    padding: 7px 10px; background: #fbfaf6;
+  }
+  .fact .v { font-family: Georgia, serif; font-size: 14pt; color: var(--anthracite); }
+  .fact .l { font-size: 7.6pt; text-transform: uppercase; letter-spacing: .8px; color: var(--grey); }
+  .callout {
+    background: var(--gold-pale); border-left: 4px solid var(--gold);
+    padding: 8px 12px; margin: 10px 0; page-break-inside: avoid; font-size: 9.6pt;
+  }
+  .note { background: #f4f2ea; border-left: 4px solid #9a9482; padding: 7px 11px; margin: 10px 0; font-size: 8.8pt; color: #444; page-break-inside: avoid; }
+
+  figure { margin: 10px 0 14px 0; page-break-inside: avoid; }
+  figure img { max-width: 100%; border: 1px solid var(--line); }
+  figcaption { font-size: 8.3pt; color: var(--grey); margin-top: 3px; }
+
+  .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  /* Inhaltsverzeichnis */
+  .toc { page-break-after: always; }
+  .toc ol { list-style: none; margin: 14px 0 0 0; }
+  .toc li { display: flex; border-bottom: 1px dotted var(--line); padding: 5px 0; font-size: 10.5pt; }
+  .toc li .t { flex: 1; }
+  .toc li .n { color: var(--gold); font-weight: bold; width: 26px; }
+
+  svg text { font-family: Helvetica, Arial, sans-serif; }
+</style>
+</head>
+<body>
+
+<!-- ============================ DECKBLATT ============================ -->
+<div class="cover">
+  <div class="proj">Projekt «Aurum Leutschen» &nbsp;·&nbsp; Businessplan &amp; Bauprojekt-Dossier</div>
+  <h1>Goldraffinerie, Hochsicherheits-Goldlager<br>&amp; Security House</h1>
+  <div class="sub">Parzelle Nr. 1172 · Gebiet Leutschen / Wolleraustrasse · 8807 Freienbach (SZ)</div>
+  <div class="rule"></div>
+  <table class="meta">
+    <tr><td>Grundstück</td><td>Nr. 1172, Freienbach (BFS 1322) · E-GRID CH932677383838 · 6'014 m²</td></tr>
+    <tr><td>Zone</td><td>Industriezone 1 (100 %) · Lärmempfindlichkeitsstufe IV</td></tr>
+    <tr><td>Kaufpreis Grundstück</td><td>CHF 12'000'000 (CHF 1'995/m²)</td></tr>
+    <tr><td>Gesamtinvestition</td><td>ca. CHF 64 Mio. (inkl. Grundstück, Bau, Anlagen, Sicherheitstechnik)</td></tr>
+    <tr><td>Dokument</td><td>Businessplan / Projektstudie – Version 1.0</td></tr>
+    <tr><td>Datum</td><td>20. Juli 2026</td></tr>
+  </table>
+  <div class="conf">
+    VERTRAULICH – Dieses Dokument ist eine indikative Projekt- und Machbarkeitsstudie. Alle Flächen-, Kosten- und
+    Ertragsangaben sind Planungsannahmen und durch Fachplaner, Behörden und Gutachter zu verifizieren.
+    Architektonische Referenz: FORMS Gallery, Freienbach (formsgallery.com) – umgenutzte Industriehalle mit Premium-Ausbaustandard.
+  </div>
+</div>
+
+<!-- ============================ INHALT ============================ -->
+<div class="toc">
+  <h2><span class="num">Übersicht</span>Inhalt</h2>
+  <ol>
+    <li><span class="n">1</span><span class="t">Executive Summary</span></li>
+    <li><span class="n">2</span><span class="t">Projektidee &amp; Vision</span></li>
+    <li><span class="n">3</span><span class="t">Standort &amp; Grundstück (ÖREB-Analyse)</span></li>
+    <li><span class="n">4</span><span class="t">Architektur- &amp; Bebauungskonzept</span></li>
+    <li><span class="n">5</span><span class="t">Betriebskonzept Goldraffinerie</span></li>
+    <li><span class="n">6</span><span class="t">Gold-Bunker – Hochsicherheits-Wertlager</span></li>
+    <li><span class="n">7</span><span class="t">Security House &amp; Sicherheitskonzept</span></li>
+    <li><span class="n">8</span><span class="t">Regulatorik, Bewilligungen &amp; Compliance</span></li>
+    <li><span class="n">9</span><span class="t">Markt &amp; Wettbewerb</span></li>
+    <li><span class="n">10</span><span class="t">Geschäftsmodell &amp; Erlösquellen</span></li>
+    <li><span class="n">11</span><span class="t">Investitionsrechnung (CAPEX)</span></li>
+    <li><span class="n">12</span><span class="t">Finanzplan 5 Jahre &amp; Finanzierung</span></li>
+    <li><span class="n">13</span><span class="t">Realisierungs-Zeitplan</span></li>
+    <li><span class="n">14</span><span class="t">Risikoanalyse &amp; Mitigation</span></li>
+    <li><span class="n">15</span><span class="t">Anhang: ÖREB-Katasterauszug (Zusammenfassung)</span></li>
+  </ol>
+</div>
+
+<!-- ============================ 1 EXECUTIVE SUMMARY ============================ -->
+<section>
+  <h2><span class="num">Kapitel 1</span>Executive Summary</h2>
+  <p>
+    Das Projekt «Aurum Leutschen» umfasst Erwerb und Bebauung der Industrieparzelle Nr. 1172 (6'014 m²) an der
+    Wolleraustrasse im Gebiet Leutschen, Freienbach SZ, mit einem integrierten Edelmetall-Kompetenzzentrum bestehend aus
+    drei Bausteinen: einer <strong>Goldraffinerie</strong> (Ausbaukapazität bis 100 t Feingold p. a.), einem unterirdischen
+    <strong>Hochsicherheits-Goldlager («Gold-Bunker»)</strong> mit einer Einlagerungskapazität von bis zu 250 t sowie einem
+    permanent besetzten <strong>Security House</strong> als Sicherheits- und Logistikzentrale.
+  </p>
+  <div class="facts">
+    <div class="fact"><div class="v">6'014 m²</div><div class="l">Grundstück, Industriezone 1</div></div>
+    <div class="fact"><div class="v">CHF 12 Mio.</div><div class="l">Kaufpreis Grundstück</div></div>
+    <div class="fact"><div class="v">CHF 64 Mio.</div><div class="l">Gesamtinvestition (indikativ)</div></div>
+    <div class="fact"><div class="v">100 t/a</div><div class="l">Raffinationskapazität (Endausbau)</div></div>
+    <div class="fact"><div class="v">250 t</div><div class="l">Tresorkapazität Gold-Bunker</div></div>
+    <div class="fact"><div class="v">~55</div><div class="l">Arbeitsplätze im Endausbau</div></div>
+  </div>
+  <p>
+    Der Standort ist aussergewöhnlich gut geeignet: Die Parzelle liegt zu 100 % in der <strong>Industriezone 1</strong> mit
+    <strong>Lärmempfindlichkeitsstufe IV</strong> (stark störende Betriebe zulässig), verfügt über direkte Anbindung an die
+    A3 (Anschluss Pfäffikon SZ), liegt im steuergünstigen Kanton Schwyz und in unmittelbarer Nähe zum Finanzplatz
+    Pfäffikon/Wollerau (Family Offices, Fonds- und Rohstoffhäuser) sowie 30 Fahrminuten von Zürich. Die architektonische
+    Leitidee orientiert sich an der benachbarten FORMS Gallery: eine präzise, monolithische Industriehalle mit
+    Premium-Ausstrahlung – aussen zurückhaltend, innen auf höchstem technischem Niveau.
+  </p>
+  <p>
+    Das Geschäftsmodell kombiniert drei sich verstärkende Ertragssäulen: (1) Lohnraffination und Recycling («Urban Mining»)
+    für Handel, Industrie, Scheideanstalten und Banken, (2) margenstarke <strong>Verwahrungsdienstleistungen</strong>
+    (segregierte Hochsicherheitslagerung ausserhalb des Bankensystems) und (3) Handel/Produkte (Barren 1 g bis 12.5 kg,
+    Granulat). Im fünften Betriebsjahr wird – bei konservativen Annahmen – ein Umsatz von rund CHF 43 Mio. bei einer
+    EBITDA-Marge von knapp 40 % erwartet; der Break-even auf Stufe EBITDA wird bereits im ersten vollen Betriebsjahr erreicht.
+  </p>
+  <div class="callout">
+    <strong>Investment Case in einem Satz:</strong> Ein bewilligungsfähiges Industriegrundstück in einer der besten
+    Edelmetall- und Vermögens-Regionen der Welt, bebaut mit einer LBMA-fähigen Boutique-Raffinerie plus
+    Hochsicherheitslager – ein Sachwert-Geschäft mit wiederkehrenden Erträgen und massiver Eintrittsbarriere für Nachahmer.
+  </div>
+</section>
+
+<!-- ============================ 2 PROJEKTIDEE ============================ -->
+<section class="page">
+  <h2><span class="num">Kapitel 2</span>Projektidee &amp; Vision</h2>
+  <h3>2.1 Ausgangslage</h3>
+  <p>
+    Die Schweiz ist das globale Zentrum der Goldraffination: Ein erheblicher Teil der weltweiten Goldproduktion wird hier
+    raffiniert, vier der grössten Raffinerien der Welt (Valcambi, PAMP, Argor-Heraeus, Metalor) sind in der Schweiz
+    domiziliert. Gleichzeitig wächst die Nachfrage nach <em>physischer, segregierter Goldverwahrung ausserhalb des
+    Bankensystems</em> – getrieben von Family Offices, vermögenden Privatkunden, Edelmetallhändlern und Fonds.
+    Zwischen den industriellen Grossraffinerien (Tessin, Neuenburg) und kleinen Scheideanstalten besteht eine Lücke:
+    <strong>ein Premium-Anbieter im Grossraum Zürich, der Raffination, Prüfung, Formgebung und Hochsicherheitslagerung
+    an einem Standort vereint.</strong>
+  </p>
+  <h3>2.2 Die drei Bausteine</h3>
+  <table class="data">
+    <tr><th style="width:22%">Baustein</th><th>Funktion</th><th style="width:30%">Zielkunden</th></tr>
+    <tr><td><strong>Goldraffinerie</strong></td><td>Schmelzen, Probenahme, Analyse (ICP/Feuerprobe), Raffination auf 999.9, Giessen von Barren &amp; Granulat, Punzierung</td><td>Edelmetallhändler, Recycler, Uhren-/Schmuckindustrie, Banken, Minen (Doré)</td></tr>
+    <tr><td><strong>Gold-Bunker</strong></td><td>Unterirdisches Hochsicherheits-Wertlager, segregierte &amp; allokierte Verwahrung, Schliessfach-Suiten, Handling &amp; Audit-Raum</td><td>Family Offices, HNWI, Händler, Fonds/ETP-Anbieter, Treuhänder</td></tr>
+    <tr><td><strong>Security House</strong></td><td>24/7-Sicherheitszentrale, Zutritts- und Fahrzeugschleusen, Werttransport-Dock, Leitstand, Personalschleuse</td><td>Interne Funktion (Schutz von Betrieb, Personal, Kundenwerten)</td></tr>
+  </table>
+  <h3>2.3 Vision</h3>
+  <p>
+    «Aurum Leutschen» positioniert sich als <strong>«The Vault of Zurich's Gold Coast»</strong> – die diskrete Schweizer
+    Adresse, an der Gold nicht nur raffiniert, sondern über den gesamten Lebenszyklus betreut wird: Ankauf, Analyse,
+    Raffination, Formgebung, Zertifizierung, Lagerung, Versicherung, Auslieferung. Mittelfristiges Ziel ist die
+    Akkreditierung als anerkannter Schmelzer/Prüfer und – im Endausbau – die Aufnahme in die
+    LBMA Good Delivery List.
+  </p>
+</section>
+
+<!-- ============================ 3 STANDORT ============================ -->
+<section class="page">
+  <h2><span class="num">Kapitel 3</span>Standort &amp; Grundstück (ÖREB-Analyse)</h2>
+  <h3>3.1 Grundstücksdaten (gemäss ÖREB-Katasterauszug vom 20.07.2026)</h3>
+  <table class="data">
+    <tr><th style="width:38%">Merkmal</th><th>Wert</th></tr>
+    <tr><td>Grundstück-Nr. / Art</td><td>1172 / Liegenschaft</td></tr>
+    <tr><td>E-GRID</td><td>CH932677383838</td></tr>
+    <tr><td>Gemeinde</td><td>Freienbach SZ (BFS-Nr. 1322), Gebiet Leutschen / Wolleraustrasse</td></tr>
+    <tr><td>Fläche</td><td>6'014 m²</td></tr>
+    <tr><td>Nutzungszone</td><td><strong>Industriezone 1 – 100 %</strong> (Baureglement Freienbach, Genehmigung 29.03.1994 inkl. Änderungen 2005/2019/2022)</td></tr>
+    <tr><td>Lärmempfindlichkeitsstufe</td><td><strong>ES IV – 100 %</strong> (stark störende Betriebe zulässig; LSV SR 814.41)</td></tr>
+    <tr><td>Kataster belasteter Standorte (KbS)</td><td>Eintrag 29_B130: 4'950 m² (82.3 %) «belastet, <strong>weder überwachungs- noch sanierungsbedürftig</strong>; keine schädlichen Einwirkungen zu erwarten»</td></tr>
+    <tr><td>Nicht betroffen von</td><td>Grundwasserschutzzonen/-arealen, Waldabstand, Baulinien Nationalstrassen/Bahn, Planungs-/Projektierungszonen</td></tr>
+    <tr><td>Kaufpreis</td><td><strong>CHF 12'000'000</strong> → CHF 1'995/m²</td></tr>
+  </table>
+  <figure>
+    <img src="img/situationsplan.png" alt="Situationsplan Parzelle 1172">
+    <figcaption>Abb. 1 – Situationsplan (amtliche Vermessung): Parzelle 1172 (rot umrandet) zwischen Wolleraustrasse und Gebiet Leutschen; Bestandesbauten auf der Parzelle werden zurückgebaut. Quelle: ÖREB-Katasterauszug Kanton Schwyz.</figcaption>
+  </figure>
+  <h3>3.2 Standortbewertung aus Sicht Raffinerie &amp; Wertlager</h3>
+  <ul>
+    <li><strong>Planungsrecht ideal:</strong> Industriezone 1 mit ES IV ist die bestmögliche Zonierung für Schmelzbetrieb (Öfen, Abluftanlagen, 24/7-Logistik) – keine Konflikte mit Wohnnutzung auf der Parzelle selbst.</li>
+    <li><strong>Verkehr &amp; Werttransport:</strong> Direkte, übersichtliche Zufahrt ab Wolleraustrasse; A3-Anschluss in wenigen Minuten; Flughafen Zürich ca. 40 Min. – kurze, planbare Werttransportrouten mit Ausweichvarianten.</li>
+    <li><strong>Finanz-Ökosystem:</strong> Pfäffikon SZ / Wollerau / Zug gehören zur höchsten Dichte an Family Offices und Asset Managern der Schweiz – der Verwahrungskunde sitzt in Sichtweite.</li>
+    <li><strong>Steuern &amp; Recht:</strong> Kanton Schwyz mit tiefer Gewinn- und Kapitalsteuer; politisch stabiles, eigentumsfreundliches Umfeld; keine Handänderungssteuer im Kanton Schwyz.</li>
+    <li><strong>Arbeitsmarkt:</strong> Fachkräfte (Chemie, Metallurgie, Sicherheit, Logistik) im Grossraum Zürich/Zug rekrutierbar; SBB-Anschluss Pfäffikon SZ in Fahrradnähe.</li>
+    <li><strong>KbS-Eintrag beherrschbar:</strong> «Belastet, nicht sanierungsbedürftig» bedeutet: kein Sanierungszwang; bei Aushub fallen erhöhte Entsorgungskosten an (im CAPEX mit eingerechnet); Aushubkonzept und Entsorgungsnachweis werden mit dem Amt für Umwelt und Energie SZ abgestimmt.</li>
+  </ul>
+  <div class="note">
+    Hinweis: Vor Beurkundung sind Grundbuchauszug (Dienstbarkeiten, Anmerkungen), Altlasten-Voruntersuchung (historische
+    Untersuchung gem. AltlV), Baugrundgutachten und die Abklärung von Gestaltungsplan-/Erschliessungspflichten
+    Bestandteil der Due Diligence.
+  </div>
+</section>
+
+<!-- ============================ 4 ARCHITEKTUR ============================ -->
+<section class="page">
+  <h2><span class="num">Kapitel 4</span>Architektur- &amp; Bebauungskonzept</h2>
+  <h3>4.1 Architektonische Leitidee – Referenz FORMS Gallery</h3>
+  <p>
+    Gestalterische Referenz ist die <strong>FORMS Gallery in Freienbach</strong> (formsgallery.com): eine ehemalige
+    Industriehalle, die mit reduzierter Materialpalette, klarer Kubatur und hochwertigem Innenausbau in eine
+    Premium-Design-Destination verwandelt wurde. Diese Haltung wird auf den Neubau übertragen:
+  </p>
+  <ul>
+    <li><strong>Ein ruhiger, monolithischer Baukörper</strong> (Halle mit integriertem zweigeschossigem Kopfbau), präzise Fugenteilung, kein «Bunker-Look» nach aussen – Sicherheit bleibt unsichtbar.</li>
+    <li><strong>Materialpalette:</strong> Sichtbeton-Sockel (durchschusshemmend dimensioniert), dunkle, matt eloxierte Metallfassade mit vertikaler Profilierung, messing-/goldfarbene Akzente am Kundeneingang als subtile Referenz an den Inhalt.</li>
+    <li><strong>Kopfbau als «Galerie»:</strong> Empfang, Kunden-Lounge, Audit-/Besprechungsräume und Showroom für Barrenprodukte mit Showroom-Qualität analog FORMS – Beratung und Vertrauen als Raumerlebnis.</li>
+    <li><strong>Industrie 4.0 innen:</strong> stützenfreie Raffineriehalle (Raster 8 m), Kranbahn 5 t, Medienkanäle im Boden, Tageslicht über verglaste Sheds nach Norden.</li>
+    <li><strong>Nachhaltigkeit:</strong> PV-Vollbelegung Dach (~400 kWp), Abwärmenutzung der Öfen für Heizung/BWW, Retention/Versickerung der Dachwässer, Minergie-Standard für den Kopfbau.</li>
+  </ul>
+
+  <h3>4.2 Bebauungskonzept (schematisch)</h3>
+  <figure class="keep">
+  <svg viewBox="0 0 900 470" width="100%" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="900" height="470" fill="#f7f5ee"/>
+    <!-- Parzelle -->
+    <polygon points="70,60 640,20 860,150 830,300 560,430 90,430" fill="#efece0" stroke="#B08D2F" stroke-width="3" stroke-dasharray="9 5"/>
+    <text x="80" y="52" font-size="15" fill="#B08D2F" font-weight="bold">Parzelle Nr. 1172 · 6'014 m²</text>
+    <!-- Strasse -->
+    <text x="30" y="30" font-size="14" fill="#5c636c" transform="rotate(-4 30 30)">Wolleraustrasse</text>
+    <line x1="20" y1="45" x2="640" y2="8" stroke="#5c636c" stroke-width="2"/>
+    <!-- Raffineriehalle -->
+    <rect x="150" y="120" width="380" height="190" fill="#2a2f36"/>
+    <text x="340" y="200" font-size="17" fill="#fff" text-anchor="middle">RAFFINERIEHALLE</text>
+    <text x="340" y="222" font-size="12" fill="#C9A227" text-anchor="middle">~1'900 m² GF · Schmelze · Elektrolyse · Labor</text>
+    <!-- Kopfbau -->
+    <rect x="150" y="70" width="200" height="50" fill="#4a5058"/>
+    <text x="250" y="100" font-size="12" fill="#fff" text-anchor="middle">KOPFBAU «GALERIE» · Empfang/Büro (2 OG)</text>
+    <!-- Bunker -->
+    <rect x="560" y="150" width="220" height="130" fill="none" stroke="#B08D2F" stroke-width="3" stroke-dasharray="5 4"/>
+    <text x="670" y="205" font-size="15" fill="#B08D2F" text-anchor="middle" font-weight="bold">GOLD-BUNKER (UG)</text>
+    <text x="670" y="225" font-size="11.5" fill="#8a6d1f" text-anchor="middle">~700 m² unterirdisch · Tresoranlage</text>
+    <!-- Security House -->
+    <rect x="110" y="330" width="120" height="70" fill="#B08D2F"/>
+    <text x="170" y="360" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="bold">SECURITY</text>
+    <text x="170" y="378" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="bold">HOUSE 24/7</text>
+    <!-- Fahrzeugschleuse -->
+    <rect x="250" y="330" width="180" height="70" fill="#7d8590"/>
+    <text x="340" y="360" font-size="12" fill="#fff" text-anchor="middle">FAHRZEUGSCHLEUSE +</text>
+    <text x="340" y="378" font-size="12" fill="#fff" text-anchor="middle">WERTTRANSPORT-DOCK</text>
+    <!-- Parking -->
+    <rect x="470" y="330" width="230" height="70" fill="#d9d4c4"/>
+    <text x="585" y="370" font-size="12" fill="#4a4a44" text-anchor="middle">BESUCHER-/PERSONALPARKING · ~30 PP + E-Lade</text>
+    <!-- Perimeter -->
+    <text x="705" y="425" font-size="11" fill="#a52a2a">— Perimeterzaun + Detektion —</text>
+    <!-- Zufahrt Pfeil -->
+    <line x1="100" y1="35" x2="170" y2="325" stroke="#a52a2a" stroke-width="3" marker-end="url(#arr)"/>
+    <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#a52a2a"/></marker></defs>
+    <text x="52" y="200" font-size="11.5" fill="#a52a2a" transform="rotate(76 52 200)">Zufahrt über Vereinzelung</text>
+  </svg>
+  <figcaption>Abb. 2 – Bebauungskonzept (schematisch, nicht massstäblich): Halle mit Kopfbau strassenseitig, Gold-Bunker vollständig unter Terrain, Security House an der einzigen Zufahrt, umlaufender Sicherheitsperimeter.</figcaption>
+  </figure>
+
+  <h3>4.3 Flächenprogramm (indikativ)</h3>
+  <table class="data">
+    <tr><th>Nutzung</th><th class="r">Fläche (m² GF)</th><th>Bemerkung</th></tr>
+    <tr><td>Raffineriehalle (Schmelze, Elektrolyse, Scheiderei)</td><td class="r">1'450</td><td>EG, stützenfrei, Kranbahn 5 t, lichte Höhe 8 m</td></tr>
+    <tr><td>Labor / Analytik / Qualitätssicherung</td><td class="r">250</td><td>ICP-OES, Röntgenfluoreszenz, Feuerprobe</td></tr>
+    <tr><td>Wareneingang, Schleusen, Tresor-Vorzone</td><td class="r">300</td><td>Vereinzelung Person/Fahrzeug, Waagenraum</td></tr>
+    <tr><td>Kopfbau: Empfang, Kunden-Lounge, Büro, Showroom</td><td class="r">650</td><td>2 Geschosse, Ausbaustandard «FORMS»</td></tr>
+    <tr><td>Technik (Abluftwäscher, HLKS, Trafo, USV, NEA)</td><td class="r">400</td><td>teilw. Dachzentrale</td></tr>
+    <tr><td>Gold-Bunker (UG): Tresorräume, Schliessfach-Suiten, Handling</td><td class="r">700</td><td>vollständig unter Terrain, eigener Zugangskern</td></tr>
+    <tr><td>Security House inkl. Leitstand &amp; Sozialräume</td><td class="r">160</td><td>freistehend an der Zufahrt, 24/7 besetzt</td></tr>
+    <tr class="sum"><td>Total Geschossfläche</td><td class="r">≈ 3'910</td><td>Fussabdruck oberirdisch ≈ 2'350 m² → Überbauungsgrad ~39 %</td></tr>
+  </table>
+  <p class="small">Aussenanlagen: Fahrzeugschleuse/Dock, ca. 30 Parkplätze, Umfahrung für WT-Fahrzeuge, Retentionsflächen, Perimeterzaun. Ausnützungs- und Abstandsnachweise gemäss Baureglement Freienbach erfolgen im Vorprojekt.</p>
+</section>
+
+<!-- ============================ 5 RAFFINERIE ============================ -->
+<section class="page">
+  <h2><span class="num">Kapitel 5</span>Betriebskonzept Goldraffinerie</h2>
+  <h3>5.1 Kapazität &amp; Ausbaustufen</h3>
+  <table class="data">
+    <tr><th>Stufe</th><th>Zeitraum</th><th class="r">Kapazität Feingold</th><th>Fokus</th></tr>
+    <tr><td>Stufe 1</td><td>Betriebsjahre 1–2</td><td class="r">25–40 t/a</td><td>Recycling/Altgold, Halbfabrikate, Münz-/Barrenumarbeitung</td></tr>
+    <tr><td>Stufe 2</td><td>Betriebsjahre 3–4</td><td class="r">55–70 t/a</td><td>+ Bankenmaterial, Industrieabfälle (Elektronik-Konzentrate)</td></tr>
+    <tr><td>Stufe 3</td><td>ab Betriebsjahr 5</td><td class="r">bis 100 t/a</td><td>+ Doré aus zertifizierten Minen, LBMA-Fähigkeit</td></tr>
+  </table>
+  <h3>5.2 Prozesskette</h3>
+  <ol>
+    <li><strong>Annahme &amp; Identifikation:</strong> Wareneingang über Schleuse, Verwiegung (geeichte Waagen), lückenlose Chain-of-Custody, KYC-/Herkunftsprüfung vor Annahme.</li>
+    <li><strong>Schmelzen &amp; Probenahme:</strong> Induktionsöfen (2 × 150 kg, 1 × 50 kg), Homogenisierung, normgerechte Probenahme.</li>
+    <li><strong>Analyse:</strong> Feuerprobe (Kupellation) als Referenzverfahren, ergänzt durch Röntgenfluoreszenz und ICP-OES; akkreditiertes Prüflabor (Ziel: ISO/IEC 17025).</li>
+    <li><strong>Raffination:</strong> Kombination aus nasschemischer Raffination (Königswasser/Aqua Regia für hochhaltiges Material) und <strong>Wohlwill-Elektrolyse</strong> für 999.9-Qualität; Silber-Elektrolyse (Moebius) als Nebenlinie; Rückgewinnung von PGM-Anteilen.</li>
+    <li><strong>Formgebung:</strong> Giessen von Guss- und Prägebarren (1 g – 1 kg, 12.5-kg-Standardbarren), Granulat für die Industrie; Punzierung, Seriennummern, Zertifikate, Verpackung/Versiegelung.</li>
+    <li><strong>Übergabe:</strong> direkt in den Gold-Bunker (Kapitel 6) oder via Werttransport-Dock an Kunden/Logistiker.</li>
+  </ol>
+  <h3>5.3 Umwelt, Arbeitssicherheit &amp; Technik</h3>
+  <ul>
+    <li><strong>Abluft:</strong> mehrstufige Abgasreinigung (Wäscher/NOx-Behandlung, Filter) gemäss Luftreinhalte-Verordnung (LRV); kontinuierliches Emissionsmonitoring.</li>
+    <li><strong>Abwasser:</strong> geschlossene Kreisläufe, Neutralisations- und Fällungsanlage, Schwermetall-Grenzwerte gem. GSchV; Indirekteinleiter-Bewilligung.</li>
+    <li><strong>Chemikalien:</strong> Säurelager (Gefahrgutraum, Auffangwannen, Gaswarnanlage) nach ChemV/SUVA-Richtlinien; Störfallvorsorge (StFV) wird mit dem AfU SZ geprüft.</li>
+    <li><strong>Lärm:</strong> ES IV am Standort; massgebende Anlagen (Rückkühler, Abluft) werden dennoch nach Stand der Technik schallgedämmt (Nachbar-Wohnzonen W2/W4 jenseits der Strasse).</li>
+    <li><strong>Energie:</strong> Anschlussleistung ~1.2 MW (Öfen/Elektrolyse), PV-Eigenstrom, Abwärmenutzung; Notstromanlage (NEA) und USV für Sicherheit &amp; Prozesse.</li>
+    <li><strong>Arbeitssicherheit:</strong> SUVA-Branchenlösung, Ex-Schutz-Zonenkonzept, PSA-Regime, betriebsärztliche Überwachung (Blei/Quecksilber-Monitoring bei Recyclingmaterial).</li>
+  </ul>
+</section>
+
+<!-- ============================ 6 GOLD-BUNKER ============================ -->
+<section class="page">
+  <h2><span class="num">Kapitel 6</span>Gold-Bunker – Hochsicherheits-Wertlager</h2>
+  <h3>6.1 Konzept</h3>
+  <p>
+    Der Gold-Bunker ist ein vollständig unterirdisches Wertlager (~700 m² NF) mit eigenem Zugangskern, baulich und
+    organisatorisch von der Raffinerie getrennt, aber intern über eine gesicherte Wertschleuse verbunden. Er dient (a) als
+    Prozesslager der Raffinerie und (b) als kommerzielles Verwahrlager für Dritte – segregiert (physisch getrennte
+    Positionen je Kunde) oder allokiert (nummerierte Barrenliste).
+  </p>
+  <h3>6.2 Bauliche und technische Auslegung (Planungsstandard)</h3>
+  <table class="data">
+    <tr><th style="width:32%">Element</th><th>Auslegung</th></tr>
+    <tr><td>Tresorraum-Hülle</td><td>Monolithischer Spezialbeton mit Bewehrungs-/Einlagensystem, zertifiziert nach <strong>EN 1143-1</strong> in einem der höchsten Widerstandsgrade (Zielklasse im Bereich WG X–XIII, Festlegung mit Versicherer/VdS)</td></tr>
+    <tr><td>Tresortüren &amp; Tagestüren</td><td>EN 1143-1 entsprechend Raumklasse, Mehrfach-Verriegelung, Zeitschloss, Vier-Augen-Öffnungsregime</td></tr>
+    <tr><td>Einbruchmeldetechnik</td><td><strong>EN 50131 Grad 4</strong>, redundante Übertragungswege (IP/Mobilfunk), Körperschall-, Seismik- und Raumüberwachung, Sabotageschutz</td></tr>
+    <tr><td>Video</td><td>Lückenlose Videoüberwachung innen/aussen, Aufzeichnung redundant, KI-gestützte Perimeteranalyse</td></tr>
+    <tr><td>Zutritt</td><td>Mehrstufige Vereinzelungsschleusen, Biometrie + Badge + PIN, Besucher nur begleitet, Interlocking (keine zwei offenen Türen in Serie)</td></tr>
+    <tr><td>Kapazität</td><td>Bis <strong>250 t Gold</strong> (Regal-/Palettenlager für Standardbarren, Fachbodenlager für Kilobarren, ~400 Schliessfächer/Suiten in 4 Grössen)</td></tr>
+    <tr><td>Infrastruktur</td><td>Autarke Lüftung, Wassereinbruch-/Brandfrüherkennung (Aspirationsmelder), Inergen-Löschanlage, USV + NEA, Faradaysche Abschirmung des Leitstands</td></tr>
+    <tr><td>Handling</td><td>Warenlift 3.5 t ab Wertschleuse, Audit-/Sichtungsraum für Kunden und Revisoren (getrennt vom Lagerbereich)</td></tr>
+  </table>
+  <h3>6.3 Dienstleistungen &amp; Konditionen (Zielgrössen)</h3>
+  <ul>
+    <li><strong>Segregierte Verwahrung</strong> inkl. All-Risk-Versicherung (Lloyd's-Deckung): 0.20 – 0.50 % p. a. des Warenwerts (volumenabhängig).</li>
+    <li><strong>Allokierte Sammelverwahrung</strong> für Händler/Fonds: ab 0.12 % p. a.</li>
+    <li><strong>Schliessfach-Suiten</strong> für Privatkunden/Family Offices: CHF 1'200 – 15'000 p. a.</li>
+    <li><strong>Zusatzleistungen:</strong> Ein-/Auslagerung, Barrenprüfung mit Prüfbericht, Inventur-/Audit-Begleitung (Big-4-tauglich), Versand-/WT-Organisation, digitale Bestandesplattform mit Bar-Code/Seriennummern-Tracking.</li>
+    <li><strong>Option offenes Zolllager (OZL):</strong> Beantragung beim BAZG zur zoll- und mehrwertsteuerneutralen Lagerung für internationale Kunden.</li>
+  </ul>
+  <div class="callout"><strong>Differenzierung:</strong> Anders als Bankschliessfächer ist das Lager bankenunabhängig, versichert bis auf Einzelpositionsebene, physisch auditierbar und mit der hauseigenen Raffinerie gekoppelt – eingelagertes Altgold kann ohne Transportrisiko direkt vor Ort raffiniert und als zertifizierter Barren wieder eingelagert werden.</div>
+</section>
+
+<!-- ============================ 7 SECURITY ============================ -->
+<section class="page">
+  <h2><span class="num">Kapitel 7</span>Security House &amp; Sicherheitskonzept</h2>
+  <h3>7.1 Zonenmodell (Verteidigung in der Tiefe)</h3>
+  <table class="data">
+    <tr><th style="width:14%">Zone</th><th style="width:30%">Bereich</th><th>Massnahmen (Auszug)</th></tr>
+    <tr><td>Zone 0</td><td>Umfeld / Anfahrt</td><td>Übersichtliche Zufahrt, Anfahrschutz (Poller/Graben), Videoanalyse Aussenraum, Lichtkonzept</td></tr>
+    <tr><td>Zone 1</td><td>Perimeter Parzelle</td><td>Sicherheitszaun mit Übersteig-/Untergrabeschutz, Zaundetektion, Bewegungsanalyse, keine Sichtdeckung</td></tr>
+    <tr><td>Zone 2</td><td>Hof / Fahrzeugschleuse</td><td>Doppeltor-Vereinzelung, Unterbodenscanner-Option, Werttransport-Dock als geschlossene Schleuse (Fahrzeug fährt vollständig ein, Tor schliesst, erst dann Übergabe)</td></tr>
+    <tr><td>Zone 3</td><td>Gebäudehülle</td><td>Durchbruchhemmende Fassade im Sockel, Fenster RC4+/BR-Verglasung im Kopfbau, Zutritt nur über Personenschleusen</td></tr>
+    <tr><td>Zone 4</td><td>Produktion/Werträume</td><td>Interlock-Schleusen, Vier-Augen-Prinzip, Aufenthalts- und Bewegungsprotokollierung, Wertbehältnisse für Tagesbestände</td></tr>
+    <tr><td>Zone 5</td><td>Gold-Bunker</td><td>Höchste Schutzstufe gem. Kapitel 6, Zeitschloss-Regime, Dual Custody ohne Ausnahme</td></tr>
+  </table>
+  <h3>7.2 Security House (Funktionen)</h3>
+  <ul>
+    <li><strong>24/7-Leitstand:</strong> ständig doppelt besetzte Sicherheitszentrale (eigenes Personal, ergänzt durch zertifizierten Sicherheitsdienstleister), Aufschaltung auf anerkannte Alarmempfangsstelle und direkte Meldewege zur Kantonspolizei Schwyz.</li>
+    <li><strong>Zutrittsmanagement:</strong> Anmeldung, Identitätsprüfung, Besucher-/Fremdfirmenverwaltung, Schlüssel-/Badge-Ausgabe, Postscanning.</li>
+    <li><strong>Fahrzeug-Vereinzelung:</strong> Kontrolle sämtlicher Fahrzeuge vor Passieren der Zone 2; getrennte Wege für Besucher, Personal, Werttransport.</li>
+    <li><strong>Krisenorganisation:</strong> Notfall-/Evakuationsleitung, Redundanz-Leitstand im Gebäude, definierte Prozesse (Überfall, Erpressung, Cyber, Brand, Elementar).</li>
+  </ul>
+  <h3>7.3 Organisation &amp; Personal-Sicherheit</h3>
+  <ul>
+    <li>Sicherheitsüberprüfung aller Mitarbeitenden (Strafregister-/Betreibungsauszug, Referenzen), rollenbasierte Berechtigungen, Job-Rotation in sensiblen Funktionen.</li>
+    <li>Vier-Augen-Prinzip für alle Wertbewegungen; systemseitig erzwungen (kein Einzelzugriff möglich).</li>
+    <li>Cyber-Security: getrennte Netze (OT/IT/Sicherheitstechnik), 24/7-Monitoring, ISO 27001 als Zielstandard.</li>
+    <li>Versicherungskonzept: All-Risk-Police für Bestände (Lloyd's-Markt), Betriebshaftpflicht, Transportversicherung; Sicherheitskonzept wird mit Versicherer und VdS-/SES-Sachverständigen abgenommen.</li>
+  </ul>
+  <div class="note">Dieses Kapitel beschreibt das Konzept auf Planungsebene (Normen, Zonen, Organisation). Detailauslegungen erfolgen vertraulich mit zertifizierten Sicherheitsplanern, dem Versicherer und den Behörden und sind nicht Bestandteil dieses Dokuments.</div>
+</section>
+
+<!-- ============================ 8 REGULATORIK ============================ -->
+<section class="page">
+  <h2><span class="num">Kapitel 8</span>Regulatorik, Bewilligungen &amp; Compliance</h2>
+  <table class="data">
+    <tr><th style="width:30%">Bereich</th><th>Anforderung / Behörde</th></tr>
+    <tr><td>Schmelzbewilligung</td><td>Edelmetallkontrollgesetz (EMKG/EMKV); Bewilligung des Zentralamts für Edelmetallkontrolle (BAZG) für gewerbsmässiges Schmelzen von Bankedelmetallen</td></tr>
+    <tr><td>Handelsprüfer-Bewilligung</td><td>Für Bestimmung des Feingehalts und Punzierung von Schmelzprodukten; beeidigte Prüfer, Registrierung der Schmelzstempel</td></tr>
+    <tr><td>Geldwäscherei (GwG)</td><td>Unterstellung als Finanzintermediär für Handel/Verwahrung von Bankedelmetallen: Anschluss an SRO bzw. FINMA-Aufsicht; KYC/AML-Prozesse, Herkunftsnachweise, Transaktionsmonitoring</td></tr>
+    <tr><td>Responsible Sourcing</td><td>LBMA Responsible Gold Guidance, OECD Due Diligence Guidance; jährliche unabhängige Assurance (Voraussetzung für Good-Delivery-Ziel)</td></tr>
+    <tr><td>Baubewilligung</td><td>Gemeinde Freienbach (Baureglement, Zonenkonformität Industriezone 1); kantonale Fachstellen (AfU, Tiefbauamt)</td></tr>
+    <tr><td>Umwelt</td><td>LRV (Abluft), GSchV (Abwasser), USG/AltlV (Aushub auf KbS-Standort 29_B130 mit Entsorgungsnachweis), StFV-Prüfung (Chemikalienmengen), VOC-Abgabe</td></tr>
+    <tr><td>Brandschutz/Arbeitssicherheit</td><td>VKF-Brandschutzkonzept mit QS-Verantwortlichem, SUVA/EKAS-Richtlinien, ArG-Plangenehmigung (SECO/kant. Arbeitsinspektorat) für den Industriebetrieb</td></tr>
+    <tr><td>Zoll / MWST</td><td>Ein-/Ausfuhrabwicklung Edelmetalle (BAZG), Option offenes Zolllager (OZL); MWST-Befreiung Bankengold gemäss MWSTV</td></tr>
+    <tr><td>Waffen-/Sicherheitsdienst</td><td>Kantonale Bewilligungen für bewaffneten Sicherheitsdienst (sofern eingesetzt), Konkordat/kant. Recht SZ</td></tr>
+  </table>
+  <p class="small">Der Bewilligungspfad wird durch eine spezialisierte Anwaltskanzlei (Edelmetall-/Finanzmarktrecht) begleitet. Zeitkritisch sind Schmelzbewilligung, GwG-Unterstellung und ArG-Plangenehmigung – sie laufen parallel zur Bauphase (vgl. Kapitel 13).</p>
+</section>
+
+<!-- ============================ 9 MARKT ============================ -->
+<section class="page">
+  <h2><span class="num">Kapitel 9</span>Markt &amp; Wettbewerb</h2>
+  <h3>9.1 Markt</h3>
+  <ul>
+    <li><strong>Raffination:</strong> Die Schweiz raffiniert einen erheblichen Teil des weltweit gehandelten Goldes; Importe von Rohgold/Doré und Altgold in die Schweiz bewegen sich seit Jahren in der Grössenordnung von über 2'000 t pro Jahr. Recycling («Urban Mining») wächst strukturell: Altgold aus Schmuck, Uhrenindustrie-Ausschuss, Elektronik-Konzentrate.</li>
+    <li><strong>Verwahrung:</strong> Anhaltend hohe Goldpreise, geopolitische Unsicherheit und Diversifikation weg von Bankbilanzen treiben die Nachfrage nach versicherter, segregierter Lagerung in der Schweiz. Zürichsee-Region: höchste Dichte an Family Offices/Asset Managern ausserhalb Zürichs (Pfäffikon SZ, Wollerau, Zug).</li>
+    <li><strong>Preisumfeld (Planungsannahme):</strong> Goldpreis CHF 90'000/kg; sensitivitätsgeprüft ±20 % (Kapitel 12).</li>
+  </ul>
+  <h3>9.2 Wettbewerb &amp; Positionierung</h3>
+  <table class="data">
+    <tr><th>Anbietertyp</th><th>Beispiele</th><th>Abgrenzung «Aurum Leutschen»</th></tr>
+    <tr><td>Grossraffinerien (LBMA)</td><td>Valcambi, PAMP, Argor-Heraeus, Metalor</td><td>Fokus auf Grossvolumen/Minen; wir: flexible Losgrössen, Speed (48-h-Analyse), persönliche Betreuung, Lager am Standort</td></tr>
+    <tr><td>Scheideanstalten regional</td><td>diverse KMU</td><td>meist ohne 999.9-Elektrolyse, ohne Hochsicherheitslager, ohne LBMA-Perspektive</td></tr>
+    <tr><td>Wertlager/Zollfreilager</td><td>Anbieter in ZH/GE/Zug</td><td>reine Lagerung ohne Raffinerie; wir: geschlossener Kreislauf Prüfen–Raffinieren–Lagern ohne Transportrisiko</td></tr>
+    <tr><td>Banken (Schliessfächer/Metallkonti)</td><td>Kantonal-/Grossbanken</td><td>Metallkonti = Bilanzrisiko Bank; wir: physisch, segregiert, bankenunabhängig, auditierbar</td></tr>
+  </table>
+  <h3>9.3 Zielkundensegmente (Jahr 1–5)</h3>
+  <ol>
+    <li>Edelmetall- und Altgoldhändler Schweiz/EU (Raffination + Lager)</li>
+    <li>Uhren- und Schmuckindustrie (Umarbeitung, Legierungen, Granulat)</li>
+    <li>Family Offices &amp; HNWI im Umkreis 50 km (Verwahrung, Schliessfach-Suiten)</li>
+    <li>Fonds-/ETP-Anbieter und Treuhänder (allokierte Bestände, Audit-Services)</li>
+    <li>Später: Minengesellschaften mit zertifizierter Herkunft (Doré, nach LBMA-Zulassung)</li>
+  </ol>
+</section>
+
+<!-- ============================ 10 GESCHÄFTSMODELL ============================ -->
+<section class="page">
+  <h2><span class="num">Kapitel 10</span>Geschäftsmodell &amp; Erlösquellen</h2>
+  <table class="data">
+    <tr><th>Erlösquelle</th><th>Mechanik</th><th class="r">Anteil Umsatz Jahr 5</th></tr>
+    <tr><td>1. Raffination &amp; Umarbeitung (Toll Refining)</td><td>Gebühr pro Gramm nach Materialklasse (Altgold/Scheidgut höher, Doré tiefer); Planannahme Ø CHF 0.30/g Feingold über den Mix</td><td class="r">~55 %</td></tr>
+    <tr><td>2. Verwahrung &amp; Tresor-Services</td><td>Lagergebühr Ø 0.25 % p. a. auf verwahrtem Warenwert + Handling/Audit/Schliessfächer</td><td class="r">~36 %</td></tr>
+    <tr><td>3. Handel &amp; Produkte</td><td>An-/Verkaufsspanne auf eigene Barrenprodukte, Ankauf Altgold, Nebenmetallerlöse (Ag, PGM)</td><td class="r">~9 %</td></tr>
+  </table>
+  <h3>Werttreiber</h3>
+  <ul>
+    <li><strong>Kreislauf-Lock-in:</strong> Wer raffiniert, lagert ein; wer lagert, raffiniert nach – beide Säulen füttern einander und erhöhen die Wechselkosten der Kunden.</li>
+    <li><strong>Wiederkehrende Erträge:</strong> Verwahrung ist ein Abo-Geschäft mit >90 % Retention und wächst mit dem Goldpreis mit.</li>
+    <li><strong>Asset Backing:</strong> Grundstück (Industriezone am Zürichsee) und Spezialimmobilie bilden einen werthaltigen Boden unter dem Business Case.</li>
+    <li><strong>Kapazitätsleiter:</strong> CAPEX-arme Skalierung der Raffination (Schichtbetrieb) vor teurem Anlagenausbau.</li>
+  </ul>
+</section>
+
+<!-- ============================ 11 CAPEX ============================ -->
+<section class="page">
+  <h2><span class="num">Kapitel 11</span>Investitionsrechnung (CAPEX, indikativ)</h2>
+  <table class="data">
+    <tr><th>Position</th><th class="r">CHF Mio.</th><th>Bemerkung</th></tr>
+    <tr><td>Grundstückserwerb Parzelle 1172</td><td class="r">12.00</td><td>gem. Angebot; CHF 1'995/m²</td></tr>
+    <tr><td>Erwerbsnebenkosten (Notariat, Grundbuch)</td><td class="r">0.10</td><td>Kanton SZ: keine Handänderungssteuer</td></tr>
+    <tr><td>Rückbau Bestandesbauten</td><td class="r">0.90</td><td>inkl. Schadstoffuntersuchung/-entsorgung</td></tr>
+    <tr><td>Baugrube/Spezialtiefbau inkl. Entsorgung belasteter Aushub</td><td class="r">2.40</td><td>KbS-Standort 29_B130 (82 % der Fläche), UG Bunker</td></tr>
+    <tr><td>Rohbau/Ausbau Halle + Kopfbau (≈3'050 m² GF oberirdisch)</td><td class="r">13.80</td><td>inkl. Fassade «FORMS-Standard», Sheds, Kranbahn</td></tr>
+    <tr><td>Gold-Bunker UG (≈700 m², EN 1143-1, Türen, Schliessfächer)</td><td class="r">8.60</td><td>inkl. Spezialbeton, Tresortechnik, Warenlift</td></tr>
+    <tr><td>Security House, Perimeter, Fahrzeugschleuse, Dock</td><td class="r">2.10</td><td>Zaun+Detektion, Poller, Tore, Leitstand-Rohbau</td></tr>
+    <tr><td>Gebäudetechnik HLKS / Elektro / PV / NEA / USV</td><td class="r">4.80</td><td>inkl. 400 kWp PV, Abwärmenutzung</td></tr>
+    <tr><td>Prozessanlagen Raffinerie (Öfen, Elektrolyse, Abgas, Labor)</td><td class="r">9.20</td><td>inkl. ICP/RFA-Analytik, Neutralisationsanlage</td></tr>
+    <tr><td>Sicherheitstechnik (EMA Grad 4, Video, ZUKO, Schleusen)</td><td class="r">3.40</td><td>inkl. redundanter Leittechnik</td></tr>
+    <tr><td>Planung, Honorare, Bewilligungen, Bauherrenberatung</td><td class="r">3.90</td><td>~12 % der Bausumme</td></tr>
+    <tr><td>Unvorhergesehenes / Reserve</td><td class="r">2.80</td><td>~5 % Gesamtprojekt</td></tr>
+    <tr class="sum"><td>Gesamtinvestition</td><td class="r">64.00</td><td>±15 % Genauigkeit (Studienstadium)</td></tr>
+  </table>
+  <h3>Finanzierungsstruktur (Ziel)</h3>
+  <table class="data">
+    <tr><th>Quelle</th><th class="r">CHF Mio.</th><th class="r">Anteil</th><th>Bemerkung</th></tr>
+    <tr><td>Eigenkapital Investoren/Sponsor</td><td class="r">26.0</td><td class="r">41 %</td><td>davon CHF 12 Mio. für Grundstück (Phase 1)</td></tr>
+    <tr><td>Hypothekar-/Baukredit (besichert)</td><td class="r">28.0</td><td class="r">44 %</td><td>Beleihung Land + Spezialimmobilie</td></tr>
+    <tr><td>Anlagen-Leasing / Lieferantenkredite</td><td class="r">10.0</td><td class="r">15 %</td><td>Prozess- und Sicherheitstechnik</td></tr>
+    <tr class="sum"><td>Total</td><td class="r">64.0</td><td class="r">100 %</td><td></td></tr>
+  </table>
+</section>
+
+<!-- ============================ 12 FINANZPLAN ============================ -->
+<section class="page">
+  <h2><span class="num">Kapitel 12</span>Finanzplan 5 Jahre &amp; Finanzierung</h2>
+  <h3>12.1 Planungsannahmen</h3>
+  <ul>
+    <li>Goldpreis: CHF 90'000/kg (konstant gerechnet; Sensitivität ±20 % unten)</li>
+    <li>Raffinationsertrag Ø CHF 0.30 pro Gramm Feingold (Mix Altgold/Industrie/Doré)</li>
+    <li>Verwahrungsertrag Ø 0.25 % p. a. auf eingelagertem Warenwert</li>
+    <li>Personalaufbau: 32 FTE (Jahr 1) → 55 FTE (Jahr 5), Ø Vollkosten CHF 135'000</li>
+    <li>Abschreibungen: Gebäude 33 J., Anlagen 10 J., Sicherheitstechnik 12 J. (~CHF 3.5 Mio. p. a.)</li>
+  </ul>
+  <h3>12.2 Erfolgsrechnung (indikativ, CHF Mio.)</h3>
+  <table class="data">
+    <tr><th>Position</th><th class="r">Jahr 1</th><th class="r">Jahr 2</th><th class="r">Jahr 3</th><th class="r">Jahr 4</th><th class="r">Jahr 5</th></tr>
+    <tr><td>Raffiniertes Feingold (t)</td><td class="r">25</td><td class="r">40</td><td class="r">55</td><td class="r">70</td><td class="r">80</td></tr>
+    <tr><td>Ø eingelagerter Bestand (t)</td><td class="r">15</td><td class="r">25</td><td class="r">40</td><td class="r">55</td><td class="r">70</td></tr>
+    <tr><td>Umsatz Raffination</td><td class="r">7.5</td><td class="r">12.0</td><td class="r">16.5</td><td class="r">21.0</td><td class="r">24.0</td></tr>
+    <tr><td>Umsatz Verwahrung/Tresor</td><td class="r">3.4</td><td class="r">5.6</td><td class="r">9.0</td><td class="r">12.4</td><td class="r">15.8</td></tr>
+    <tr><td>Umsatz Handel/Produkte</td><td class="r">1.5</td><td class="r">2.0</td><td class="r">2.5</td><td class="r">3.0</td><td class="r">3.5</td></tr>
+    <tr class="sub"><td>Total Umsatz</td><td class="r">12.4</td><td class="r">19.6</td><td class="r">28.0</td><td class="r">36.4</td><td class="r">43.3</td></tr>
+    <tr><td>Personal</td><td class="r">-4.3</td><td class="r">-5.4</td><td class="r">-6.2</td><td class="r">-6.9</td><td class="r">-7.4</td></tr>
+    <tr><td>Energie, Chemie, Betriebsmittel</td><td class="r">-2.6</td><td class="r">-3.6</td><td class="r">-4.6</td><td class="r">-5.6</td><td class="r">-6.2</td></tr>
+    <tr><td>Versicherung (Bestände/Betrieb)</td><td class="r">-1.9</td><td class="r">-2.6</td><td class="r">-3.6</td><td class="r">-4.6</td><td class="r">-5.6</td></tr>
+    <tr><td>Sicherheit, Unterhalt, Verwaltung, Marketing</td><td class="r">-3.0</td><td class="r">-4.1</td><td class="r">-5.2</td><td class="r">-6.6</td><td class="r">-7.2</td></tr>
+    <tr class="sub"><td>EBITDA</td><td class="r">0.6</td><td class="r">3.9</td><td class="r">8.4</td><td class="r">12.7</td><td class="r">16.9</td></tr>
+    <tr><td class="small">EBITDA-Marge</td><td class="r small">5 %</td><td class="r small">20 %</td><td class="r small">30 %</td><td class="r small">35 %</td><td class="r small">39 %</td></tr>
+    <tr><td>Abschreibungen</td><td class="r">-3.5</td><td class="r">-3.5</td><td class="r">-3.5</td><td class="r">-3.5</td><td class="r">-3.5</td></tr>
+    <tr><td>Finanzaufwand</td><td class="r">-1.5</td><td class="r">-1.5</td><td class="r">-1.4</td><td class="r">-1.3</td><td class="r">-1.2</td></tr>
+    <tr class="sum"><td>Ergebnis vor Steuern</td><td class="r">-4.4</td><td class="r">-1.1</td><td class="r">3.5</td><td class="r">7.9</td><td class="r">12.2</td></tr>
+  </table>
+  <h3>12.3 Kernaussagen &amp; Sensitivität</h3>
+  <ul>
+    <li>EBITDA-positiv ab dem 1. Betriebsjahr; Nettogewinn ab Jahr 3; kumulierter Free Cashflow deckt die Anlaufverluste bis Ende Jahr 4.</li>
+    <li>Payback der Gesamtinvestition (ohne Landwert-Appreciation): ~9–10 Jahre; inkl. Land als Residualwert deutlich kürzer.</li>
+    <li><strong>Sensitivität Goldpreis −20 %:</strong> Verwahrungsumsatz Jahr 5 sinkt auf ~CHF 12.6 Mio., EBITDA ~CHF 13.7 Mio. – Business Case bleibt tragfähig, da Raffinationsvolumen preisunelastisch ist.</li>
+    <li><strong>Sensitivität Volumen −25 %:</strong> EBITDA Jahr 5 ~CHF 11 Mio.; Break-even-Auslastung der Raffinerie liegt bei ~22 t/a.</li>
+  </ul>
+</section>
+
+<!-- ============================ 13 ZEITPLAN ============================ -->
+<section class="page">
+  <h2><span class="num">Kapitel 13</span>Realisierungs-Zeitplan</h2>
+  <table class="data">
+    <tr><th style="width:22%">Phase</th><th style="width:24%">Zeitraum</th><th>Meilensteine</th></tr>
+    <tr><td>0 · Due Diligence &amp; Erwerb</td><td>Q3–Q4 2026</td><td>Grundbuch-/Altlasten-DD, Baugrundgutachten, Kaufvertrag, Eigentumsübertragung Parzelle 1172</td></tr>
+    <tr><td>1 · Planung</td><td>Q4 2026 – Q3 2027</td><td>Architekturwettbewerb/Direktauftrag, Vorprojekt, Bauprojekt, Sicherheitskonzept mit Versicherer/VdS, Umweltberichte</td></tr>
+    <tr><td>2 · Bewilligung</td><td>Q3 2027 – Q1 2028</td><td>Baueingabe Gemeinde Freienbach, ArG-Plangenehmigung, Start Schmelzbewilligung &amp; GwG-Unterstellung</td></tr>
+    <tr><td>3 · Rückbau &amp; Bau</td><td>Q2 2028 – Q4 2029</td><td>Rückbau, Aushub (Entsorgungsnachweis KbS), Rohbau inkl. Bunker, Ausbau, Prozessanlagen-Montage</td></tr>
+    <tr><td>4 · Inbetriebnahme</td><td>Q1–Q2 2030</td><td>Abnahmen (VKF, SUVA, Versicherer, Edelmetallkontrolle), Testbetrieb, Zertifizierungs-Audits</td></tr>
+    <tr><td>5 · Betrieb</td><td>ab Q3 2030</td><td>Kommerzieller Start Raffination &amp; Verwahrung; LBMA-Track-Record ab Jahr 3 des Betriebs</td></tr>
+  </table>
+  <div class="callout"><strong>Kritischer Pfad:</strong> Baubewilligung und Schmelzbewilligung. Beide Verfahren werden mit Vorbescheiden/Vorabklärungen (Gemeinde Freienbach, Zentralamt für Edelmetallkontrolle) de-riskiert, bevor der Grundstückskauf beurkundet wird – idealerweise via bedingtem Kaufvertrag oder Kaufrecht.</div>
+</section>
+
+<!-- ============================ 14 RISIKEN ============================ -->
+<section class="page">
+  <h2><span class="num">Kapitel 14</span>Risikoanalyse &amp; Mitigation</h2>
+  <table class="data">
+    <tr><th style="width:24%">Risiko</th><th style="width:10%">Eintritt</th><th style="width:12%">Wirkung</th><th>Mitigation</th></tr>
+    <tr><td>Bewilligungsverzögerung (Bau/EMK/GwG)</td><td>mittel</td><td>hoch</td><td>Vorbescheide, bedingter Kaufvertrag, spezialisierte Rechtsberatung, frühzeitige Behördengespräche</td></tr>
+    <tr><td>Baukostenüberschreitung</td><td>mittel</td><td>mittel</td><td>TU-/GU-Vergabe mit Kostendach, 5 % Reserve, Etappierung Anlagenausbau</td></tr>
+    <tr><td>Altlasten-Überraschungen im Aushub</td><td>mittel</td><td>mittel</td><td>Historische Untersuchung + Sondierungen vor Kauf; Entsorgungsbudget eingerechnet; Rückbehalt im Kaufvertrag verhandeln</td></tr>
+    <tr><td>Goldpreis-Einbruch</td><td>mittel</td><td>mittel</td><td>Erträge primär volumen-/gebührenbasiert; keine offenen Eigenpositionen (Metallkonto-Hedging); Sensitivität geprüft</td></tr>
+    <tr><td>Sicherheitsereignis (Überfall/Einbruch)</td><td>tief</td><td>sehr hoch</td><td>Verteidigung in der Tiefe (Kap. 7), Versicherung auf Vollwert, Krisenorganisation, regelmässige Red-Team-Audits</td></tr>
+    <tr><td>Compliance-/Reputationsrisiko (Herkunft)</td><td>mittel</td><td>hoch</td><td>Striktes Responsible-Sourcing-Regime, Annahme-Stopp-Kriterien, unabhängige Audits, Transparenzberichte</td></tr>
+    <tr><td>Fachkräftemangel (Metallurgie/Sicherheit)</td><td>mittel</td><td>mittel</td><td>Frühzeitige Rekrutierung, Ausbildungspartnerschaften, Wohnortattraktivität Ausserschwyz, Beteiligungsmodelle</td></tr>
+    <tr><td>Zins-/Finanzierungsrisiko</td><td>mittel</td><td>mittel</td><td>Langfristige Zinsbindung, moderater Leverage (44 % Hypothek), Sponsor-Commitment für Nachschüsse</td></tr>
+  </table>
+</section>
+
+<!-- ============================ 15 ANHANG ============================ -->
+<section class="page">
+  <h2><span class="num">Kapitel 15</span>Anhang: ÖREB-Katasterauszug (Zusammenfassung)</h2>
+  <p class="small">
+    Quelle: Auszug aus dem Kataster der öffentlich-rechtlichen Eigentumsbeschränkungen (ÖREB), Kanton Schwyz,
+    Auszugsnummer 11b1d3f5-42d9-4237-bfe4-6ca4ef258411 vom 20.07.2026; katasterverantwortliche Stelle: Amt für
+    Geoinformation, Schwyz. Stand amtliche Vermessung: 06.07.2026.
+  </p>
+  <div class="twocol">
+    <figure>
+      <img src="img/zonenplan.png" alt="Nutzungsplanung">
+      <figcaption>Abb. 3 – Nutzungsplanung: Parzelle 1172 zu 100 % in der Industriezone 1 (angrenzend Wohnzonen W2/W4 jenseits der Strasse).</figcaption>
+    </figure>
+    <figure>
+      <img src="img/kbs.png" alt="Kataster der belasteten Standorte">
+      <figcaption>Abb. 4 – Kataster der belasteten Standorte: Eintrag 29_B130, 4'950 m² «belastet, weder überwachungs- noch sanierungsbedürftig».</figcaption>
+    </figure>
+  </div>
+  <figure>
+    <img src="img/laerm.png" alt="Lärmempfindlichkeitsstufen">
+    <figcaption>Abb. 5 – Lärmempfindlichkeitsstufen: ES IV auf der gesamten Parzelle (6'014 m², 100 %).</figcaption>
+  </figure>
+  <h3>Rechtsgrundlagen (Auswahl)</h3>
+  <ul class="small" style="font-size:8.6pt">
+    <li>Bundesgesetz über die Raumplanung (RPG, SR 700); Planungs- und Baugesetz Kanton Schwyz (PBG, SRSZ 400.100); Baureglement Freienbach (1994, Änderungen 2005/2019/2022)</li>
+    <li>Umweltschutzgesetz (USG, SR 814.01); Altlasten-Verordnung (AltlV, SR 814.680); Lärmschutz-Verordnung (LSV, SR 814.41)</li>
+    <li>Edelmetallkontrollgesetz (EMKG, SR 941.31) und Verordnung (EMKV); Geldwäschereigesetz (GwG, SR 955.0)</li>
+  </ul>
+  <div class="note">
+    <strong>Disclaimer:</strong> Dieses Dokument ist eine Projektstudie zu Planungszwecken. Es stellt kein Angebot, keine
+    Finanz-, Rechts- oder Steuerberatung und keine Zusicherung künftiger Ergebnisse dar. Alle Kosten-, Ertrags- und
+    Terminangaben sind indikativ und durch Fachplaner, Gutachter und Behördenentscheide zu bestätigen. Der ÖREB-Auszug
+    hat rein informativen Charakter; massgeblich sind die rechtskräftigen Dokumente und das Grundbuch.
+  </div>
+</section>
+
+</body>
+</html>
