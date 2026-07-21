@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jours entre deux dates – Calculateur de durée | CalcMate</title>
+  <meta name="description" content="Comptez les jours entre deux dates en ligne : choisissez les dates de début et de fin et obtenez la différence en jours et en semaines. Gratuit.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/fr/jours-entre-deux-dates/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/tagerechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/days-between-dates/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/jours-entre-deux-dates/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/giorni-tra-due-date/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/days-between-dates/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jours entre deux dates – Calculateur de durée | CalcMate">
+  <meta property="og:description" content="Comptez les jours entre deux dates en ligne : choisissez les dates de début et de fin et obtenez la différence en jours et en semaines. Gratuit.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/fr/jours-entre-deux-dates/">
+  <meta property="og:locale" content="fr">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://drbrius.github.io/Allgemein1/fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Jours entre deux dates",
+      "item": "https://drbrius.github.io/Allgemein1/fr/jours-entre-deux-dates/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Jours entre deux dates – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/fr/jours-entre-deux-dates/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "fr",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Comptez les jours entre deux dates en ligne : choisissez les dates de début et de fin et obtenez la différence en jours et en semaines. Gratuit."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "La date de fin est-elle comptée ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non, le calculateur affiche la différence entre les deux dates : du 1er au 2 janvier, il y a 1 jour. Si la date de fin doit être incluse, ajoutez 1 au résultat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Les années bissextiles sont-elles prises en compte ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Le calcul repose sur de vraies dates calendaires : années bissextiles et longueurs de mois variables sont automatiquement correctes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de jours compte une année ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Une année normale compte 365 jours, une année bissextile 366. Sont bissextiles les années divisibles par 4 – mais les siècles pleins uniquement s'ils sont divisibles par 400 (2000 était bissextile, 2100 ne le sera pas)."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="../../de/tagerechner/" hreflang="de" lang="de">DE</a></li>
+        <li><a href="../../en/days-between-dates/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="./" hreflang="fr" aria-current="true">FR</a></li>
+        <li><a href="../../it/giorni-tra-due-date/" hreflang="it" lang="it">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Accueil</a> › <span>Jours entre deux dates</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">📅</span>Jours entre deux dates</h1>
+      <p>Combien de jours séparent deux dates ? Choisissez la date de début et la date de fin – le calculateur compte les jours calendaires et les convertit en semaines. Pratique pour les délais, les vacances, les comptes à rebours ou la gestion de projet.</p>
+      <form class="calc-form" data-calc="datediff" novalidate>
+        <div class="fields">
+          <label>Date de début<input type="date" name="start"></label>
+          <label>Date de fin<input type="date" name="end"></label>
+        </div>
+        <dl class="result-list">
+          <div><dt>Jours</dt><dd data-out="days">–</dd></div>
+          <div><dt>Semaines</dt><dd data-out="weeks">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>Comment le calculateur compte-t-il les jours ?</h2>
+      <p>Le calculateur détermine la différence calendaire réelle entre les deux dates – les années bissextiles et les longueurs de mois différentes sont prises en compte automatiquement. La date de fin n'est pas comptée : du 1er au 2 janvier, il y a 1 jour.</p>
+      <p class="formula">1er janvier 2026 → 1er mars 2026 = 59 jours (31 jours de janvier + 28 jours de février)</p>
+      <p>Si la date de fin doit compter aussi (par exemple « vacances du 5 au 9 août : combien de jours de congé ? »), ajoutez simplement 1 au résultat : 4 + 1 = 5 jours. Pour les délais juridiques, l'une ou l'autre convention peut s'appliquer selon les règles en vigueur – vérifiez le texte applicable en cas de doute.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Questions fréquentes</h2>
+      <details>
+        <summary>La date de fin est-elle comptée ?</summary>
+        <p>Non, le calculateur affiche la différence entre les deux dates : du 1er au 2 janvier, il y a 1 jour. Si la date de fin doit être incluse, ajoutez 1 au résultat.</p>
+      </details>
+      <details>
+        <summary>Les années bissextiles sont-elles prises en compte ?</summary>
+        <p>Oui. Le calcul repose sur de vraies dates calendaires : années bissextiles et longueurs de mois variables sont automatiquement correctes.</p>
+      </details>
+      <details>
+        <summary>Combien de jours compte une année ?</summary>
+        <p>Une année normale compte 365 jours, une année bissextile 366. Sont bissextiles les années divisibles par 4 – mais les siècles pleins uniquement s'ils sont divisibles par 400 (2000 était bissextile, 2100 ne le sera pas).</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Calculatrices associées</h2>
+      <nav class="calc-nav" aria-label="Calculatrices associées">
+        <a href="../calculatrice/">🧮 Calculatrice</a>
+        <a href="../regle-de-trois/">⚖️ Règle de trois</a>
+        <a href="../calcul-imc/">❤️ Calcul de l'IMC</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Langues">
+        <a href="../../de/tagerechner/" hreflang="de" lang="de">Deutsch</a>
+        <a href="../../en/days-between-dates/" hreflang="en" lang="en">English</a>
+        <a href="./" hreflang="fr" aria-current="true">Français</a>
+        <a href="../../it/giorni-tra-due-date/" hreflang="it" lang="it">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – calculatrices en ligne gratuites. Résultats fournis sans garantie.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Erreur", "bmi_label": "IMC", "bmi_under": "Insuffisance pondérale", "bmi_normal": "Corpulence normale", "bmi_over": "Surpoids", "bmi_obese": "Obésité", "weeks": "semaines", "days": "jours"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

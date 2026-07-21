@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trinkgeld-Rechner – Trinkgeld berechnen &amp; Rechnung teilen | CalcMate</title>
+  <meta name="description" content="Trinkgeld online berechnen und die Rechnung gerecht aufteilen: Betrag, Prozentsatz und Personenzahl eingeben – Trinkgeld, Gesamtbetrag und Anteil pro Person.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/de/trinkgeld-rechner/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/trinkgeld-rechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/tip-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pourboire/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-mancia/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/tip-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Trinkgeld-Rechner – Trinkgeld berechnen &amp; Rechnung teilen | CalcMate">
+  <meta property="og:description" content="Trinkgeld online berechnen und die Rechnung gerecht aufteilen: Betrag, Prozentsatz und Personenzahl eingeben – Trinkgeld, Gesamtbetrag und Anteil pro Person.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/de/trinkgeld-rechner/">
+  <meta property="og:locale" content="de">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://drbrius.github.io/Allgemein1/de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Trinkgeld-Rechner",
+      "item": "https://drbrius.github.io/Allgemein1/de/trinkgeld-rechner/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Trinkgeld-Rechner – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/de/trinkgeld-rechner/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "de",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Trinkgeld online berechnen und die Rechnung gerecht aufteilen: Betrag, Prozentsatz und Personenzahl eingeben – Trinkgeld, Gesamtbetrag und Anteil pro Person."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie viel Trinkgeld gibt man in Deutschland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Üblich sind 5–10 % im Restaurant, oder man rundet auf einen glatten Betrag auf. Bei sehr gutem Service dürfen es auch mehr sein – Trinkgeld ist freiwillig."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie berechne ich 10 % Trinkgeld im Kopf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Verschiebe das Komma des Rechnungsbetrags um eine Stelle nach links: 10 % von 86,50 € sind 8,65 €. Für 5 % halbierst du diesen Wert, für 20 % verdoppelst du ihn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wird das Trinkgeld vom Brutto- oder Nettobetrag berechnet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Im Alltag wird das Trinkgeld üblicherweise auf den Bruttobetrag der Rechnung (inklusive Mehrwertsteuer) gegeben – so macht es auch dieser Rechner."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="./" hreflang="de" aria-current="true">DE</a></li>
+        <li><a href="../../en/tip-calculator/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="../../fr/calcul-pourboire/" hreflang="fr" lang="fr">FR</a></li>
+        <li><a href="../../it/calcolo-mancia/" hreflang="it" lang="it">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Startseite</a> › <span>Trinkgeld-Rechner</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">🪙</span>Trinkgeld-Rechner</h1>
+      <p>Wie viel Trinkgeld ist angemessen und was zahlt jeder? Rechnungsbetrag, Trinkgeld in Prozent und Personenzahl eingeben – der Rechner zeigt Trinkgeld, Gesamtbetrag und den Anteil pro Person.</p>
+      <form class="calc-form" data-calc="tip" novalidate>
+        <div class="fields">
+          <label>Rechnungsbetrag<input type="text" inputmode="decimal" name="bill" placeholder="86,50"></label>
+          <label>Trinkgeld (%)<input type="text" inputmode="decimal" name="pct" value="10"></label>
+          <label>Personen<input type="text" inputmode="numeric" name="people" placeholder="2"></label>
+        </div>
+        <dl class="result-list">
+          <div><dt>Trinkgeld</dt><dd data-out="tip">–</dd></div>
+          <div><dt>Gesamt</dt><dd data-out="total">–</dd></div>
+          <div><dt>Pro Person</dt><dd data-out="person">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>Wie viel Trinkgeld ist üblich?</h2>
+      <p>In Deutschland, Österreich und der Schweiz sind 5–10 % des Rechnungsbetrags üblich – oft wird einfach aufgerundet. In den USA erwarten Servicekräfte dagegen 15–20 %, weil das Trinkgeld dort ein wesentlicher Teil des Einkommens ist.</p>
+      <p class="formula">Trinkgeld = Rechnung × Prozentsatz ÷ 100&nbsp;&nbsp;·&nbsp;&nbsp;Pro Person = (Rechnung + Trinkgeld) ÷ Personen</p>
+      <p>Beispiel: Bei 86,50 € Rechnung und 10 % Trinkgeld gibst du 8,65 € – zusammen 95,15 €. Zu zweit zahlt jeder 47,58 €. Kopfrechen-Trick: 10 % erhältst du, indem du das Komma um eine Stelle nach links verschiebst; 5 % sind die Hälfte davon.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Häufige Fragen</h2>
+      <details>
+        <summary>Wie viel Trinkgeld gibt man in Deutschland?</summary>
+        <p>Üblich sind 5–10 % im Restaurant, oder man rundet auf einen glatten Betrag auf. Bei sehr gutem Service dürfen es auch mehr sein – Trinkgeld ist freiwillig.</p>
+      </details>
+      <details>
+        <summary>Wie berechne ich 10 % Trinkgeld im Kopf?</summary>
+        <p>Verschiebe das Komma des Rechnungsbetrags um eine Stelle nach links: 10 % von 86,50 € sind 8,65 €. Für 5 % halbierst du diesen Wert, für 20 % verdoppelst du ihn.</p>
+      </details>
+      <details>
+        <summary>Wird das Trinkgeld vom Brutto- oder Nettobetrag berechnet?</summary>
+        <p>Im Alltag wird das Trinkgeld üblicherweise auf den Bruttobetrag der Rechnung (inklusive Mehrwertsteuer) gegeben – so macht es auch dieser Rechner.</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Passende Rechner</h2>
+      <nav class="calc-nav" aria-label="Passende Rechner">
+        <a href="../prozentrechner/">％ Prozentrechner</a>
+        <a href="../rabatt-rechner/">🏷️ Rabatt-Rechner</a>
+        <a href="../taschenrechner/">🧮 Taschenrechner</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Sprachen">
+        <a href="./" hreflang="de" aria-current="true">Deutsch</a>
+        <a href="../../en/tip-calculator/" hreflang="en" lang="en">English</a>
+        <a href="../../fr/calcul-pourboire/" hreflang="fr" lang="fr">Français</a>
+        <a href="../../it/calcolo-mancia/" hreflang="it" lang="it">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – kostenlose Online-Rechner. Alle Ergebnisse ohne Gewähr.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Fehler", "bmi_label": "BMI", "bmi_under": "Untergewicht", "bmi_normal": "Normalgewicht", "bmi_over": "Übergewicht", "bmi_obese": "Adipositas", "weeks": "Wochen", "days": "Tage"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

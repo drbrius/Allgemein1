@@ -3,6 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://drbrius.github.io/Allgemein1/</loc>
+    <lastmod>2026-07-21</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/"/>
@@ -11,6 +12,7 @@
   </url>
   <url>
     <loc>https://drbrius.github.io/Allgemein1/de/</loc>
+    <lastmod>2026-07-21</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/"/>
@@ -19,6 +21,7 @@
   </url>
   <url>
     <loc>https://drbrius.github.io/Allgemein1/en/</loc>
+    <lastmod>2026-07-21</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/"/>
@@ -27,6 +30,7 @@
   </url>
   <url>
     <loc>https://drbrius.github.io/Allgemein1/fr/</loc>
+    <lastmod>2026-07-21</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/"/>
@@ -35,10 +39,443 @@
   </url>
   <url>
     <loc>https://drbrius.github.io/Allgemein1/it/</loc>
+    <lastmod>2026-07-21</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/de/taschenrechner/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/taschenrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calculatrice/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolatrice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/en/calculator/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/taschenrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calculatrice/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolatrice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/fr/calculatrice/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/taschenrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calculatrice/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolatrice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/it/calcolatrice/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/taschenrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calculatrice/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolatrice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/de/prozentrechner/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/prozentrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/percentage-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pourcentage/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-percentuale/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/percentage-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/en/percentage-calculator/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/prozentrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/percentage-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pourcentage/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-percentuale/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/percentage-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/fr/calcul-pourcentage/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/prozentrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/percentage-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pourcentage/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-percentuale/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/percentage-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/it/calcolo-percentuale/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/prozentrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/percentage-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pourcentage/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-percentuale/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/percentage-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/de/mehrwertsteuer-rechner/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/mehrwertsteuer-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/vat-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-tva/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-iva/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/vat-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/en/vat-calculator/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/mehrwertsteuer-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/vat-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-tva/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-iva/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/vat-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/fr/calcul-tva/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/mehrwertsteuer-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/vat-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-tva/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-iva/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/vat-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/it/calcolo-iva/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/mehrwertsteuer-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/vat-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-tva/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-iva/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/vat-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/de/rabatt-rechner/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/rabatt-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/discount-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-remise/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-sconto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/discount-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/en/discount-calculator/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/rabatt-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/discount-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-remise/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-sconto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/discount-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/fr/calcul-remise/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/rabatt-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/discount-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-remise/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-sconto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/discount-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/it/calcolo-sconto/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/rabatt-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/discount-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-remise/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-sconto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/discount-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/de/dreisatzrechner/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/dreisatzrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/rule-of-three/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/regle-de-trois/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/regola-del-tre/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/rule-of-three/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/en/rule-of-three/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/dreisatzrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/rule-of-three/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/regle-de-trois/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/regola-del-tre/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/rule-of-three/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/fr/regle-de-trois/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/dreisatzrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/rule-of-three/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/regle-de-trois/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/regola-del-tre/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/rule-of-three/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/it/regola-del-tre/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/dreisatzrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/rule-of-three/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/regle-de-trois/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/regola-del-tre/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/rule-of-three/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/de/gefaelle-rechner/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/gefaelle-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/slope-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pente/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-pendenza/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/slope-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/en/slope-calculator/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/gefaelle-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/slope-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pente/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-pendenza/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/slope-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/fr/calcul-pente/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/gefaelle-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/slope-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pente/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-pendenza/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/slope-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/it/calcolo-pendenza/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/gefaelle-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/slope-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pente/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-pendenza/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/slope-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/de/bmi-rechner/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/bmi-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/bmi-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-imc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-imc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/bmi-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/en/bmi-calculator/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/bmi-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/bmi-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-imc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-imc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/bmi-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/fr/calcul-imc/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/bmi-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/bmi-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-imc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-imc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/bmi-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/it/calcolo-imc/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/bmi-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/bmi-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-imc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-imc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/bmi-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/de/zinseszinsrechner/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/zinseszinsrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/compound-interest-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/interets-composes/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/interesse-composto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/compound-interest-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/en/compound-interest-calculator/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/zinseszinsrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/compound-interest-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/interets-composes/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/interesse-composto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/compound-interest-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/fr/interets-composes/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/zinseszinsrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/compound-interest-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/interets-composes/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/interesse-composto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/compound-interest-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/it/interesse-composto/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/zinseszinsrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/compound-interest-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/interets-composes/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/interesse-composto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/compound-interest-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/de/kreditrechner/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/kreditrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pret/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-prestito/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/loan-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/en/loan-calculator/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/kreditrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pret/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-prestito/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/loan-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/fr/calcul-pret/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/kreditrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pret/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-prestito/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/loan-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/it/calcolo-prestito/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/kreditrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pret/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-prestito/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/loan-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/de/spritkostenrechner/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/spritkostenrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/cout-carburant/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/costo-carburante/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/spritkostenrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/cout-carburant/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/costo-carburante/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/fr/cout-carburant/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/spritkostenrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/cout-carburant/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/costo-carburante/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/it/costo-carburante/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/spritkostenrechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/cout-carburant/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/costo-carburante/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/de/trinkgeld-rechner/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/trinkgeld-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/tip-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pourboire/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-mancia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/tip-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/en/tip-calculator/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/trinkgeld-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/tip-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pourboire/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-mancia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/tip-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/fr/calcul-pourboire/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/trinkgeld-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/tip-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pourboire/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-mancia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/tip-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/it/calcolo-mancia/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/trinkgeld-rechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/tip-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pourboire/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-mancia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/tip-calculator/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/de/tagerechner/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/tagerechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/days-between-dates/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/jours-entre-deux-dates/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/giorni-tra-due-date/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/days-between-dates/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/en/days-between-dates/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/tagerechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/days-between-dates/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/jours-entre-deux-dates/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/giorni-tra-due-date/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/days-between-dates/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/fr/jours-entre-deux-dates/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/tagerechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/days-between-dates/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/jours-entre-deux-dates/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/giorni-tra-due-date/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/days-between-dates/"/>
+  </url>
+  <url>
+    <loc>https://drbrius.github.io/Allgemein1/it/giorni-tra-due-date/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/tagerechner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/days-between-dates/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/jours-entre-deux-dates/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/giorni-tra-due-date/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/days-between-dates/"/>
   </url>
 </urlset>

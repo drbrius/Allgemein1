@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calcolo interesse composto online | CalcMate</title>
+  <meta name="description" content="Calcola l'interesse composto online: capitale finale e interessi maturati da capitale iniziale, tasso e durata – con formula e regola del 72.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/it/interesse-composto/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/zinseszinsrechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/compound-interest-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/interets-composes/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/interesse-composto/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/compound-interest-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calcolo interesse composto online | CalcMate">
+  <meta property="og:description" content="Calcola l'interesse composto online: capitale finale e interessi maturati da capitale iniziale, tasso e durata – con formula e regola del 72.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/it/interesse-composto/">
+  <meta property="og:locale" content="it">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drbrius.github.io/Allgemein1/it/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Interesse composto",
+      "item": "https://drbrius.github.io/Allgemein1/it/interesse-composto/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Interesse composto – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/it/interesse-composto/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "it",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Calcola l'interesse composto online: capitale finale e interessi maturati da capitale iniziale, tasso e durata – con formula e regola del 72."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Che cos'è l'effetto dell'interesse composto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gli interessi vengono accreditati sul capitale e producono a loro volta interessi negli anni successivi. Il capitale cresce in modo esponenziale: 10.000 € al 3% diventano circa 13.439 € in 10 anni, contro i 13.000 € dell'interesse semplice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual è la formula dell'interesse composto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Capitale finale = capitale iniziale × (1 + tasso ÷ 100) elevato al numero di anni. Esempio: 10.000 € × 1,03¹⁰ ≈ 13.439,16 €."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo serve per raddoppiare il capitale?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usa la regola del 72: 72 diviso per il tasso di interesse dà approssimativamente gli anni necessari al raddoppio. Al 6% circa 12 anni; al 3% circa 24 anni."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="../../de/zinseszinsrechner/" hreflang="de" lang="de">DE</a></li>
+        <li><a href="../../en/compound-interest-calculator/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="../../fr/interets-composes/" hreflang="fr" lang="fr">FR</a></li>
+        <li><a href="./" hreflang="it" aria-current="true">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Home</a> › <span>Interesse composto</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">📈</span>Calcolatore di interesse composto</h1>
+      <p>Guarda crescere i tuoi risparmi: inserisci un capitale iniziale, un tasso di interesse annuo e una durata in anni per calcolare il capitale finale, interesse composto incluso.</p>
+      <form class="calc-form" data-calc="interest" novalidate>
+        <div class="fields">
+          <label>Capitale iniziale<input type="text" inputmode="decimal" name="principal" placeholder="10000"></label>
+          <label>Tasso di interesse (% annuo)<input type="text" inputmode="decimal" name="rate" placeholder="3"></label>
+          <label>Durata (anni)<input type="text" inputmode="decimal" name="years" placeholder="10"></label>
+        </div>
+        <dl class="result-list">
+          <div><dt>Capitale finale</dt><dd data-out="final">–</dd></div>
+          <div><dt>Interessi maturati</dt><dd data-out="earned">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>La formula dell'interesse composto</h2>
+      <p>Con l'interesse composto, gli interessi di ogni periodo si aggiungono al capitale e producono a loro volta interessi nei periodi successivi. Il capitale cresce quindi in modo esponenziale, non lineare.</p>
+      <p class="formula">capitale finale = capitale iniziale × (1 + tasso ÷ 100)^anni</p>
+      <p>Esempio: 10.000 € al 3% annuo diventano 10.000 × 1,03¹⁰ ≈ 13.439,16 € dopo 10 anni – circa 3.439 € di interessi. Con l'interesse semplice (senza capitalizzazione) sarebbero solo 3.000 €.</p>
+      <p>Regola pratica per il raddoppio («regola del 72»): dividi 72 per il tasso di interesse e ottieni il numero approssimativo di anni necessari al raddoppio del capitale. Al 6% servono circa 12 anni.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Domande frequenti</h2>
+      <details>
+        <summary>Che cos'è l'effetto dell'interesse composto?</summary>
+        <p>Gli interessi vengono accreditati sul capitale e producono a loro volta interessi negli anni successivi. Il capitale cresce in modo esponenziale: 10.000 € al 3% diventano circa 13.439 € in 10 anni, contro i 13.000 € dell'interesse semplice.</p>
+      </details>
+      <details>
+        <summary>Qual è la formula dell'interesse composto?</summary>
+        <p>Capitale finale = capitale iniziale × (1 + tasso ÷ 100) elevato al numero di anni. Esempio: 10.000 € × 1,03¹⁰ ≈ 13.439,16 €.</p>
+      </details>
+      <details>
+        <summary>Quanto tempo serve per raddoppiare il capitale?</summary>
+        <p>Usa la regola del 72: 72 diviso per il tasso di interesse dà approssimativamente gli anni necessari al raddoppio. Al 6% circa 12 anni; al 3% circa 24 anni.</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Calcolatrici correlate</h2>
+      <nav class="calc-nav" aria-label="Calcolatrici correlate">
+        <a href="../calcolo-prestito/">🏦 Calcolo prestito</a>
+        <a href="../calcolo-percentuale/">％ Calcolo percentuale</a>
+        <a href="../calcolo-iva/">🧾 Calcolo IVA</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Lingue">
+        <a href="../../de/zinseszinsrechner/" hreflang="de" lang="de">Deutsch</a>
+        <a href="../../en/compound-interest-calculator/" hreflang="en" lang="en">English</a>
+        <a href="../../fr/interets-composes/" hreflang="fr" lang="fr">Français</a>
+        <a href="./" hreflang="it" aria-current="true">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – calcolatrici online gratuite. Risultati forniti senza garanzia.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Errore", "bmi_label": "IMC", "bmi_under": "Sottopeso", "bmi_normal": "Normopeso", "bmi_over": "Sovrappeso", "bmi_obese": "Obesità", "weeks": "settimane", "days": "giorni"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

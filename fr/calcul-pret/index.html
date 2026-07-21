@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calcul de prêt – Mensualité, intérêts &amp; coût total | CalcMate</title>
+  <meta name="description" content="Calculateur de prêt en ligne : mensualité, coût total et intérêts d'un crédit à taux fixe à partir du montant, du taux et de la durée. Gratuit.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/fr/calcul-pret/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/kreditrechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/loan-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pret/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-prestito/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/loan-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calcul de prêt – Mensualité, intérêts &amp; coût total | CalcMate">
+  <meta property="og:description" content="Calculateur de prêt en ligne : mensualité, coût total et intérêts d'un crédit à taux fixe à partir du montant, du taux et de la durée. Gratuit.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/fr/calcul-pret/">
+  <meta property="og:locale" content="fr">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://drbrius.github.io/Allgemein1/fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Calcul de prêt",
+      "item": "https://drbrius.github.io/Allgemein1/fr/calcul-pret/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calcul de prêt – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/fr/calcul-pret/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "fr",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Calculateur de prêt en ligne : mensualité, coût total et intérêts d'un crédit à taux fixe à partir du montant, du taux et de la durée. Gratuit."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment calcule-t-on la mensualité d'un prêt ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Avec la formule d'annuité : mensualité = capital × taux mensuel ÷ (1 − (1 + taux mensuel)^−mois). Exemple : 20 000 € à 5 % sur 5 ans donnent environ 377,42 € par mois."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle est la différence entre taux nominal et TAEG ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le taux nominal est l'intérêt pur sur le capital restant dû. Le TAEG inclut en plus les frais de dossier, l'assurance et le calendrier des paiements : c'est lui qu'il faut utiliser pour comparer les offres de crédit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment réduire le coût des intérêts d'un prêt ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Choisissez une durée plus courte, effectuez des remboursements anticipés quand c'est possible, comparez les offres via le TAEG et n'empruntez que le nécessaire. Un demi-point de taux en moins représente déjà une économie sensible sur la durée."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="../../de/kreditrechner/" hreflang="de" lang="de">DE</a></li>
+        <li><a href="../../en/loan-calculator/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="./" hreflang="fr" aria-current="true">FR</a></li>
+        <li><a href="../../it/calcolo-prestito/" hreflang="it" lang="it">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Accueil</a> › <span>Calcul de prêt</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">🏦</span>Calcul de prêt</h1>
+      <p>Calculez la mensualité d'un prêt à taux fixe (crédit amortissable) : saisissez le montant emprunté, le taux d'intérêt annuel et la durée – le calculateur affiche la mensualité, le montant total remboursé et le coût des intérêts.</p>
+      <form class="calc-form" data-calc="loan" novalidate>
+        <div class="fields">
+          <label>Montant du prêt<input type="text" inputmode="decimal" name="principal" placeholder="20000"></label>
+          <label>Taux d'intérêt (% par an)<input type="text" inputmode="decimal" name="rate" placeholder="5"></label>
+          <label>Durée (années)<input type="text" inputmode="decimal" name="years" placeholder="5"></label>
+        </div>
+        <dl class="result-list">
+          <div><dt>Mensualité</dt><dd data-out="monthly">–</dd></div>
+          <div><dt>Total remboursé</dt><dd data-out="total">–</dd></div>
+          <div><dt>Coût des intérêts</dt><dd data-out="interest">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>Comment la mensualité est-elle calculée ?</h2>
+      <p>Pour un prêt amortissable à taux fixe, la mensualité reste constante sur toute la durée. Chaque échéance comprend une part d'intérêts et une part de capital ; à mesure que le capital restant dû diminue, la part d'intérêts baisse et la part de capital augmente.</p>
+      <p class="formula">mensualité = capital × i ÷ (1 − (1 + i)^−n)&nbsp;&nbsp;avec&nbsp;&nbsp;i = taux annuel ÷ 12 ÷ 100, n = mois</p>
+      <p>Exemple : 20 000 € à 5 % sur 5 ans (60 mensualités) donnent une mensualité d'environ 377,42 €. Au total, vous remboursez environ 22 645 €, soit un coût d'intérêts d'environ 2 645 €.</p>
+      <p>Remarque : le calculateur utilise le taux nominal. Les banques doivent également indiquer le TAEG (taux annuel effectif global), qui inclut les frais et permet de comparer les offres. Une durée plus courte signifie des mensualités plus élevées mais un coût total des intérêts nettement plus faible.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Questions fréquentes</h2>
+      <details>
+        <summary>Comment calcule-t-on la mensualité d'un prêt ?</summary>
+        <p>Avec la formule d'annuité : mensualité = capital × taux mensuel ÷ (1 − (1 + taux mensuel)^−mois). Exemple : 20 000 € à 5 % sur 5 ans donnent environ 377,42 € par mois.</p>
+      </details>
+      <details>
+        <summary>Quelle est la différence entre taux nominal et TAEG ?</summary>
+        <p>Le taux nominal est l'intérêt pur sur le capital restant dû. Le TAEG inclut en plus les frais de dossier, l'assurance et le calendrier des paiements : c'est lui qu'il faut utiliser pour comparer les offres de crédit.</p>
+      </details>
+      <details>
+        <summary>Comment réduire le coût des intérêts d'un prêt ?</summary>
+        <p>Choisissez une durée plus courte, effectuez des remboursements anticipés quand c'est possible, comparez les offres via le TAEG et n'empruntez que le nécessaire. Un demi-point de taux en moins représente déjà une économie sensible sur la durée.</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Calculatrices associées</h2>
+      <nav class="calc-nav" aria-label="Calculatrices associées">
+        <a href="../interets-composes/">📈 Intérêts composés</a>
+        <a href="../calcul-tva/">🧾 Calculateur de TVA</a>
+        <a href="../calcul-pourcentage/">％ Calcul de pourcentage</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Langues">
+        <a href="../../de/kreditrechner/" hreflang="de" lang="de">Deutsch</a>
+        <a href="../../en/loan-calculator/" hreflang="en" lang="en">English</a>
+        <a href="./" hreflang="fr" aria-current="true">Français</a>
+        <a href="../../it/calcolo-prestito/" hreflang="it" lang="it">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – calculatrices en ligne gratuites. Résultats fournis sans garantie.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Erreur", "bmi_label": "IMC", "bmi_under": "Insuffisance pondérale", "bmi_normal": "Corpulence normale", "bmi_over": "Surpoids", "bmi_obese": "Obésité", "weeks": "semaines", "days": "jours"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

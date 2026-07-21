@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coût du carburant – Calculer le budget essence d'un trajet | CalcMate</title>
+  <meta name="description" content="Calculez le coût en carburant d'un trajet : litres nécessaires et budget à partir de la distance, de la consommation aux 100 km et du prix du litre.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/fr/cout-carburant/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/spritkostenrechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/cout-carburant/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/costo-carburante/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Coût du carburant – Calculer le budget essence d'un trajet | CalcMate">
+  <meta property="og:description" content="Calculez le coût en carburant d'un trajet : litres nécessaires et budget à partir de la distance, de la consommation aux 100 km et du prix du litre.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/fr/cout-carburant/">
+  <meta property="og:locale" content="fr">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://drbrius.github.io/Allgemein1/fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Coût du carburant",
+      "item": "https://drbrius.github.io/Allgemein1/fr/cout-carburant/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Coût du carburant – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/fr/cout-carburant/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "fr",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Calculez le coût en carburant d'un trajet : litres nécessaires et budget à partir de la distance, de la consommation aux 100 km et du prix du litre."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment calculer le coût en carburant d'un trajet ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divisez la distance par 100, multipliez par la consommation aux 100 km puis par le prix du litre. Exemple : 350 km ÷ 100 × 6,5 l × 1,85 € ≈ 42,09 €."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien coûte la route aux 100 km ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multipliez simplement la consommation aux 100 km par le prix du litre. À 6,5 l/100 km et 1,85 €/l, cela fait environ 12,03 € aux 100 km."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment réduire ma consommation de carburant ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Conduite souple, passage rapide des rapports, pneus bien gonflés, pas de poids ni de galerie inutiles, et regroupement des petits trajets. L'ensemble réduit souvent la consommation de 10 à 20 %."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="../../de/spritkostenrechner/" hreflang="de" lang="de">DE</a></li>
+        <li><a href="../../en/fuel-cost-calculator/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="./" hreflang="fr" aria-current="true">FR</a></li>
+        <li><a href="../../it/costo-carburante/" hreflang="it" lang="it">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Accueil</a> › <span>Coût du carburant</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">⛽</span>Calculateur de coût du carburant</h1>
+      <p>Combien coûte le trajet ? Saisissez la distance, la consommation moyenne de votre voiture et le prix du carburant pour obtenir la quantité de carburant nécessaire, le coût total et le coût aux 100 km.</p>
+      <form class="calc-form" data-calc="fuel" novalidate>
+        <div class="fields">
+          <label>Distance (km)<input type="text" inputmode="decimal" name="distance" placeholder="350"></label>
+          <label>Consommation (l/100 km)<input type="text" inputmode="decimal" name="consumption" placeholder="6,5"></label>
+          <label>Prix du litre<input type="text" inputmode="decimal" name="price" placeholder="1,85"></label>
+        </div>
+        <dl class="result-list">
+          <div><dt>Carburant (l)</dt><dd data-out="liters">–</dd></div>
+          <div><dt>Coût</dt><dd data-out="cost">–</dd></div>
+          <div><dt>Coût / 100 km</dt><dd data-out="per100">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>Calculer le coût du carburant : la formule</h2>
+      <p>Le coût d'un trajet dépend de trois éléments : la distance, la consommation moyenne de votre véhicule et le prix actuel du carburant.</p>
+      <p class="formula">coût = distance ÷ 100 × consommation × prix du litre</p>
+      <p>Exemple : pour 350 km avec une consommation de 6,5 l/100 km, il faut 22,75 litres. À 1,85 € le litre, le trajet coûte environ 42,09 € – soit à peu près 12,03 € aux 100 km.</p>
+      <p>Astuces d'économie : conduite souple et passage rapide des vitesses, suppression du poids inutile et des barres de toit, pression des pneus correcte et comparaison des prix – d'une station à l'autre, l'écart dépasse souvent 10 centimes par litre. En covoiturage, divisez simplement le coût total par le nombre de passagers.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Questions fréquentes</h2>
+      <details>
+        <summary>Comment calculer le coût en carburant d'un trajet ?</summary>
+        <p>Divisez la distance par 100, multipliez par la consommation aux 100 km puis par le prix du litre. Exemple : 350 km ÷ 100 × 6,5 l × 1,85 € ≈ 42,09 €.</p>
+      </details>
+      <details>
+        <summary>Combien coûte la route aux 100 km ?</summary>
+        <p>Multipliez simplement la consommation aux 100 km par le prix du litre. À 6,5 l/100 km et 1,85 €/l, cela fait environ 12,03 € aux 100 km.</p>
+      </details>
+      <details>
+        <summary>Comment réduire ma consommation de carburant ?</summary>
+        <p>Conduite souple, passage rapide des rapports, pneus bien gonflés, pas de poids ni de galerie inutiles, et regroupement des petits trajets. L'ensemble réduit souvent la consommation de 10 à 20 %.</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Calculatrices associées</h2>
+      <nav class="calc-nav" aria-label="Calculatrices associées">
+        <a href="../regle-de-trois/">⚖️ Règle de trois</a>
+        <a href="../calcul-pourcentage/">％ Calcul de pourcentage</a>
+        <a href="../calcul-remise/">🏷️ Calcul de remise</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Langues">
+        <a href="../../de/spritkostenrechner/" hreflang="de" lang="de">Deutsch</a>
+        <a href="../../en/fuel-cost-calculator/" hreflang="en" lang="en">English</a>
+        <a href="./" hreflang="fr" aria-current="true">Français</a>
+        <a href="../../it/costo-carburante/" hreflang="it" lang="it">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – calculatrices en ligne gratuites. Résultats fournis sans garantie.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Erreur", "bmi_label": "IMC", "bmi_under": "Insuffisance pondérale", "bmi_normal": "Corpulence normale", "bmi_over": "Surpoids", "bmi_obese": "Obésité", "weeks": "semaines", "days": "jours"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

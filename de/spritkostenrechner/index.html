@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spritkostenrechner – Benzinkosten pro Fahrt berechnen | CalcMate</title>
+  <meta name="description" content="Spritkosten online berechnen: Kraftstoffverbrauch und Kosten einer Fahrt aus Strecke, Verbrauch pro 100 km und Kraftstoffpreis. Kostenlos und schnell.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/de/spritkostenrechner/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/spritkostenrechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/cout-carburant/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/costo-carburante/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Spritkostenrechner – Benzinkosten pro Fahrt berechnen | CalcMate">
+  <meta property="og:description" content="Spritkosten online berechnen: Kraftstoffverbrauch und Kosten einer Fahrt aus Strecke, Verbrauch pro 100 km und Kraftstoffpreis. Kostenlos und schnell.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/de/spritkostenrechner/">
+  <meta property="og:locale" content="de">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://drbrius.github.io/Allgemein1/de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Spritkostenrechner",
+      "item": "https://drbrius.github.io/Allgemein1/de/spritkostenrechner/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Spritkostenrechner – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/de/spritkostenrechner/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "de",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Spritkosten online berechnen: Kraftstoffverbrauch und Kosten einer Fahrt aus Strecke, Verbrauch pro 100 km und Kraftstoffpreis. Kostenlos und schnell."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie berechne ich die Spritkosten für eine Fahrt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Teile die Strecke durch 100, multipliziere mit dem Verbrauch pro 100 km und dem Literpreis. Beispiel: 350 km ÷ 100 × 6,5 l × 1,85 € ≈ 42,09 €."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie viel kostet mich das Fahren pro 100 km?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multipliziere einfach den Verbrauch pro 100 km mit dem Literpreis. Bei 6,5 l/100 km und 1,85 €/l sind das rund 12,03 € pro 100 km."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie kann ich meinen Spritverbrauch senken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vorausschauend fahren, früh hochschalten, korrekte Reifendrücke, unnötiges Gewicht und Dachaufbauten vermeiden und kurze Strecken bündeln. Zusammen senkt das den Verbrauch oft um 10–20 %."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="./" hreflang="de" aria-current="true">DE</a></li>
+        <li><a href="../../en/fuel-cost-calculator/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="../../fr/cout-carburant/" hreflang="fr" lang="fr">FR</a></li>
+        <li><a href="../../it/costo-carburante/" hreflang="it" lang="it">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Startseite</a> › <span>Spritkostenrechner</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">⛽</span>Spritkostenrechner</h1>
+      <p>Was kostet die Fahrt? Gib Strecke, Durchschnittsverbrauch und Kraftstoffpreis ein und erhalte die benötigte Kraftstoffmenge, die Gesamtkosten und die Kosten pro 100 km.</p>
+      <form class="calc-form" data-calc="fuel" novalidate>
+        <div class="fields">
+          <label>Strecke (km)<input type="text" inputmode="decimal" name="distance" placeholder="350"></label>
+          <label>Verbrauch (l/100 km)<input type="text" inputmode="decimal" name="consumption" placeholder="6,5"></label>
+          <label>Preis pro Liter<input type="text" inputmode="decimal" name="price" placeholder="1,85"></label>
+        </div>
+        <dl class="result-list">
+          <div><dt>Kraftstoff (l)</dt><dd data-out="liters">–</dd></div>
+          <div><dt>Kosten</dt><dd data-out="cost">–</dd></div>
+          <div><dt>Kosten / 100 km</dt><dd data-out="per100">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>Spritkosten berechnen: die Formel</h2>
+      <p>Die Kosten einer Fahrt ergeben sich aus drei Größen: der Strecke, dem Durchschnittsverbrauch deines Autos und dem aktuellen Kraftstoffpreis.</p>
+      <p class="formula">Kosten = Strecke ÷ 100 × Verbrauch × Literpreis</p>
+      <p>Beispiel: Für 350 km mit einem Verbrauch von 6,5 l/100 km brauchst du 22,75 Liter. Bei 1,85 € pro Liter kostet die Fahrt rund 42,09 € – das entspricht etwa 12,03 € pro 100 km.</p>
+      <p>Spar-Tipps: vorausschauend fahren und früh hochschalten, unnötigen Ballast und Dachträger entfernen, Reifendruck prüfen und Preise vergleichen – zwischen Autobahntankstelle und freier Tankstelle liegen oft mehr als 10 Cent pro Liter. Bei Fahrgemeinschaften teilst du die Gesamtkosten einfach durch die Zahl der Mitfahrer.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Häufige Fragen</h2>
+      <details>
+        <summary>Wie berechne ich die Spritkosten für eine Fahrt?</summary>
+        <p>Teile die Strecke durch 100, multipliziere mit dem Verbrauch pro 100 km und dem Literpreis. Beispiel: 350 km ÷ 100 × 6,5 l × 1,85 € ≈ 42,09 €.</p>
+      </details>
+      <details>
+        <summary>Wie viel kostet mich das Fahren pro 100 km?</summary>
+        <p>Multipliziere einfach den Verbrauch pro 100 km mit dem Literpreis. Bei 6,5 l/100 km und 1,85 €/l sind das rund 12,03 € pro 100 km.</p>
+      </details>
+      <details>
+        <summary>Wie kann ich meinen Spritverbrauch senken?</summary>
+        <p>Vorausschauend fahren, früh hochschalten, korrekte Reifendrücke, unnötiges Gewicht und Dachaufbauten vermeiden und kurze Strecken bündeln. Zusammen senkt das den Verbrauch oft um 10–20 %.</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Passende Rechner</h2>
+      <nav class="calc-nav" aria-label="Passende Rechner">
+        <a href="../dreisatzrechner/">⚖️ Dreisatzrechner</a>
+        <a href="../prozentrechner/">％ Prozentrechner</a>
+        <a href="../rabatt-rechner/">🏷️ Rabatt-Rechner</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Sprachen">
+        <a href="./" hreflang="de" aria-current="true">Deutsch</a>
+        <a href="../../en/fuel-cost-calculator/" hreflang="en" lang="en">English</a>
+        <a href="../../fr/cout-carburant/" hreflang="fr" lang="fr">Français</a>
+        <a href="../../it/costo-carburante/" hreflang="it" lang="it">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – kostenlose Online-Rechner. Alle Ergebnisse ohne Gewähr.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Fehler", "bmi_label": "BMI", "bmi_under": "Untergewicht", "bmi_normal": "Normalgewicht", "bmi_over": "Übergewicht", "bmi_obese": "Adipositas", "weeks": "Wochen", "days": "Tage"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

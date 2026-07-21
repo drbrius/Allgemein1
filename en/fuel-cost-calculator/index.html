@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fuel Cost Calculator – Cost of a Trip | CalcMate</title>
+  <meta name="description" content="Fuel cost calculator: fuel needed and cost of a trip from distance, consumption per 100 km and fuel price – plus cost per 100 km. Free and fast.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/spritkostenrechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/cout-carburant/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/costo-carburante/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fuel Cost Calculator – Cost of a Trip | CalcMate">
+  <meta property="og:description" content="Fuel cost calculator: fuel needed and cost of a trip from distance, consumption per 100 km and fuel price – plus cost per 100 km. Free and fast.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/">
+  <meta property="og:locale" content="en">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drbrius.github.io/Allgemein1/en/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Fuel Cost Calculator",
+      "item": "https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Fuel Cost Calculator – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "en",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Fuel cost calculator: fuel needed and cost of a trip from distance, consumption per 100 km and fuel price – plus cost per 100 km. Free and fast."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate the fuel cost of a trip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divide the distance by 100, multiply by the consumption per 100 km and by the price per litre. Example: 350 km ÷ 100 × 6.5 l × 1.85 ≈ 42.09."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does driving cost per 100 km?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simply multiply the consumption per 100 km by the fuel price. At 6.5 l/100 km and 1.85 per litre that is about 12.03 per 100 km."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I lower my fuel consumption?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Drive smoothly, shift up early, keep tyres properly inflated, avoid unnecessary weight and roof attachments, and combine short trips. Together this often cuts consumption by 10–20%."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="../../de/spritkostenrechner/" hreflang="de" lang="de">DE</a></li>
+        <li><a href="./" hreflang="en" aria-current="true">EN</a></li>
+        <li><a href="../../fr/cout-carburant/" hreflang="fr" lang="fr">FR</a></li>
+        <li><a href="../../it/costo-carburante/" hreflang="it" lang="it">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Home</a> › <span>Fuel Cost Calculator</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">⛽</span>Fuel Cost Calculator</h1>
+      <p>What does the trip cost? Enter the distance, your car's average consumption and the fuel price to get the amount of fuel needed, the total cost and the cost per 100 km.</p>
+      <form class="calc-form" data-calc="fuel" novalidate>
+        <div class="fields">
+          <label>Distance (km)<input type="text" inputmode="decimal" name="distance" placeholder="350"></label>
+          <label>Consumption (l/100 km)<input type="text" inputmode="decimal" name="consumption" placeholder="6.5"></label>
+          <label>Price per litre<input type="text" inputmode="decimal" name="price" placeholder="1.85"></label>
+        </div>
+        <dl class="result-list">
+          <div><dt>Fuel (l)</dt><dd data-out="liters">–</dd></div>
+          <div><dt>Cost</dt><dd data-out="cost">–</dd></div>
+          <div><dt>Cost / 100 km</dt><dd data-out="per100">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>How to calculate fuel costs</h2>
+      <p>The cost of a trip follows from three inputs: the distance, your car's average consumption and the current fuel price.</p>
+      <p class="formula">cost = distance ÷ 100 × consumption × price per litre</p>
+      <p>Example: for 350 km at a consumption of 6.5 l/100 km you need 22.75 litres. At 1.85 per litre the trip costs about 42.09 – roughly 12.03 per 100 km.</p>
+      <p>Saving tips: drive smoothly and shift up early, remove unnecessary weight and roof racks, check your tyre pressure and compare fuel prices – stations can differ by more than 10 cents per litre. In a carpool, simply divide the total cost by the number of passengers.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Frequently Asked Questions</h2>
+      <details>
+        <summary>How do I calculate the fuel cost of a trip?</summary>
+        <p>Divide the distance by 100, multiply by the consumption per 100 km and by the price per litre. Example: 350 km ÷ 100 × 6.5 l × 1.85 ≈ 42.09.</p>
+      </details>
+      <details>
+        <summary>What does driving cost per 100 km?</summary>
+        <p>Simply multiply the consumption per 100 km by the fuel price. At 6.5 l/100 km and 1.85 per litre that is about 12.03 per 100 km.</p>
+      </details>
+      <details>
+        <summary>How can I lower my fuel consumption?</summary>
+        <p>Drive smoothly, shift up early, keep tyres properly inflated, avoid unnecessary weight and roof attachments, and combine short trips. Together this often cuts consumption by 10–20%.</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Related calculators</h2>
+      <nav class="calc-nav" aria-label="Related calculators">
+        <a href="../rule-of-three/">⚖️ Rule of Three</a>
+        <a href="../percentage-calculator/">％ Percentage Calculator</a>
+        <a href="../discount-calculator/">🏷️ Discount Calculator</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Languages">
+        <a href="../../de/spritkostenrechner/" hreflang="de" lang="de">Deutsch</a>
+        <a href="./" hreflang="en" aria-current="true">English</a>
+        <a href="../../fr/cout-carburant/" hreflang="fr" lang="fr">Français</a>
+        <a href="../../it/costo-carburante/" hreflang="it" lang="it">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – free online calculators. All results are provided without guarantee.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Error", "bmi_label": "BMI", "bmi_under": "Underweight", "bmi_normal": "Normal weight", "bmi_over": "Overweight", "bmi_obese": "Obesity", "weeks": "weeks", "days": "days"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

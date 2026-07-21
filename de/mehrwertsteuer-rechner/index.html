@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mehrwertsteuer-Rechner – MwSt berechnen (netto ↔ brutto) | CalcMate</title>
+  <meta name="description" content="MwSt-Rechner online: Mehrwertsteuer aufschlagen oder herausrechnen – netto zu brutto und brutto zu netto, mit 19 %, 7 % oder beliebigem Steuersatz.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/de/mehrwertsteuer-rechner/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/mehrwertsteuer-rechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/vat-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-tva/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-iva/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/vat-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mehrwertsteuer-Rechner – MwSt berechnen (netto ↔ brutto) | CalcMate">
+  <meta property="og:description" content="MwSt-Rechner online: Mehrwertsteuer aufschlagen oder herausrechnen – netto zu brutto und brutto zu netto, mit 19 %, 7 % oder beliebigem Steuersatz.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/de/mehrwertsteuer-rechner/">
+  <meta property="og:locale" content="de">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://drbrius.github.io/Allgemein1/de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "MwSt-Rechner",
+      "item": "https://drbrius.github.io/Allgemein1/de/mehrwertsteuer-rechner/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "MwSt-Rechner – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/de/mehrwertsteuer-rechner/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "de",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "MwSt-Rechner online: Mehrwertsteuer aufschlagen oder herausrechnen – netto zu brutto und brutto zu netto, mit 19 %, 7 % oder beliebigem Steuersatz."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie wird die Mehrwertsteuer berechnet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Um die MwSt aufzuschlagen, multipliziere den Nettopreis mit (1 + Steuersatz ÷ 100) – bei 19 % also mit 1,19. Um sie aus einem Bruttopreis herauszurechnen, teile durch denselben Faktor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie rechne ich die MwSt aus einem Bruttobetrag heraus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Teile den Bruttobetrag durch 1,19 (bei 19 %) bzw. 1,07 (bei 7 %). Beispiel: 119 € brutto ÷ 1,19 = 100 € netto, die MwSt beträgt 19 €. Einfach 19 % vom Brutto abzuziehen wäre falsch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Mehrwertsteuersätze gelten in Deutschland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Regelsatz beträgt 19 %. Der ermäßigte Satz von 7 % gilt z. B. für Lebensmittel, Bücher, Zeitungen und den öffentlichen Nahverkehr."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="./" hreflang="de" aria-current="true">DE</a></li>
+        <li><a href="../../en/vat-calculator/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="../../fr/calcul-tva/" hreflang="fr" lang="fr">FR</a></li>
+        <li><a href="../../it/calcolo-iva/" hreflang="it" lang="it">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Startseite</a> › <span>MwSt-Rechner</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">🧾</span>Mehrwertsteuer-Rechner</h1>
+      <p>Mehrwertsteuer in einem Schritt aufschlagen oder herausrechnen: von netto zu brutto oder von brutto zu netto mit beliebigem Steuersatz. In Deutschland gilt der Regelsatz von 19 % (ermäßigt 7 %), in Österreich 20 % und in der Schweiz 8,1 %.</p>
+      <form class="calc-form" data-calc="vat" novalidate>
+        <div class="fields">
+          <label>Betrag<input type="text" inputmode="decimal" name="amount" placeholder="100"></label>
+          <label>Steuersatz (%)<input type="text" inputmode="decimal" name="rate" value="19"></label>
+        </div>
+        <fieldset>
+          <label><input type="radio" name="dir" value="net2gross" checked> Netto → Brutto (MwSt aufschlagen)</label>
+          <label><input type="radio" name="dir" value="gross2net"> Brutto → Netto (MwSt herausrechnen)</label>
+        </fieldset>
+        <dl class="result-list">
+          <div><dt>Netto</dt><dd data-out="net">–</dd></div>
+          <div><dt>MwSt</dt><dd data-out="vat">–</dd></div>
+          <div><dt>Brutto</dt><dd data-out="gross">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>MwSt berechnen: die Formeln</h2>
+      <p>Vom Nettobetrag zum Bruttobetrag führt ein einziger Faktor. Bei 19 % Mehrwertsteuer ist das 1,19 – beim ermäßigten Satz von 7 % entsprechend 1,07.</p>
+      <p class="formula">Brutto = Netto × (1 + Satz ÷ 100)&nbsp;&nbsp;·&nbsp;&nbsp;Netto = Brutto ÷ (1 + Satz ÷ 100)</p>
+      <p>Beispiel: 100 € netto ergeben bei 19 % genau 119 € brutto, die enthaltene MwSt beträgt 19 €. Umgekehrt stecken in 119 € brutto 119 ÷ 1,19 = 100 € netto. Ein häufiger Fehler ist, aus dem Bruttobetrag einfach 19 % abzuziehen – das ergibt zu wenig, weil sich die 19 % auf den Nettobetrag beziehen.</p>
+      <p>Der ermäßigte Satz von 7 % gilt in Deutschland unter anderem für Lebensmittel, Bücher, Zeitungen und den öffentlichen Nahverkehr. In Österreich beträgt der Regelsatz 20 % (ermäßigt 10 % bzw. 13 %), in der Schweiz 8,1 % (reduziert 2,6 %).</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Häufige Fragen</h2>
+      <details>
+        <summary>Wie wird die Mehrwertsteuer berechnet?</summary>
+        <p>Um die MwSt aufzuschlagen, multipliziere den Nettopreis mit (1 + Steuersatz ÷ 100) – bei 19 % also mit 1,19. Um sie aus einem Bruttopreis herauszurechnen, teile durch denselben Faktor.</p>
+      </details>
+      <details>
+        <summary>Wie rechne ich die MwSt aus einem Bruttobetrag heraus?</summary>
+        <p>Teile den Bruttobetrag durch 1,19 (bei 19 %) bzw. 1,07 (bei 7 %). Beispiel: 119 € brutto ÷ 1,19 = 100 € netto, die MwSt beträgt 19 €. Einfach 19 % vom Brutto abzuziehen wäre falsch.</p>
+      </details>
+      <details>
+        <summary>Welche Mehrwertsteuersätze gelten in Deutschland?</summary>
+        <p>Der Regelsatz beträgt 19 %. Der ermäßigte Satz von 7 % gilt z. B. für Lebensmittel, Bücher, Zeitungen und den öffentlichen Nahverkehr.</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Passende Rechner</h2>
+      <nav class="calc-nav" aria-label="Passende Rechner">
+        <a href="../prozentrechner/">％ Prozentrechner</a>
+        <a href="../rabatt-rechner/">🏷️ Rabatt-Rechner</a>
+        <a href="../kreditrechner/">🏦 Kreditrechner</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Sprachen">
+        <a href="./" hreflang="de" aria-current="true">Deutsch</a>
+        <a href="../../en/vat-calculator/" hreflang="en" lang="en">English</a>
+        <a href="../../fr/calcul-tva/" hreflang="fr" lang="fr">Français</a>
+        <a href="../../it/calcolo-iva/" hreflang="it" lang="it">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – kostenlose Online-Rechner. Alle Ergebnisse ohne Gewähr.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Fehler", "bmi_label": "BMI", "bmi_under": "Untergewicht", "bmi_normal": "Normalgewicht", "bmi_over": "Übergewicht", "bmi_obese": "Adipositas", "weeks": "Wochen", "days": "Tage"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

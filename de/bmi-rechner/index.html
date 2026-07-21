@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BMI-Rechner – Body-Mass-Index berechnen | CalcMate</title>
+  <meta name="description" content="BMI online berechnen: Body-Mass-Index aus Gewicht und Größe inklusive Einordnung von Untergewicht bis Adipositas. Kostenlos und ohne Anmeldung.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/de/bmi-rechner/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/bmi-rechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/bmi-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-imc/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-imc/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/bmi-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BMI-Rechner – Body-Mass-Index berechnen | CalcMate">
+  <meta property="og:description" content="BMI online berechnen: Body-Mass-Index aus Gewicht und Größe inklusive Einordnung von Untergewicht bis Adipositas. Kostenlos und ohne Anmeldung.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/de/bmi-rechner/">
+  <meta property="og:locale" content="de">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://drbrius.github.io/Allgemein1/de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "BMI-Rechner",
+      "item": "https://drbrius.github.io/Allgemein1/de/bmi-rechner/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "BMI-Rechner – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/de/bmi-rechner/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "de",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "BMI online berechnen: Body-Mass-Index aus Gewicht und Größe inklusive Einordnung von Untergewicht bis Adipositas. Kostenlos und ohne Anmeldung."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie wird der BMI berechnet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Body-Mass-Index ist das Gewicht in Kilogramm geteilt durch das Quadrat der Körpergröße in Metern: BMI = kg / m². Beispiel: 70 kg bei 1,75 m ergeben einen BMI von etwa 22,9."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welcher BMI gilt als normal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bei Erwachsenen gilt laut WHO ein BMI von 18,5 bis 24,9 als Normalgewicht. Unter 18,5 spricht man von Untergewicht, ab 25 von Übergewicht und ab 30 von Adipositas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie aussagekräftig ist der BMI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der BMI ist nur ein grober Richtwert. Er unterscheidet nicht zwischen Muskel- und Fettmasse und berücksichtigt weder Alter noch Geschlecht oder Statur. Für eine fundierte Einschätzung sind zusätzliche Messwerte und ärztlicher Rat sinnvoll."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="./" hreflang="de" aria-current="true">DE</a></li>
+        <li><a href="../../en/bmi-calculator/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="../../fr/calcul-imc/" hreflang="fr" lang="fr">FR</a></li>
+        <li><a href="../../it/calcolo-imc/" hreflang="it" lang="it">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Startseite</a> › <span>BMI-Rechner</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">❤️</span>BMI-Rechner</h1>
+      <p>Berechne deinen Body-Mass-Index (BMI) aus Gewicht und Körpergröße. Der BMI ist ein schneller Richtwert für ein gesundes Körpergewicht: Werte zwischen 18,5 und 25 gelten bei Erwachsenen als Normalgewicht.</p>
+      <form class="calc-form" data-calc="bmi" novalidate>
+        <div class="fields">
+          <label>Gewicht (kg)<input type="text" inputmode="decimal" name="weight" placeholder="70"></label>
+          <label>Größe (cm)<input type="text" inputmode="decimal" name="height" placeholder="175"></label>
+        </div>
+        <output class="result" aria-live="polite"></output>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>So wird der BMI berechnet</h2>
+      <p>Der Body-Mass-Index setzt das Körpergewicht ins Verhältnis zur Körpergröße. Er wurde von der Weltgesundheitsorganisation (WHO) als grober Richtwert für Erwachsene definiert.</p>
+      <p class="formula">BMI = Gewicht (kg) ÷ Größe (m)²</p>
+      <p>Beispiel: 70 kg bei 1,75 m ergeben 70 ÷ (1,75 × 1,75) ≈ 22,9 – Normalgewicht. Die WHO-Einteilung: unter 18,5 Untergewicht, 18,5–24,9 Normalgewicht, 25–29,9 Übergewicht, ab 30 Adipositas.</p>
+      <p>Der BMI unterscheidet nicht zwischen Muskel- und Fettmasse: Sportliche Menschen mit viel Muskulatur können einen hohen BMI bei niedrigem Körperfettanteil haben. Für Kinder, Schwangere und ältere Menschen gelten eigene Referenzwerte – im Zweifel ärztlichen Rat einholen.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Häufige Fragen</h2>
+      <details>
+        <summary>Wie wird der BMI berechnet?</summary>
+        <p>Der Body-Mass-Index ist das Gewicht in Kilogramm geteilt durch das Quadrat der Körpergröße in Metern: BMI = kg / m². Beispiel: 70 kg bei 1,75 m ergeben einen BMI von etwa 22,9.</p>
+      </details>
+      <details>
+        <summary>Welcher BMI gilt als normal?</summary>
+        <p>Bei Erwachsenen gilt laut WHO ein BMI von 18,5 bis 24,9 als Normalgewicht. Unter 18,5 spricht man von Untergewicht, ab 25 von Übergewicht und ab 30 von Adipositas.</p>
+      </details>
+      <details>
+        <summary>Wie aussagekräftig ist der BMI?</summary>
+        <p>Der BMI ist nur ein grober Richtwert. Er unterscheidet nicht zwischen Muskel- und Fettmasse und berücksichtigt weder Alter noch Geschlecht oder Statur. Für eine fundierte Einschätzung sind zusätzliche Messwerte und ärztlicher Rat sinnvoll.</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Passende Rechner</h2>
+      <nav class="calc-nav" aria-label="Passende Rechner">
+        <a href="../tagerechner/">📅 Tagerechner</a>
+        <a href="../prozentrechner/">％ Prozentrechner</a>
+        <a href="../taschenrechner/">🧮 Taschenrechner</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Sprachen">
+        <a href="./" hreflang="de" aria-current="true">Deutsch</a>
+        <a href="../../en/bmi-calculator/" hreflang="en" lang="en">English</a>
+        <a href="../../fr/calcul-imc/" hreflang="fr" lang="fr">Français</a>
+        <a href="../../it/calcolo-imc/" hreflang="it" lang="it">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – kostenlose Online-Rechner. Alle Ergebnisse ohne Gewähr.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Fehler", "bmi_label": "BMI", "bmi_under": "Untergewicht", "bmi_normal": "Normalgewicht", "bmi_over": "Übergewicht", "bmi_obese": "Adipositas", "weeks": "Wochen", "days": "Tage"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

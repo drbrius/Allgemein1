@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculatrice en ligne – gratuite et sans inscription | CalcMate</title>
+  <meta name="description" content="Calculatrice en ligne gratuite avec parenthèses et pourcentage : addition, soustraction, multiplication et division – directement dans le navigateur.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/fr/calculatrice/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/taschenrechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calculatrice/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolatrice/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calculatrice en ligne – gratuite et sans inscription | CalcMate">
+  <meta property="og:description" content="Calculatrice en ligne gratuite avec parenthèses et pourcentage : addition, soustraction, multiplication et division – directement dans le navigateur.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/fr/calculatrice/">
+  <meta property="og:locale" content="fr">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://drbrius.github.io/Allgemein1/fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Calculatrice",
+      "item": "https://drbrius.github.io/Allgemein1/fr/calculatrice/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculatrice – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/fr/calculatrice/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "fr",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Calculatrice en ligne gratuite avec parenthèses et pourcentage : addition, soustraction, multiplication et division – directement dans le navigateur."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "La calculatrice respecte-t-elle la priorité des opérations ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. La multiplication et la division sont évaluées avant l'addition et la soustraction, et les parenthèses passent toujours en premier. Ainsi 2 + 3 × 4 donne 14, tandis que (2 + 3) × 4 donne 20."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment fonctionne la touche pourcentage ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La touche % divise le nombre qui la précède par 100 : 50 % devient 0,5. Par exemple, saisir 80 × 25 % donne 20."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je utiliser mon clavier ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Cliquez dans le champ d'affichage et tapez votre expression directement – chiffres, + − × ÷ (ou * et /), parenthèses et virgule. Appuyez sur Entrée ou = pour calculer, sur Échap pour effacer."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="../../de/taschenrechner/" hreflang="de" lang="de">DE</a></li>
+        <li><a href="../../en/calculator/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="./" hreflang="fr" aria-current="true">FR</a></li>
+        <li><a href="../../it/calcolatrice/" hreflang="it" lang="it">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Accueil</a> › <span>Calculatrice</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">🧮</span>Calculatrice en ligne</h1>
+      <p>Une calculatrice gratuite pour l'addition, la soustraction, la multiplication et la division – avec parenthèses et pourcentage. Saisissez une expression ou utilisez le clavier, puis appuyez sur <kbd>=</kbd> ou Entrée.</p>
+      <div class="calculator" data-calculator>
+        <input class="calc-display" type="text" inputmode="decimal" aria-label="Écran de la calculatrice" placeholder="0" autocomplete="off">
+        <div class="calc-keys">
+          <button type="button" class="danger" data-key="C">C</button>
+          <button type="button" class="op" data-key="(">(</button>
+          <button type="button" class="op" data-key=")">)</button>
+          <button type="button" class="danger" data-key="back">⌫</button>
+          <button type="button" data-key="7">7</button>
+          <button type="button" data-key="8">8</button>
+          <button type="button" data-key="9">9</button>
+          <button type="button" class="op" data-key="÷">÷</button>
+          <button type="button" data-key="4">4</button>
+          <button type="button" data-key="5">5</button>
+          <button type="button" data-key="6">6</button>
+          <button type="button" class="op" data-key="×">×</button>
+          <button type="button" data-key="1">1</button>
+          <button type="button" data-key="2">2</button>
+          <button type="button" data-key="3">3</button>
+          <button type="button" class="op" data-key="−">−</button>
+          <button type="button" data-key="0">0</button>
+          <button type="button" data-key=",">,</button>
+          <button type="button" class="op" data-key="%">%</button>
+          <button type="button" class="op" data-key="+">+</button>
+          <button type="button" class="equals" data-key="=">=</button>
+        </div>
+      </div>
+    </section>
+
+    <article class="seo-text">
+      <h2>Comment fonctionne la calculatrice en ligne</h2>
+      <p>La calculatrice gère les quatre opérations de base, les parenthèses et le pourcentage, en respectant la priorité des opérations : multiplication et division sont évaluées avant addition et soustraction, et les parenthèses ont toujours la priorité. Vous pouvez saisir une expression complète et ne l'évaluer qu'à la fin.</p>
+      <p class="formula">(12 + 8) × 2,5 = 50&nbsp;&nbsp;·&nbsp;&nbsp;200 − 15 % = 200 − 0,15 × 200 = 170</p>
+      <p>La touche pourcentage convertit le nombre qui la précède en centièmes : 15 % devient 0,15, ce qui permet d'appliquer majorations et réductions directement dans l'expression. La virgule et le point décimal sont tous deux acceptés.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Questions fréquentes</h2>
+      <details>
+        <summary>La calculatrice respecte-t-elle la priorité des opérations ?</summary>
+        <p>Oui. La multiplication et la division sont évaluées avant l'addition et la soustraction, et les parenthèses passent toujours en premier. Ainsi 2 + 3 × 4 donne 14, tandis que (2 + 3) × 4 donne 20.</p>
+      </details>
+      <details>
+        <summary>Comment fonctionne la touche pourcentage ?</summary>
+        <p>La touche % divise le nombre qui la précède par 100 : 50 % devient 0,5. Par exemple, saisir 80 × 25 % donne 20.</p>
+      </details>
+      <details>
+        <summary>Puis-je utiliser mon clavier ?</summary>
+        <p>Oui. Cliquez dans le champ d'affichage et tapez votre expression directement – chiffres, + − × ÷ (ou * et /), parenthèses et virgule. Appuyez sur Entrée ou = pour calculer, sur Échap pour effacer.</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Calculatrices associées</h2>
+      <nav class="calc-nav" aria-label="Calculatrices associées">
+        <a href="../calcul-pourcentage/">％ Calcul de pourcentage</a>
+        <a href="../regle-de-trois/">⚖️ Règle de trois</a>
+        <a href="../calcul-tva/">🧾 Calculateur de TVA</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Langues">
+        <a href="../../de/taschenrechner/" hreflang="de" lang="de">Deutsch</a>
+        <a href="../../en/calculator/" hreflang="en" lang="en">English</a>
+        <a href="./" hreflang="fr" aria-current="true">Français</a>
+        <a href="../../it/calcolatrice/" hreflang="it" lang="it">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – calculatrices en ligne gratuites. Résultats fournis sans garantie.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Erreur", "bmi_label": "IMC", "bmi_under": "Insuffisance pondérale", "bmi_normal": "Corpulence normale", "bmi_over": "Surpoids", "bmi_obese": "Obésité", "weeks": "semaines", "days": "jours"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

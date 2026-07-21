@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Days Between Dates – Date Difference Calculator | CalcMate</title>
+  <meta name="description" content="Count the days between two dates online: pick a start and end date to get the difference in days and weeks – free, with leap years handled correctly.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/en/days-between-dates/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/tagerechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/days-between-dates/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/jours-entre-deux-dates/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/giorni-tra-due-date/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/days-between-dates/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Days Between Dates – Date Difference Calculator | CalcMate">
+  <meta property="og:description" content="Count the days between two dates online: pick a start and end date to get the difference in days and weeks – free, with leap years handled correctly.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/en/days-between-dates/">
+  <meta property="og:locale" content="en">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drbrius.github.io/Allgemein1/en/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Days Between Dates",
+      "item": "https://drbrius.github.io/Allgemein1/en/days-between-dates/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Days Between Dates – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/en/days-between-dates/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "en",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Count the days between two dates online: pick a start and end date to get the difference in days and weeks – free, with leap years handled correctly."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the end date included in the count?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, the calculator shows the difference between the two dates: from 1 January to 2 January is 1 day. If the end date should be included, add 1 to the result."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the calculator account for leap years?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It works with real calendar dates, so leap years and varying month lengths are automatically handled correctly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many days are there in a year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A common year has 365 days, a leap year 366. Leap years are years divisible by 4 – but full centuries only if they are divisible by 400 (2000 was a leap year, 2100 will not be)."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="../../de/tagerechner/" hreflang="de" lang="de">DE</a></li>
+        <li><a href="./" hreflang="en" aria-current="true">EN</a></li>
+        <li><a href="../../fr/jours-entre-deux-dates/" hreflang="fr" lang="fr">FR</a></li>
+        <li><a href="../../it/giorni-tra-due-date/" hreflang="it" lang="it">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Home</a> › <span>Days Between Dates</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">📅</span>Days Between Dates</h1>
+      <p>How many days are there between two dates? Pick a start and an end date – the calculator counts the calendar days and converts them into weeks. Handy for deadlines, holidays, countdowns and project planning.</p>
+      <form class="calc-form" data-calc="datediff" novalidate>
+        <div class="fields">
+          <label>Start date<input type="date" name="start"></label>
+          <label>End date<input type="date" name="end"></label>
+        </div>
+        <dl class="result-list">
+          <div><dt>Days</dt><dd data-out="days">–</dd></div>
+          <div><dt>Weeks</dt><dd data-out="weeks">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>How the day counter works</h2>
+      <p>The calculator determines the true calendar difference between the two dates – leap years and the different month lengths are handled automatically. The end date is not counted: from 1 January to 2 January is 1 day.</p>
+      <p class="formula">1 January 2026 → 1 March 2026 = 59 days (31 days of January + 28 days of February)</p>
+      <p>If the end date should count as well (for example, “holiday from 5 to 9 August – how many days off?”), simply add 1 to the result: 4 + 1 = 5 days. For legal deadlines, either counting convention may apply depending on the jurisdiction – check the applicable rules when it matters.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Frequently Asked Questions</h2>
+      <details>
+        <summary>Is the end date included in the count?</summary>
+        <p>No, the calculator shows the difference between the two dates: from 1 January to 2 January is 1 day. If the end date should be included, add 1 to the result.</p>
+      </details>
+      <details>
+        <summary>Does the calculator account for leap years?</summary>
+        <p>Yes. It works with real calendar dates, so leap years and varying month lengths are automatically handled correctly.</p>
+      </details>
+      <details>
+        <summary>How many days are there in a year?</summary>
+        <p>A common year has 365 days, a leap year 366. Leap years are years divisible by 4 – but full centuries only if they are divisible by 400 (2000 was a leap year, 2100 will not be).</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Related calculators</h2>
+      <nav class="calc-nav" aria-label="Related calculators">
+        <a href="../calculator/">🧮 Calculator</a>
+        <a href="../rule-of-three/">⚖️ Rule of Three</a>
+        <a href="../bmi-calculator/">❤️ BMI Calculator</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Languages">
+        <a href="../../de/tagerechner/" hreflang="de" lang="de">Deutsch</a>
+        <a href="./" hreflang="en" aria-current="true">English</a>
+        <a href="../../fr/jours-entre-deux-dates/" hreflang="fr" lang="fr">Français</a>
+        <a href="../../it/giorni-tra-due-date/" hreflang="it" lang="it">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – free online calculators. All results are provided without guarantee.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Error", "bmi_label": "BMI", "bmi_under": "Underweight", "bmi_normal": "Normal weight", "bmi_over": "Overweight", "bmi_obese": "Obesity", "weeks": "weeks", "days": "days"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

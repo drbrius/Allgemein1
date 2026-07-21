@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tagerechner – Tage zwischen zwei Daten berechnen | CalcMate</title>
+  <meta name="description" content="Tage zwischen zwei Daten online zählen: Start- und Enddatum wählen und die Differenz in Tagen und Wochen anzeigen – kostenlos, ohne Anmeldung.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/de/tagerechner/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/tagerechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/days-between-dates/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/jours-entre-deux-dates/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/giorni-tra-due-date/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/days-between-dates/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tagerechner – Tage zwischen zwei Daten berechnen | CalcMate">
+  <meta property="og:description" content="Tage zwischen zwei Daten online zählen: Start- und Enddatum wählen und die Differenz in Tagen und Wochen anzeigen – kostenlos, ohne Anmeldung.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/de/tagerechner/">
+  <meta property="og:locale" content="de">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://drbrius.github.io/Allgemein1/de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tagerechner",
+      "item": "https://drbrius.github.io/Allgemein1/de/tagerechner/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Tagerechner – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/de/tagerechner/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "de",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Tage zwischen zwei Daten online zählen: Start- und Enddatum wählen und die Differenz in Tagen und Wochen anzeigen – kostenlos, ohne Anmeldung."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wird das Enddatum mitgezählt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein, der Rechner zeigt die Differenz zwischen beiden Daten: Vom 1. zum 2. Januar ist es 1 Tag. Soll das Enddatum mitzählen, addiere einfach 1 zum Ergebnis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Berücksichtigt der Rechner Schaltjahre?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Gerechnet wird mit echten Kalenderdaten, Schaltjahre und unterschiedliche Monatslängen fließen automatisch korrekt ein."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie viele Tage hat ein Jahr?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ein normales Jahr hat 365 Tage, ein Schaltjahr 366. Schaltjahre sind durch 4 teilbare Jahre – volle Jahrhunderte allerdings nur, wenn sie durch 400 teilbar sind (2000 war ein Schaltjahr, 2100 nicht)."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="./" hreflang="de" aria-current="true">DE</a></li>
+        <li><a href="../../en/days-between-dates/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="../../fr/jours-entre-deux-dates/" hreflang="fr" lang="fr">FR</a></li>
+        <li><a href="../../it/giorni-tra-due-date/" hreflang="it" lang="it">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Startseite</a> › <span>Tagerechner</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">📅</span>Tagerechner: Tage zwischen zwei Daten</h1>
+      <p>Wie viele Tage liegen zwischen zwei Terminen? Wähle Start- und Enddatum – der Rechner zählt die Kalendertage und rechnet sie in Wochen um. Praktisch für Fristen, Urlaub, Countdown oder Projektplanung.</p>
+      <form class="calc-form" data-calc="datediff" novalidate>
+        <div class="fields">
+          <label>Startdatum<input type="date" name="start"></label>
+          <label>Enddatum<input type="date" name="end"></label>
+        </div>
+        <dl class="result-list">
+          <div><dt>Tage</dt><dd data-out="days">–</dd></div>
+          <div><dt>Wochen</dt><dd data-out="weeks">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>So zählt der Tagerechner</h2>
+      <p>Der Rechner ermittelt die echte Kalenderdifferenz zwischen beiden Daten – Schaltjahre und unterschiedliche Monatslängen werden automatisch berücksichtigt. Das Enddatum wird dabei nicht mitgezählt: Vom 1. zum 2. Januar ist es 1 Tag.</p>
+      <p class="formula">1. Januar 2026 → 1. März 2026 = 59 Tage (31 Tage Januar + 28 Tage Februar)</p>
+      <p>Soll das Enddatum mitzählen (z. B. „Urlaub vom 5. bis 9. August – wie viele Urlaubstage?“), addiere einfach 1 zum Ergebnis: 4 + 1 = 5 Tage. Für Fristen gilt je nach Kontext die eine oder andere Zählweise – im Zweifel die maßgebliche Regelung prüfen.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Häufige Fragen</h2>
+      <details>
+        <summary>Wird das Enddatum mitgezählt?</summary>
+        <p>Nein, der Rechner zeigt die Differenz zwischen beiden Daten: Vom 1. zum 2. Januar ist es 1 Tag. Soll das Enddatum mitzählen, addiere einfach 1 zum Ergebnis.</p>
+      </details>
+      <details>
+        <summary>Berücksichtigt der Rechner Schaltjahre?</summary>
+        <p>Ja. Gerechnet wird mit echten Kalenderdaten, Schaltjahre und unterschiedliche Monatslängen fließen automatisch korrekt ein.</p>
+      </details>
+      <details>
+        <summary>Wie viele Tage hat ein Jahr?</summary>
+        <p>Ein normales Jahr hat 365 Tage, ein Schaltjahr 366. Schaltjahre sind durch 4 teilbare Jahre – volle Jahrhunderte allerdings nur, wenn sie durch 400 teilbar sind (2000 war ein Schaltjahr, 2100 nicht).</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Passende Rechner</h2>
+      <nav class="calc-nav" aria-label="Passende Rechner">
+        <a href="../taschenrechner/">🧮 Taschenrechner</a>
+        <a href="../dreisatzrechner/">⚖️ Dreisatzrechner</a>
+        <a href="../bmi-rechner/">❤️ BMI-Rechner</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Sprachen">
+        <a href="./" hreflang="de" aria-current="true">Deutsch</a>
+        <a href="../../en/days-between-dates/" hreflang="en" lang="en">English</a>
+        <a href="../../fr/jours-entre-deux-dates/" hreflang="fr" lang="fr">Français</a>
+        <a href="../../it/giorni-tra-due-date/" hreflang="it" lang="it">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – kostenlose Online-Rechner. Alle Ergebnisse ohne Gewähr.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Fehler", "bmi_label": "BMI", "bmi_under": "Untergewicht", "bmi_normal": "Normalgewicht", "bmi_over": "Übergewicht", "bmi_obese": "Adipositas", "weeks": "Wochen", "days": "Tage"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

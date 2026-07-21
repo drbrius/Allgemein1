@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calcul de remise – Prix après réduction | CalcMate</title>
+  <meta name="description" content="Calculez une remise en ligne : combien économisez-vous avec X % de réduction et quel est le prix final ? Gratuit, avec formule et exemples.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/fr/calcul-remise/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/rabatt-rechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/discount-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-remise/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-sconto/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/discount-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calcul de remise – Prix après réduction | CalcMate">
+  <meta property="og:description" content="Calculez une remise en ligne : combien économisez-vous avec X % de réduction et quel est le prix final ? Gratuit, avec formule et exemples.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/fr/calcul-remise/">
+  <meta property="og:locale" content="fr">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://drbrius.github.io/Allgemein1/fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Calcul de remise",
+      "item": "https://drbrius.github.io/Allgemein1/fr/calcul-remise/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calcul de remise – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/fr/calcul-remise/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "fr",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Calculez une remise en ligne : combien économisez-vous avec X % de réduction et quel est le prix final ? Gratuit, avec formule et exemples."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment calculer une remise ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multipliez le prix par le pourcentage de remise et divisez par 100 : c'est votre économie. Le prix final est le prix initial moins l'économie. Exemple : 80 € avec 25 % de remise = 20 € économisés, 60 € à payer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien coûte un article après 20 % de réduction ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multipliez le prix par 0,8. Exemple : 50 € × 0,8 = 40 €. En général : prix final = prix initial × (1 − remise ÷ 100)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment fonctionnent les remises cumulées, par exemple 20 % + 10 % ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les remises s'appliquent l'une après l'autre et ne s'additionnent pas. 100 € deviennent 80 € après 20 %, puis 72 € après 10 % supplémentaires. La remise totale est de 28 %, pas de 30 %."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="../../de/rabatt-rechner/" hreflang="de" lang="de">DE</a></li>
+        <li><a href="../../en/discount-calculator/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="./" hreflang="fr" aria-current="true">FR</a></li>
+        <li><a href="../../it/calcolo-sconto/" hreflang="it" lang="it">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Accueil</a> › <span>Calcul de remise</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">🏷️</span>Calcul de remise</h1>
+      <p>Calculez en quelques secondes combien vous économisez grâce à une remise et ce que coûte l'article après réduction : saisissez simplement le prix et le pourcentage de remise.</p>
+      <form class="calc-form" data-calc="discount" novalidate>
+        <div class="fields">
+          <label>Prix<input type="text" inputmode="decimal" name="price" placeholder="80"></label>
+          <label>Remise (%)<input type="text" inputmode="decimal" name="pct" placeholder="25"></label>
+        </div>
+        <dl class="result-list">
+          <div><dt>Économie</dt><dd data-out="saved">–</dd></div>
+          <div><dt>Prix final</dt><dd data-out="final">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>Comment calculer une remise</h2>
+      <p>Une remise est une réduction en pourcentage du prix initial. L'économie et le prix final découlent de deux formules simples :</p>
+      <p class="formula">économie = prix × remise ÷ 100&nbsp;&nbsp;·&nbsp;&nbsp;prix final = prix − économie</p>
+      <p>Exemple : un pull coûte 80 € et bénéficie de 25 % de réduction. L'économie est de 80 × 25 ÷ 100 = 20 €, le prix final de 60 €. Astuces de calcul mental : 25 % représentent un quart, 50 % la moitié et 10 % un dixième du prix.</p>
+      <p>Attention aux remises cumulées : « 20 % + 10 % » ne font pas 30 %. La seconde remise s'applique au prix déjà réduit – 100 € deviennent 80 €, puis 72 €, soit 28 % de réduction au total.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Questions fréquentes</h2>
+      <details>
+        <summary>Comment calculer une remise ?</summary>
+        <p>Multipliez le prix par le pourcentage de remise et divisez par 100 : c'est votre économie. Le prix final est le prix initial moins l'économie. Exemple : 80 € avec 25 % de remise = 20 € économisés, 60 € à payer.</p>
+      </details>
+      <details>
+        <summary>Combien coûte un article après 20 % de réduction ?</summary>
+        <p>Multipliez le prix par 0,8. Exemple : 50 € × 0,8 = 40 €. En général : prix final = prix initial × (1 − remise ÷ 100).</p>
+      </details>
+      <details>
+        <summary>Comment fonctionnent les remises cumulées, par exemple 20 % + 10 % ?</summary>
+        <p>Les remises s'appliquent l'une après l'autre et ne s'additionnent pas. 100 € deviennent 80 € après 20 %, puis 72 € après 10 % supplémentaires. La remise totale est de 28 %, pas de 30 %.</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Calculatrices associées</h2>
+      <nav class="calc-nav" aria-label="Calculatrices associées">
+        <a href="../calcul-pourcentage/">％ Calcul de pourcentage</a>
+        <a href="../calcul-tva/">🧾 Calculateur de TVA</a>
+        <a href="../calcul-pourboire/">🪙 Calcul de pourboire</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Langues">
+        <a href="../../de/rabatt-rechner/" hreflang="de" lang="de">Deutsch</a>
+        <a href="../../en/discount-calculator/" hreflang="en" lang="en">English</a>
+        <a href="./" hreflang="fr" aria-current="true">Français</a>
+        <a href="../../it/calcolo-sconto/" hreflang="it" lang="it">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – calculatrices en ligne gratuites. Résultats fournis sans garantie.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Erreur", "bmi_label": "IMC", "bmi_under": "Insuffisance pondérale", "bmi_normal": "Corpulence normale", "bmi_over": "Surpoids", "bmi_obese": "Obésité", "weeks": "semaines", "days": "jours"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

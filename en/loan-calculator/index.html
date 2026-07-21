@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loan Calculator – Monthly Payment, Interest &amp; Total Cost | CalcMate</title>
+  <meta name="description" content="Loan calculator online: monthly payment, total repayment and interest cost of a fixed-rate loan from amount, interest rate and term. Free, no sign-up.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/en/loan-calculator/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/kreditrechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/loan-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pret/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-prestito/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/loan-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Loan Calculator – Monthly Payment, Interest &amp; Total Cost | CalcMate">
+  <meta property="og:description" content="Loan calculator online: monthly payment, total repayment and interest cost of a fixed-rate loan from amount, interest rate and term. Free, no sign-up.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/en/loan-calculator/">
+  <meta property="og:locale" content="en">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drbrius.github.io/Allgemein1/en/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Loan Calculator",
+      "item": "https://drbrius.github.io/Allgemein1/en/loan-calculator/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Loan Calculator – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/en/loan-calculator/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "en",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Loan calculator online: monthly payment, total repayment and interest cost of a fixed-rate loan from amount, interest rate and term. Free, no sign-up."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is a monthly loan payment calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With the annuity formula: payment = principal × monthly rate ÷ (1 − (1 + monthly rate)^−months). Example: 20,000 at 5% over 5 years gives about 377.42 per month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between the nominal rate and the APR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The nominal rate is the pure interest on the outstanding balance. The APR additionally includes fees and the timing of payments, which makes it the better figure for comparing loan offers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I reduce the interest cost of a loan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Choose a shorter term, make extra repayments where allowed, compare offers by APR and only borrow what you really need. Even half a percentage point less interest saves a noticeable amount over the term."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="../../de/kreditrechner/" hreflang="de" lang="de">DE</a></li>
+        <li><a href="./" hreflang="en" aria-current="true">EN</a></li>
+        <li><a href="../../fr/calcul-pret/" hreflang="fr" lang="fr">FR</a></li>
+        <li><a href="../../it/calcolo-prestito/" hreflang="it" lang="it">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Home</a> › <span>Loan Calculator</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">🏦</span>Loan Calculator</h1>
+      <p>Calculate the monthly payment for a fixed-rate (amortizing) loan: enter the loan amount, the annual interest rate and the term – the calculator shows the monthly payment, total repayment and interest cost.</p>
+      <form class="calc-form" data-calc="loan" novalidate>
+        <div class="fields">
+          <label>Loan amount<input type="text" inputmode="decimal" name="principal" placeholder="20000"></label>
+          <label>Interest rate (% p.a.)<input type="text" inputmode="decimal" name="rate" placeholder="5"></label>
+          <label>Term (years)<input type="text" inputmode="decimal" name="years" placeholder="5"></label>
+        </div>
+        <dl class="result-list">
+          <div><dt>Monthly payment</dt><dd data-out="monthly">–</dd></div>
+          <div><dt>Total repayment</dt><dd data-out="total">–</dd></div>
+          <div><dt>Interest cost</dt><dd data-out="interest">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>How the monthly payment is calculated</h2>
+      <p>With an amortizing fixed-rate loan the monthly payment stays constant over the whole term. Each payment consists of an interest portion and a principal portion; as the outstanding balance shrinks, the interest portion falls and the principal portion grows.</p>
+      <p class="formula">payment = principal × i ÷ (1 − (1 + i)^−n)&nbsp;&nbsp;where&nbsp;&nbsp;i = annual rate ÷ 12 ÷ 100, n = months</p>
+      <p>Example: 20,000 at 5% over 5 years (60 monthly payments) gives a payment of about 377.42. In total you repay about 22,645, so the interest cost is roughly 2,645.</p>
+      <p>Note: the calculator uses the nominal interest rate. Lenders also quote an APR (annual percentage rate) that includes fees and makes offers comparable. Shorter terms mean higher payments but considerably lower total interest.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Frequently Asked Questions</h2>
+      <details>
+        <summary>How is a monthly loan payment calculated?</summary>
+        <p>With the annuity formula: payment = principal × monthly rate ÷ (1 − (1 + monthly rate)^−months). Example: 20,000 at 5% over 5 years gives about 377.42 per month.</p>
+      </details>
+      <details>
+        <summary>What is the difference between the nominal rate and the APR?</summary>
+        <p>The nominal rate is the pure interest on the outstanding balance. The APR additionally includes fees and the timing of payments, which makes it the better figure for comparing loan offers.</p>
+      </details>
+      <details>
+        <summary>How can I reduce the interest cost of a loan?</summary>
+        <p>Choose a shorter term, make extra repayments where allowed, compare offers by APR and only borrow what you really need. Even half a percentage point less interest saves a noticeable amount over the term.</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Related calculators</h2>
+      <nav class="calc-nav" aria-label="Related calculators">
+        <a href="../compound-interest-calculator/">📈 Compound Interest</a>
+        <a href="../vat-calculator/">🧾 VAT Calculator</a>
+        <a href="../percentage-calculator/">％ Percentage Calculator</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Languages">
+        <a href="../../de/kreditrechner/" hreflang="de" lang="de">Deutsch</a>
+        <a href="./" hreflang="en" aria-current="true">English</a>
+        <a href="../../fr/calcul-pret/" hreflang="fr" lang="fr">Français</a>
+        <a href="../../it/calcolo-prestito/" hreflang="it" lang="it">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – free online calculators. All results are provided without guarantee.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Error", "bmi_label": "BMI", "bmi_under": "Underweight", "bmi_normal": "Normal weight", "bmi_over": "Overweight", "bmi_obese": "Obesity", "weeks": "weeks", "days": "days"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

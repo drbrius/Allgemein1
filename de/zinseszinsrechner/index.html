@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zinseszinsrechner – Zinseszins online berechnen | CalcMate</title>
+  <meta name="description" content="Zinseszins online berechnen: Endkapital und Zinsertrag aus Startkapital, Zinssatz und Laufzeit – mit Formel, Beispiel und 72er-Regel. Kostenlos.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/de/zinseszinsrechner/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/zinseszinsrechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/compound-interest-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/interets-composes/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/interesse-composto/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/compound-interest-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zinseszinsrechner – Zinseszins online berechnen | CalcMate">
+  <meta property="og:description" content="Zinseszins online berechnen: Endkapital und Zinsertrag aus Startkapital, Zinssatz und Laufzeit – mit Formel, Beispiel und 72er-Regel. Kostenlos.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/de/zinseszinsrechner/">
+  <meta property="og:locale" content="de">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://drbrius.github.io/Allgemein1/de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Zinseszinsrechner",
+      "item": "https://drbrius.github.io/Allgemein1/de/zinseszinsrechner/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Zinseszinsrechner – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/de/zinseszinsrechner/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "de",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Zinseszins online berechnen: Endkapital und Zinsertrag aus Startkapital, Zinssatz und Laufzeit – mit Formel, Beispiel und 72er-Regel. Kostenlos."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist der Zinseszinseffekt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zinsen werden dem Kapital gutgeschrieben und in den Folgejahren mitverzinst. Das Kapital wächst dadurch exponentiell: Aus 10.000 € werden bei 3 % nach 10 Jahren rund 13.439 € statt 13.000 € mit einfachen Zinsen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lautet die Zinseszinsformel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Endkapital = Startkapital × (1 + Zinssatz ÷ 100) hoch Anzahl der Jahre. Beispiel: 10.000 € × 1,03¹⁰ ≈ 13.439,16 €."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lange dauert es, bis sich mein Kapital verdoppelt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nutze die 72er-Regel: 72 geteilt durch den Zinssatz ergibt näherungsweise die Jahre bis zur Verdopplung. Bei 6 % sind es etwa 12 Jahre, bei 3 % etwa 24 Jahre."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="./" hreflang="de" aria-current="true">DE</a></li>
+        <li><a href="../../en/compound-interest-calculator/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="../../fr/interets-composes/" hreflang="fr" lang="fr">FR</a></li>
+        <li><a href="../../it/interesse-composto/" hreflang="it" lang="it">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Startseite</a> › <span>Zinseszinsrechner</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">📈</span>Zinseszinsrechner</h1>
+      <p>So wächst dein Erspartes: Gib Startkapital, jährlichen Zinssatz und Laufzeit in Jahren ein und berechne das Endkapital inklusive Zinseszins.</p>
+      <form class="calc-form" data-calc="interest" novalidate>
+        <div class="fields">
+          <label>Startkapital<input type="text" inputmode="decimal" name="principal" placeholder="10000"></label>
+          <label>Zinssatz (% p.a.)<input type="text" inputmode="decimal" name="rate" placeholder="3"></label>
+          <label>Laufzeit (Jahre)<input type="text" inputmode="decimal" name="years" placeholder="10"></label>
+        </div>
+        <dl class="result-list">
+          <div><dt>Endkapital</dt><dd data-out="final">–</dd></div>
+          <div><dt>Zinsertrag</dt><dd data-out="earned">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>Die Zinseszinsformel</h2>
+      <p>Beim Zinseszins werden die Zinsen am Ende jeder Periode dem Kapital zugeschlagen und in der Folgeperiode mitverzinst. Dadurch wächst das Kapital nicht linear, sondern exponentiell.</p>
+      <p class="formula">Endkapital = Startkapital × (1 + Zinssatz ÷ 100)^Jahre</p>
+      <p>Beispiel: 10.000 € bei 3 % pro Jahr ergeben nach 10 Jahren 10.000 × 1,03¹⁰ ≈ 13.439,16 € – der Zinsertrag beträgt rund 3.439 €. Ohne Zinseszins (nur einfache Zinsen) wären es lediglich 3.000 €.</p>
+      <p>Faustregel zur Verdopplung („72er-Regel“): Teile 72 durch den Zinssatz, und du erhältst die ungefähre Anzahl Jahre bis zur Kapitalverdopplung. Bei 6 % dauert es also rund 12 Jahre.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Häufige Fragen</h2>
+      <details>
+        <summary>Was ist der Zinseszinseffekt?</summary>
+        <p>Zinsen werden dem Kapital gutgeschrieben und in den Folgejahren mitverzinst. Das Kapital wächst dadurch exponentiell: Aus 10.000 € werden bei 3 % nach 10 Jahren rund 13.439 € statt 13.000 € mit einfachen Zinsen.</p>
+      </details>
+      <details>
+        <summary>Wie lautet die Zinseszinsformel?</summary>
+        <p>Endkapital = Startkapital × (1 + Zinssatz ÷ 100) hoch Anzahl der Jahre. Beispiel: 10.000 € × 1,03¹⁰ ≈ 13.439,16 €.</p>
+      </details>
+      <details>
+        <summary>Wie lange dauert es, bis sich mein Kapital verdoppelt?</summary>
+        <p>Nutze die 72er-Regel: 72 geteilt durch den Zinssatz ergibt näherungsweise die Jahre bis zur Verdopplung. Bei 6 % sind es etwa 12 Jahre, bei 3 % etwa 24 Jahre.</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Passende Rechner</h2>
+      <nav class="calc-nav" aria-label="Passende Rechner">
+        <a href="../kreditrechner/">🏦 Kreditrechner</a>
+        <a href="../prozentrechner/">％ Prozentrechner</a>
+        <a href="../mehrwertsteuer-rechner/">🧾 MwSt-Rechner</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Sprachen">
+        <a href="./" hreflang="de" aria-current="true">Deutsch</a>
+        <a href="../../en/compound-interest-calculator/" hreflang="en" lang="en">English</a>
+        <a href="../../fr/interets-composes/" hreflang="fr" lang="fr">Français</a>
+        <a href="../../it/interesse-composto/" hreflang="it" lang="it">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – kostenlose Online-Rechner. Alle Ergebnisse ohne Gewähr.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Fehler", "bmi_label": "BMI", "bmi_under": "Untergewicht", "bmi_normal": "Normalgewicht", "bmi_over": "Übergewicht", "bmi_obese": "Adipositas", "weeks": "Wochen", "days": "Tage"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

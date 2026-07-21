@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calcolo IVA – Scorporo e aggiunta IVA (netto ↔ lordo) | CalcMate</title>
+  <meta name="description" content="Calcolatore IVA online: aggiungi l'IVA a un prezzo netto o scorporala da un prezzo lordo, al 22%, 10% o qualsiasi aliquota – con formule ed esempi.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/it/calcolo-iva/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/mehrwertsteuer-rechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/vat-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-tva/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-iva/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/vat-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calcolo IVA – Scorporo e aggiunta IVA (netto ↔ lordo) | CalcMate">
+  <meta property="og:description" content="Calcolatore IVA online: aggiungi l'IVA a un prezzo netto o scorporala da un prezzo lordo, al 22%, 10% o qualsiasi aliquota – con formule ed esempi.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/it/calcolo-iva/">
+  <meta property="og:locale" content="it">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drbrius.github.io/Allgemein1/it/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Calcolo IVA",
+      "item": "https://drbrius.github.io/Allgemein1/it/calcolo-iva/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calcolo IVA – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/it/calcolo-iva/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "it",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Calcolatore IVA online: aggiungi l'IVA a un prezzo netto o scorporala da un prezzo lordo, al 22%, 10% o qualsiasi aliquota – con formule ed esempi."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Come si calcola l'IVA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Per aggiungere l'IVA, moltiplica il prezzo netto per (1 + aliquota ÷ 100) – al 22% moltiplichi quindi per 1,22. Per scorporare l'IVA da un prezzo lordo, dividi per lo stesso fattore."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Come si scorpora l'IVA da un prezzo lordo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dividi il prezzo lordo per 1,22 al 22% (o per 1,10 al 10%). Esempio: 122 € lordi ÷ 1,22 = 100 € netti, quindi l'IVA è di 22 €. Sottrarre semplicemente il 22% dal lordo sarebbe sbagliato."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quali aliquote IVA si applicano in Italia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'aliquota ordinaria è del 22%. Le aliquote ridotte sono del 10% (es. ristorazione, energia), del 5% e del 4% (beni di prima necessità, alimentari di base, libri)."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="../../de/mehrwertsteuer-rechner/" hreflang="de" lang="de">DE</a></li>
+        <li><a href="../../en/vat-calculator/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="../../fr/calcul-tva/" hreflang="fr" lang="fr">FR</a></li>
+        <li><a href="./" hreflang="it" aria-current="true">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Home</a> › <span>Calcolo IVA</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">🧾</span>Calcolo IVA</h1>
+      <p>Aggiungi o scorpora l'IVA in un solo passaggio: dal netto al lordo o dal lordo al netto con qualsiasi aliquota. L'aliquota ordinaria in Italia è del 22%, in Germania del 19%, in Francia del 20%.</p>
+      <form class="calc-form" data-calc="vat" novalidate>
+        <div class="fields">
+          <label>Importo<input type="text" inputmode="decimal" name="amount" placeholder="100"></label>
+          <label>Aliquota IVA (%)<input type="text" inputmode="decimal" name="rate" value="22"></label>
+        </div>
+        <fieldset>
+          <label><input type="radio" name="dir" value="net2gross" checked> Netto → Lordo (aggiungi IVA)</label>
+          <label><input type="radio" name="dir" value="gross2net"> Lordo → Netto (scorpora IVA)</label>
+        </fieldset>
+        <dl class="result-list">
+          <div><dt>Netto</dt><dd data-out="net">–</dd></div>
+          <div><dt>IVA</dt><dd data-out="vat">–</dd></div>
+          <div><dt>Lordo</dt><dd data-out="gross">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>Calcolare l'IVA: le formule</h2>
+      <p>Un unico fattore trasforma il prezzo netto in prezzo lordo. Con l'IVA al 22% il fattore è 1,22; con l'aliquota ridotta del 10% è 1,10.</p>
+      <p class="formula">lordo = netto × (1 + aliquota ÷ 100)&nbsp;&nbsp;·&nbsp;&nbsp;netto = lordo ÷ (1 + aliquota ÷ 100)</p>
+      <p>Esempio: 100 € netti al 22% danno 122 € lordi, l'IVA è di 22 €. Viceversa, 122 € lordi contengono 122 ÷ 1,22 = 100 € netti. Errore frequente: sottrarre il 22% dal prezzo lordo – il risultato è troppo basso, perché il 22% si applica all'importo netto.</p>
+      <p>In Italia l'aliquota ordinaria è del 22%; le aliquote ridotte del 10%, 5% e 4% si applicano ad esempio a generi alimentari, ristorazione, libri e prodotti di prima necessità.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Domande frequenti</h2>
+      <details>
+        <summary>Come si calcola l'IVA?</summary>
+        <p>Per aggiungere l'IVA, moltiplica il prezzo netto per (1 + aliquota ÷ 100) – al 22% moltiplichi quindi per 1,22. Per scorporare l'IVA da un prezzo lordo, dividi per lo stesso fattore.</p>
+      </details>
+      <details>
+        <summary>Come si scorpora l'IVA da un prezzo lordo?</summary>
+        <p>Dividi il prezzo lordo per 1,22 al 22% (o per 1,10 al 10%). Esempio: 122 € lordi ÷ 1,22 = 100 € netti, quindi l'IVA è di 22 €. Sottrarre semplicemente il 22% dal lordo sarebbe sbagliato.</p>
+      </details>
+      <details>
+        <summary>Quali aliquote IVA si applicano in Italia?</summary>
+        <p>L'aliquota ordinaria è del 22%. Le aliquote ridotte sono del 10% (es. ristorazione, energia), del 5% e del 4% (beni di prima necessità, alimentari di base, libri).</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Calcolatrici correlate</h2>
+      <nav class="calc-nav" aria-label="Calcolatrici correlate">
+        <a href="../calcolo-percentuale/">％ Calcolo percentuale</a>
+        <a href="../calcolo-sconto/">🏷️ Calcolo sconto</a>
+        <a href="../calcolo-prestito/">🏦 Calcolo prestito</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Lingue">
+        <a href="../../de/mehrwertsteuer-rechner/" hreflang="de" lang="de">Deutsch</a>
+        <a href="../../en/vat-calculator/" hreflang="en" lang="en">English</a>
+        <a href="../../fr/calcul-tva/" hreflang="fr" lang="fr">Français</a>
+        <a href="./" hreflang="it" aria-current="true">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – calcolatrici online gratuite. Risultati forniti senza garanzia.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Errore", "bmi_label": "IMC", "bmi_under": "Sottopeso", "bmi_normal": "Normopeso", "bmi_over": "Sovrappeso", "bmi_obese": "Obesità", "weeks": "settimane", "days": "giorni"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

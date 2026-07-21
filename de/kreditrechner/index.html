@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kreditrechner – monatliche Rate berechnen | CalcMate</title>
+  <meta name="description" content="Kreditrechner online: monatliche Rate, Gesamtzahlung und Zinskosten für einen Annuitätenkredit aus Kreditbetrag, Zinssatz und Laufzeit berechnen.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/de/kreditrechner/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/kreditrechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/loan-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-pret/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-prestito/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/loan-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kreditrechner – monatliche Rate berechnen | CalcMate">
+  <meta property="og:description" content="Kreditrechner online: monatliche Rate, Gesamtzahlung und Zinskosten für einen Annuitätenkredit aus Kreditbetrag, Zinssatz und Laufzeit berechnen.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/de/kreditrechner/">
+  <meta property="og:locale" content="de">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://drbrius.github.io/Allgemein1/de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Kreditrechner",
+      "item": "https://drbrius.github.io/Allgemein1/de/kreditrechner/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Kreditrechner – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/de/kreditrechner/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "de",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Kreditrechner online: monatliche Rate, Gesamtzahlung und Zinskosten für einen Annuitätenkredit aus Kreditbetrag, Zinssatz und Laufzeit berechnen."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie wird die monatliche Kreditrate berechnet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mit der Annuitätenformel: Rate = Kreditbetrag × Monatszins ÷ (1 − (1 + Monatszins)^−Monate). Beispiel: 20.000 € zu 5 % über 5 Jahre ergeben rund 377,42 € pro Monat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen Sollzins und Effektivzins?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Sollzins ist der reine Zins auf die Restschuld. Der effektive Jahreszins enthält zusätzlich Nebenkosten und die Verrechnungstermine und eignet sich deshalb besser für den Vergleich verschiedener Kreditangebote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie kann ich die Zinskosten eines Kredits senken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kürzere Laufzeit wählen, Sondertilgungen nutzen, Angebote über den Effektivzins vergleichen und nur so viel aufnehmen, wie wirklich nötig. Schon ein halber Prozentpunkt weniger Zins spart über die Laufzeit spürbar Geld."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="./" hreflang="de" aria-current="true">DE</a></li>
+        <li><a href="../../en/loan-calculator/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="../../fr/calcul-pret/" hreflang="fr" lang="fr">FR</a></li>
+        <li><a href="../../it/calcolo-prestito/" hreflang="it" lang="it">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Startseite</a> › <span>Kreditrechner</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">🏦</span>Kreditrechner</h1>
+      <p>Berechne die monatliche Rate für einen Kredit mit fester Verzinsung (Annuitätendarlehen): Kreditbetrag, jährlichen Zinssatz und Laufzeit eingeben – der Rechner zeigt Monatsrate, Gesamtzahlung und Zinskosten.</p>
+      <form class="calc-form" data-calc="loan" novalidate>
+        <div class="fields">
+          <label>Kreditbetrag<input type="text" inputmode="decimal" name="principal" placeholder="20000"></label>
+          <label>Zinssatz (% p.a.)<input type="text" inputmode="decimal" name="rate" placeholder="5"></label>
+          <label>Laufzeit (Jahre)<input type="text" inputmode="decimal" name="years" placeholder="5"></label>
+        </div>
+        <dl class="result-list">
+          <div><dt>Monatliche Rate</dt><dd data-out="monthly">–</dd></div>
+          <div><dt>Gesamtzahlung</dt><dd data-out="total">–</dd></div>
+          <div><dt>Zinskosten</dt><dd data-out="interest">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>So wird die Kreditrate berechnet</h2>
+      <p>Bei einem Annuitätendarlehen bleibt die monatliche Rate über die gesamte Laufzeit konstant. Sie besteht aus einem Zins- und einem Tilgungsanteil; mit jeder Zahlung sinkt die Restschuld, der Zinsanteil wird kleiner und der Tilgungsanteil größer.</p>
+      <p class="formula">Rate = Kreditbetrag × i ÷ (1 − (1 + i)^−n)&nbsp;&nbsp;mit&nbsp;&nbsp;i = Jahreszins ÷ 12 ÷ 100, n = Monate</p>
+      <p>Beispiel: 20.000 € zu 5 % Zinsen über 5 Jahre (60 Monatsraten) ergeben eine Rate von etwa 377,42 €. Insgesamt zahlst du rund 22.645 € zurück – die Zinskosten betragen also etwa 2.645 €.</p>
+      <p>Hinweis: Der Rechner arbeitet mit dem nominalen Sollzins. Banken müssen zusätzlich den effektiven Jahreszins ausweisen, der Nebenkosten einrechnet und Angebote vergleichbar macht. Kürzere Laufzeiten bedeuten höhere Raten, aber deutlich geringere Gesamtzinskosten.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Häufige Fragen</h2>
+      <details>
+        <summary>Wie wird die monatliche Kreditrate berechnet?</summary>
+        <p>Mit der Annuitätenformel: Rate = Kreditbetrag × Monatszins ÷ (1 − (1 + Monatszins)^−Monate). Beispiel: 20.000 € zu 5 % über 5 Jahre ergeben rund 377,42 € pro Monat.</p>
+      </details>
+      <details>
+        <summary>Was ist der Unterschied zwischen Sollzins und Effektivzins?</summary>
+        <p>Der Sollzins ist der reine Zins auf die Restschuld. Der effektive Jahreszins enthält zusätzlich Nebenkosten und die Verrechnungstermine und eignet sich deshalb besser für den Vergleich verschiedener Kreditangebote.</p>
+      </details>
+      <details>
+        <summary>Wie kann ich die Zinskosten eines Kredits senken?</summary>
+        <p>Kürzere Laufzeit wählen, Sondertilgungen nutzen, Angebote über den Effektivzins vergleichen und nur so viel aufnehmen, wie wirklich nötig. Schon ein halber Prozentpunkt weniger Zins spart über die Laufzeit spürbar Geld.</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Passende Rechner</h2>
+      <nav class="calc-nav" aria-label="Passende Rechner">
+        <a href="../zinseszinsrechner/">📈 Zinseszinsrechner</a>
+        <a href="../mehrwertsteuer-rechner/">🧾 MwSt-Rechner</a>
+        <a href="../prozentrechner/">％ Prozentrechner</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Sprachen">
+        <a href="./" hreflang="de" aria-current="true">Deutsch</a>
+        <a href="../../en/loan-calculator/" hreflang="en" lang="en">English</a>
+        <a href="../../fr/calcul-pret/" hreflang="fr" lang="fr">Français</a>
+        <a href="../../it/calcolo-prestito/" hreflang="it" lang="it">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – kostenlose Online-Rechner. Alle Ergebnisse ohne Gewähr.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Fehler", "bmi_label": "BMI", "bmi_under": "Untergewicht", "bmi_normal": "Normalgewicht", "bmi_over": "Übergewicht", "bmi_obese": "Adipositas", "weeks": "Wochen", "days": "Tage"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

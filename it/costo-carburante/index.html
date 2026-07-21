@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Costo carburante – Calcola la spesa di benzina per un viaggio | CalcMate</title>
+  <meta name="description" content="Calcola il costo del carburante per un viaggio: litri necessari e spesa da distanza, consumo per 100 km e prezzo al litro. Gratis e veloce.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/it/costo-carburante/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/spritkostenrechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/cout-carburant/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/costo-carburante/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/fuel-cost-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Costo carburante – Calcola la spesa di benzina per un viaggio | CalcMate">
+  <meta property="og:description" content="Calcola il costo del carburante per un viaggio: litri necessari e spesa da distanza, consumo per 100 km e prezzo al litro. Gratis e veloce.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/it/costo-carburante/">
+  <meta property="og:locale" content="it">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drbrius.github.io/Allgemein1/it/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Costo carburante",
+      "item": "https://drbrius.github.io/Allgemein1/it/costo-carburante/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Costo carburante – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/it/costo-carburante/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "it",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Calcola il costo del carburante per un viaggio: litri necessari e spesa da distanza, consumo per 100 km e prezzo al litro. Gratis e veloce."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Come calcolo la spesa di carburante per un viaggio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dividi la distanza per 100, moltiplica per il consumo per 100 km e per il prezzo al litro. Esempio: 350 km ÷ 100 × 6,5 l × 1,85 € ≈ 42,09 €."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto costa viaggiare per 100 km?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Moltiplica semplicemente il consumo per 100 km per il prezzo al litro. Con 6,5 l/100 km e 1,85 €/l sono circa 12,03 € per 100 km."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Come posso ridurre il consumo di carburante?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Guida fluida, cambio marcia anticipato, pneumatici alla giusta pressione, niente pesi o portapacchi inutili e accorpamento dei tragitti brevi. Nel complesso il consumo cala spesso del 10–20%."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="../../de/spritkostenrechner/" hreflang="de" lang="de">DE</a></li>
+        <li><a href="../../en/fuel-cost-calculator/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="../../fr/cout-carburant/" hreflang="fr" lang="fr">FR</a></li>
+        <li><a href="./" hreflang="it" aria-current="true">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Home</a> › <span>Costo carburante</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">⛽</span>Calcolatore costo carburante</h1>
+      <p>Quanto costa il viaggio? Inserisci la distanza, il consumo medio della tua auto e il prezzo del carburante per ottenere la quantità di carburante necessaria, la spesa totale e il costo per 100 km.</p>
+      <form class="calc-form" data-calc="fuel" novalidate>
+        <div class="fields">
+          <label>Distanza (km)<input type="text" inputmode="decimal" name="distance" placeholder="350"></label>
+          <label>Consumo (l/100 km)<input type="text" inputmode="decimal" name="consumption" placeholder="6,5"></label>
+          <label>Prezzo al litro<input type="text" inputmode="decimal" name="price" placeholder="1,85"></label>
+        </div>
+        <dl class="result-list">
+          <div><dt>Carburante (l)</dt><dd data-out="liters">–</dd></div>
+          <div><dt>Costo</dt><dd data-out="cost">–</dd></div>
+          <div><dt>Costo / 100 km</dt><dd data-out="per100">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>Calcolare il costo del carburante: la formula</h2>
+      <p>Il costo di un viaggio dipende da tre elementi: la distanza, il consumo medio del veicolo e il prezzo attuale del carburante.</p>
+      <p class="formula">costo = distanza ÷ 100 × consumo × prezzo al litro</p>
+      <p>Esempio: per 350 km con un consumo di 6,5 l/100 km servono 22,75 litri. A 1,85 € al litro il viaggio costa circa 42,09 € – più o meno 12,03 € per 100 km.</p>
+      <p>Consigli per risparmiare: guida fluida e cambio marcia anticipato, niente peso superfluo né portapacchi, pressione degli pneumatici corretta e confronto dei prezzi – tra un distributore e l'altro la differenza supera spesso i 10 centesimi al litro. In caso di car pooling, dividi semplicemente il costo totale per il numero di passeggeri.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Domande frequenti</h2>
+      <details>
+        <summary>Come calcolo la spesa di carburante per un viaggio?</summary>
+        <p>Dividi la distanza per 100, moltiplica per il consumo per 100 km e per il prezzo al litro. Esempio: 350 km ÷ 100 × 6,5 l × 1,85 € ≈ 42,09 €.</p>
+      </details>
+      <details>
+        <summary>Quanto costa viaggiare per 100 km?</summary>
+        <p>Moltiplica semplicemente il consumo per 100 km per il prezzo al litro. Con 6,5 l/100 km e 1,85 €/l sono circa 12,03 € per 100 km.</p>
+      </details>
+      <details>
+        <summary>Come posso ridurre il consumo di carburante?</summary>
+        <p>Guida fluida, cambio marcia anticipato, pneumatici alla giusta pressione, niente pesi o portapacchi inutili e accorpamento dei tragitti brevi. Nel complesso il consumo cala spesso del 10–20%.</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Calcolatrici correlate</h2>
+      <nav class="calc-nav" aria-label="Calcolatrici correlate">
+        <a href="../regola-del-tre/">⚖️ Regola del tre</a>
+        <a href="../calcolo-percentuale/">％ Calcolo percentuale</a>
+        <a href="../calcolo-sconto/">🏷️ Calcolo sconto</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Lingue">
+        <a href="../../de/spritkostenrechner/" hreflang="de" lang="de">Deutsch</a>
+        <a href="../../en/fuel-cost-calculator/" hreflang="en" lang="en">English</a>
+        <a href="../../fr/cout-carburant/" hreflang="fr" lang="fr">Français</a>
+        <a href="./" hreflang="it" aria-current="true">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – calcolatrici online gratuite. Risultati forniti senza garanzia.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Errore", "bmi_label": "IMC", "bmi_under": "Sottopeso", "bmi_normal": "Normopeso", "bmi_over": "Sovrappeso", "bmi_obese": "Obesità", "weeks": "settimane", "days": "giorni"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

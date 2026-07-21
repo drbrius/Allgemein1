@@ -273,7 +273,7 @@
       else if (bmi < 25) cat = I18N.bmi_normal;
       else if (bmi < 30) cat = I18N.bmi_over;
       else cat = I18N.bmi_obese;
-      return "BMI = " + fmt(bmi, 1) + " — " + cat;
+      return (I18N.bmi_label || "BMI") + " = " + fmt(bmi, 1) + " — " + cat;
     },
     /* Slope: from length+height, percent or degrees -> percent, angle, height, slope length */
     "slope": function (f) {
@@ -315,6 +315,75 @@
       var final_ = p * Math.pow(1 + r / 100, y);
       setOut(f, "final", fmt(final_, 2));
       setOut(f, "earned", fmt(final_ - p, 2));
+    },
+    /* Loan: annuity payment from principal, annual rate, years */
+    "loan": function (f) {
+      var p = val(f, "principal"), r = val(f, "rate"), y = val(f, "years");
+      if (isNaN(p) || isNaN(r) || isNaN(y) || p <= 0 || r < 0 || y <= 0) {
+        setOut(f, "monthly", "–"); setOut(f, "total", "–"); setOut(f, "interest", "–");
+        return;
+      }
+      var n = Math.round(y * 12);
+      if (n < 1) n = 1;
+      var i = r / 100 / 12;
+      var pay = i === 0 ? p / n : p * i / (1 - Math.pow(1 + i, -n));
+      setOut(f, "monthly", fmt(pay, 2));
+      setOut(f, "total", fmt(pay * n, 2));
+      setOut(f, "interest", fmt(pay * n - p, 2));
+    },
+    /* Fuel cost: distance, consumption per 100 km, price per litre */
+    "fuel": function (f) {
+      var d = val(f, "distance"), c = val(f, "consumption"), p = val(f, "price");
+      if (isNaN(d) || isNaN(c) || isNaN(p) || d < 0 || c < 0 || p < 0) {
+        setOut(f, "liters", "–"); setOut(f, "cost", "–"); setOut(f, "per100", "–");
+        return;
+      }
+      var liters = d * c / 100;
+      setOut(f, "liters", fmt(liters, 2));
+      setOut(f, "cost", fmt(liters * p, 2));
+      setOut(f, "per100", fmt(c * p, 2));
+    },
+    /* Discount: price and percent off -> savings, final price */
+    "discount": function (f) {
+      var price = val(f, "price"), pct = val(f, "pct");
+      if (isNaN(price) || isNaN(pct)) {
+        setOut(f, "saved", "–"); setOut(f, "final", "–");
+        return;
+      }
+      var saved = price * pct / 100;
+      setOut(f, "saved", fmt(saved, 2));
+      setOut(f, "final", fmt(price - saved, 2));
+    },
+    /* Tip: bill, percent, people -> tip, total, per person */
+    "tip": function (f) {
+      var bill = val(f, "bill"), pct = val(f, "pct"), people = val(f, "people");
+      if (isNaN(people) || people < 1) people = 1;
+      people = Math.round(people);
+      if (isNaN(bill) || isNaN(pct) || bill < 0 || pct < 0) {
+        setOut(f, "tip", "–"); setOut(f, "total", "–"); setOut(f, "person", "–");
+        return;
+      }
+      var tip = bill * pct / 100;
+      setOut(f, "tip", fmt(tip, 2));
+      setOut(f, "total", fmt(bill + tip, 2));
+      setOut(f, "person", fmt((bill + tip) / people, 2));
+    },
+    /* Days between two dates */
+    "datediff": function (f) {
+      var a = f.elements.start.value, b = f.elements.end.value;
+      var days = NaN;
+      if (a && b) {
+        days = Math.round((new Date(b + "T00:00:00Z") - new Date(a + "T00:00:00Z")) / 86400000);
+      }
+      if (isNaN(days)) {
+        setOut(f, "days", "–"); setOut(f, "weeks", "–");
+        return;
+      }
+      days = Math.abs(days);
+      setOut(f, "days", fmt(days, 0));
+      setOut(f, "weeks",
+        fmt(Math.floor(days / 7), 0) + " " + (I18N.weeks || "weeks") +
+        ", " + (days % 7) + " " + (I18N.days || "days"));
     }
   };
 
@@ -340,7 +409,7 @@
 
   /* Remember chosen language for the root landing page */
   try {
-    var m = location.pathname.match(/\/(de|en|fr|it)\/(?:index\.html)?$/);
+    var m = location.pathname.match(/\/(de|en|fr|it)(?:\/|$)/);
     if (m) localStorage.setItem("calcmate-lang", m[1]);
   } catch (e) { /* storage unavailable */ }
 })();

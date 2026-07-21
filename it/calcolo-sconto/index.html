@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calcolo sconto – Prezzo dopo lo sconto | CalcMate</title>
+  <meta name="description" content="Calcola lo sconto online: quanto risparmi con l'X% di sconto e quanto costa l'articolo dopo la riduzione? Gratis, con formula ed esempi.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/it/calcolo-sconto/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/rabatt-rechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/discount-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-remise/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-sconto/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/discount-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calcolo sconto – Prezzo dopo lo sconto | CalcMate">
+  <meta property="og:description" content="Calcola lo sconto online: quanto risparmi con l'X% di sconto e quanto costa l'articolo dopo la riduzione? Gratis, con formula ed esempi.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/it/calcolo-sconto/">
+  <meta property="og:locale" content="it">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drbrius.github.io/Allgemein1/it/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Calcolo sconto",
+      "item": "https://drbrius.github.io/Allgemein1/it/calcolo-sconto/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calcolo sconto – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/it/calcolo-sconto/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "it",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Calcola lo sconto online: quanto risparmi con l'X% di sconto e quanto costa l'articolo dopo la riduzione? Gratis, con formula ed esempi."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Come si calcola uno sconto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Moltiplica il prezzo per la percentuale di sconto e dividi per 100: è il tuo risparmio. Il prezzo finale è il prezzo originale meno il risparmio. Esempio: 80 € con il 25% di sconto = 20 € risparmiati, 60 € da pagare."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto costa un articolo dopo il 20% di sconto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Moltiplica il prezzo per 0,8. Esempio: 50 € × 0,8 = 40 €. In generale: prezzo finale = prezzo originale × (1 − sconto ÷ 100)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Come funzionano gli sconti cumulati, ad esempio 20% + 10%?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gli sconti si applicano uno dopo l'altro e non si sommano. 100 € diventano 80 € dopo il 20%, poi 72 € dopo un ulteriore 10%. Lo sconto totale è del 28%, non del 30%."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="../../de/rabatt-rechner/" hreflang="de" lang="de">DE</a></li>
+        <li><a href="../../en/discount-calculator/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="../../fr/calcul-remise/" hreflang="fr" lang="fr">FR</a></li>
+        <li><a href="./" hreflang="it" aria-current="true">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Home</a> › <span>Calcolo sconto</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">🏷️</span>Calcolo sconto</h1>
+      <p>Calcola in pochi secondi quanto risparmi con uno sconto e quanto costa l'articolo dopo la riduzione: basta inserire il prezzo e lo sconto in percentuale.</p>
+      <form class="calc-form" data-calc="discount" novalidate>
+        <div class="fields">
+          <label>Prezzo<input type="text" inputmode="decimal" name="price" placeholder="80"></label>
+          <label>Sconto (%)<input type="text" inputmode="decimal" name="pct" placeholder="25"></label>
+        </div>
+        <dl class="result-list">
+          <div><dt>Risparmio</dt><dd data-out="saved">–</dd></div>
+          <div><dt>Prezzo finale</dt><dd data-out="final">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>Come si calcola uno sconto</h2>
+      <p>Lo sconto è una riduzione percentuale del prezzo originale. Il risparmio e il prezzo finale derivano da due semplici formule:</p>
+      <p class="formula">risparmio = prezzo × sconto ÷ 100&nbsp;&nbsp;·&nbsp;&nbsp;prezzo finale = prezzo − risparmio</p>
+      <p>Esempio: un maglione costa 80 € ed è scontato del 25%. Il risparmio è 80 × 25 ÷ 100 = 20 €, il prezzo finale 60 €. Scorciatoie di calcolo mentale: il 25% è un quarto, il 50% è la metà e il 10% è un decimo del prezzo.</p>
+      <p>Attenzione agli sconti cumulati: «20% + 10%» non fa 30%. Il secondo sconto si applica al prezzo già ridotto – 100 € diventano 80 €, poi 72 €, cioè il 28% di sconto complessivo.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Domande frequenti</h2>
+      <details>
+        <summary>Come si calcola uno sconto?</summary>
+        <p>Moltiplica il prezzo per la percentuale di sconto e dividi per 100: è il tuo risparmio. Il prezzo finale è il prezzo originale meno il risparmio. Esempio: 80 € con il 25% di sconto = 20 € risparmiati, 60 € da pagare.</p>
+      </details>
+      <details>
+        <summary>Quanto costa un articolo dopo il 20% di sconto?</summary>
+        <p>Moltiplica il prezzo per 0,8. Esempio: 50 € × 0,8 = 40 €. In generale: prezzo finale = prezzo originale × (1 − sconto ÷ 100).</p>
+      </details>
+      <details>
+        <summary>Come funzionano gli sconti cumulati, ad esempio 20% + 10%?</summary>
+        <p>Gli sconti si applicano uno dopo l'altro e non si sommano. 100 € diventano 80 € dopo il 20%, poi 72 € dopo un ulteriore 10%. Lo sconto totale è del 28%, non del 30%.</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Calcolatrici correlate</h2>
+      <nav class="calc-nav" aria-label="Calcolatrici correlate">
+        <a href="../calcolo-percentuale/">％ Calcolo percentuale</a>
+        <a href="../calcolo-iva/">🧾 Calcolo IVA</a>
+        <a href="../calcolo-mancia/">🪙 Calcolo mancia</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Lingue">
+        <a href="../../de/rabatt-rechner/" hreflang="de" lang="de">Deutsch</a>
+        <a href="../../en/discount-calculator/" hreflang="en" lang="en">English</a>
+        <a href="../../fr/calcul-remise/" hreflang="fr" lang="fr">Français</a>
+        <a href="./" hreflang="it" aria-current="true">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – calcolatrici online gratuite. Risultati forniti senza garanzia.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Errore", "bmi_label": "IMC", "bmi_under": "Sottopeso", "bmi_normal": "Normopeso", "bmi_over": "Sovrappeso", "bmi_obese": "Obesità", "weeks": "settimane", "days": "giorni"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

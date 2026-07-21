@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calcul TVA – Prix HT ↔ TTC en ligne | CalcMate</title>
+  <meta name="description" content="Calculateur de TVA en ligne : passer du HT au TTC ou extraire la TVA d'un prix TTC, à 20 %, 5,5 % ou tout autre taux – avec formules et exemples.">
+  <link rel="canonical" href="https://drbrius.github.io/Allgemein1/fr/calcul-tva/">
+  <link rel="alternate" hreflang="de" href="https://drbrius.github.io/Allgemein1/de/mehrwertsteuer-rechner/">
+  <link rel="alternate" hreflang="en" href="https://drbrius.github.io/Allgemein1/en/vat-calculator/">
+  <link rel="alternate" hreflang="fr" href="https://drbrius.github.io/Allgemein1/fr/calcul-tva/">
+  <link rel="alternate" hreflang="it" href="https://drbrius.github.io/Allgemein1/it/calcolo-iva/">
+  <link rel="alternate" hreflang="x-default" href="https://drbrius.github.io/Allgemein1/en/vat-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calcul TVA – Prix HT ↔ TTC en ligne | CalcMate">
+  <meta property="og:description" content="Calculateur de TVA en ligne : passer du HT au TTC ou extraire la TVA d'un prix TTC, à 20 %, 5,5 % ou tout autre taux – avec formules et exemples.">
+  <meta property="og:url" content="https://drbrius.github.io/Allgemein1/fr/calcul-tva/">
+  <meta property="og:locale" content="fr">
+  <meta name="theme-color" content="#4f6df5">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://drbrius.github.io/Allgemein1/fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Calculateur de TVA",
+      "item": "https://drbrius.github.io/Allgemein1/fr/calcul-tva/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculateur de TVA – CalcMate",
+  "url": "https://drbrius.github.io/Allgemein1/fr/calcul-tva/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "fr",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Calculateur de TVA en ligne : passer du HT au TTC ou extraire la TVA d'un prix TTC, à 20 %, 5,5 % ou tout autre taux – avec formules et exemples."
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment calculer la TVA ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pour ajouter la TVA, multipliez le prix HT par (1 + taux ÷ 100) – à 20 %, multipliez donc par 1,20. Pour extraire la TVA d'un prix TTC, divisez par le même facteur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment retrouver le prix HT à partir du TTC ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divisez le prix TTC par 1,20 à 20 % (ou 1,055 à 5,5 %). Exemple : 120 € TTC ÷ 1,20 = 100 € HT, soit 20 € de TVA. Soustraire simplement 20 % du TTC serait faux."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quels sont les taux de TVA en France ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le taux normal est de 20 %. Les taux réduits sont de 10 % (restauration, transports), 5,5 % (produits alimentaires, livres, énergie) et 2,1 % (médicaments remboursables, presse)."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../"><span class="logo-mark">∑</span>CalcMate</a>
+      <ul class="lang-switch">
+        <li><a href="../../de/mehrwertsteuer-rechner/" hreflang="de" lang="de">DE</a></li>
+        <li><a href="../../en/vat-calculator/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="./" hreflang="fr" aria-current="true">FR</a></li>
+        <li><a href="../../it/calcolo-iva/" hreflang="it" lang="it">IT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Accueil</a> › <span>Calculateur de TVA</span>
+    </nav>
+
+    <section class="calc-section">
+      <h1><span class="icon" aria-hidden="true">🧾</span>Calculateur de TVA</h1>
+      <p>Ajoutez ou retirez la TVA en une étape : convertissez un prix hors taxes (HT) en prix TTC ou inversement, avec n'importe quel taux. Le taux normal est de 20 % en France, 19 % en Allemagne, 22 % en Italie et 8,1 % en Suisse.</p>
+      <form class="calc-form" data-calc="vat" novalidate>
+        <div class="fields">
+          <label>Montant<input type="text" inputmode="decimal" name="amount" placeholder="100"></label>
+          <label>Taux de TVA (%)<input type="text" inputmode="decimal" name="rate" value="20"></label>
+        </div>
+        <fieldset>
+          <label><input type="radio" name="dir" value="net2gross" checked> HT → TTC (ajouter la TVA)</label>
+          <label><input type="radio" name="dir" value="gross2net"> TTC → HT (retirer la TVA)</label>
+        </fieldset>
+        <dl class="result-list">
+          <div><dt>HT</dt><dd data-out="net">–</dd></div>
+          <div><dt>TVA</dt><dd data-out="vat">–</dd></div>
+          <div><dt>TTC</dt><dd data-out="gross">–</dd></div>
+        </dl>
+      </form>
+    </section>
+
+    <article class="seo-text">
+      <h2>Calculer la TVA : les formules</h2>
+      <p>Un seul facteur permet de passer du prix hors taxes au prix TTC. À 20 % de TVA, ce facteur est 1,20 ; au taux réduit de 5,5 %, il est de 1,055.</p>
+      <p class="formula">TTC = HT × (1 + taux ÷ 100)&nbsp;&nbsp;·&nbsp;&nbsp;HT = TTC ÷ (1 + taux ÷ 100)</p>
+      <p>Exemple : 100 € HT à 20 % donnent 120 € TTC, la TVA s'élève à 20 €. Inversement, 120 € TTC contiennent 120 ÷ 1,20 = 100 € HT. Erreur fréquente : soustraire 20 % du prix TTC – le résultat est trop faible, car les 20 % s'appliquent au montant HT.</p>
+      <p>En France, le taux normal est de 20 % ; les taux réduits de 10 %, 5,5 % et 2,1 % s'appliquent notamment à la restauration, aux produits alimentaires, aux livres et aux médicaments remboursables.</p>
+    </article>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Questions fréquentes</h2>
+      <details>
+        <summary>Comment calculer la TVA ?</summary>
+        <p>Pour ajouter la TVA, multipliez le prix HT par (1 + taux ÷ 100) – à 20 %, multipliez donc par 1,20. Pour extraire la TVA d'un prix TTC, divisez par le même facteur.</p>
+      </details>
+      <details>
+        <summary>Comment retrouver le prix HT à partir du TTC ?</summary>
+        <p>Divisez le prix TTC par 1,20 à 20 % (ou 1,055 à 5,5 %). Exemple : 120 € TTC ÷ 1,20 = 100 € HT, soit 20 € de TVA. Soustraire simplement 20 % du TTC serait faux.</p>
+      </details>
+      <details>
+        <summary>Quels sont les taux de TVA en France ?</summary>
+        <p>Le taux normal est de 20 %. Les taux réduits sont de 10 % (restauration, transports), 5,5 % (produits alimentaires, livres, énergie) et 2,1 % (médicaments remboursables, presse).</p>
+      </details>
+    </section>
+
+    <section class="related">
+      <h2>Calculatrices associées</h2>
+      <nav class="calc-nav" aria-label="Calculatrices associées">
+        <a href="../calcul-pourcentage/">％ Calcul de pourcentage</a>
+        <a href="../calcul-remise/">🏷️ Calcul de remise</a>
+        <a href="../calcul-pret/">🏦 Calcul de prêt</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Langues">
+        <a href="../../de/mehrwertsteuer-rechner/" hreflang="de" lang="de">Deutsch</a>
+        <a href="../../en/vat-calculator/" hreflang="en" lang="en">English</a>
+        <a href="./" hreflang="fr" aria-current="true">Français</a>
+        <a href="../../it/calcolo-iva/" hreflang="it" lang="it">Italiano</a>
+      </nav>
+      <p>© 2026 CalcMate – calculatrices en ligne gratuites. Résultats fournis sans garantie.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.CALC_I18N = {"error": "Erreur", "bmi_label": "IMC", "bmi_under": "Insuffisance pondérale", "bmi_normal": "Corpulence normale", "bmi_over": "Surpoids", "bmi_obese": "Obésité", "weeks": "semaines", "days": "jours"};
+  </script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>
