@@ -1,6 +1,8 @@
 > **Also in this repository:** [`/crm/`](crm/) — **OffMarket CRM**, a self-contained CRM for
-> off-market real estate acquisition (pipeline kanban, properties, contacts, tasks, reports).
-> Same philosophy: static files, no build step, no backend. See [crm/README.md](crm/README.md).
+> off-market deals across asset classes (real estate, precious metals, energy, crypto,
+> commodities, company stakes) with a kanban pipeline, contacts, tasks, meeting minutes and
+> reports. Same philosophy: static files, no build step, no backend.
+> See [crm/README.md](crm/README.md).
 
 # CalcMate – Multilingual Online Calculators
 

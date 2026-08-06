@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OffMarket CRM – Akquise-Cockpit für Off-Market-Immobilien</title>
-  <meta name="description" content="Schlankes CRM für die Off-Market-Immobilienakquise: Objekt-Pipeline, Kontakte, Aufgaben und Auswertungen. Läuft vollständig im Browser, ohne Server und ohne Anmeldung.">
+  <title>OffMarket CRM – Deal-Cockpit für Off-Market-Geschäfte</title>
+  <meta name="description" content="CRM für Off-Market-Deals aller Anlageklassen: Immobilien, Edelmetalle, Energie, Krypto, Rohstoffe und Beteiligungen — mit Pipeline, Kontakten, Aufgaben, Gesprächsprotokollen und Auswertungen. Läuft vollständig im Browser.">
   <meta name="theme-color" content="#4f6df5">
   <meta name="robots" content="noindex">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -28,14 +28,18 @@
         </button>
         <div class="search">
           <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input type="search" id="global-search" placeholder="Objekte, Kontakte, Aufgaben durchsuchen …" aria-label="Globale Suche">
+          <input type="search" id="global-search" placeholder="Deals, Kontakte, Protokolle durchsuchen …" aria-label="Globale Suche">
           <kbd>/</kbd>
         </div>
         <div class="topbar-spacer"></div>
         <button class="btn btn-icon" id="theme-toggle" title="Design wechseln" aria-label="Design wechseln"></button>
-        <button class="btn btn-primary" id="neues-objekt">
+        <button class="btn" id="neues-protokoll">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5M8.5 13h7M8.5 17h4"/></svg>
+          <span class="btn-label">Protokoll</span>
+        </button>
+        <button class="btn btn-primary" id="neuer-deal">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-          Neues Objekt
+          <span class="btn-label">Neuer Deal</span>
         </button>
       </header>
 

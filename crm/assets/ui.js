@@ -94,6 +94,47 @@
       '<span class="dot"></span>' + esc(s.label) + "</span>";
   }
 
+  function kategoriePill(katId, mitIcon) {
+    var k = global.Store.kategorie(katId);
+    return '<span class="pill" style="background:' + k.farbe + '1f;color:' + k.farbe + '">' +
+      (mitIcon ? icon(k.icon, 13) : '<span class="dot"></span>') + esc(k.label) + "</span>";
+  }
+
+  function statusPill(statusId) {
+    var s = D.PROTOKOLL_STATUS.filter(function (x) { return x.id === statusId; })[0];
+    if (!s) return "";
+    return '<span class="pill ' + s.cls + '">' + esc(s.label) + "</span>";
+  }
+
+  /* Mengen: Krypto braucht Nachkommastellen, Tonnen und Stück nicht */
+  function menge(wert, einheit) {
+    if (!wert) return "—";
+    var nachkomma = Math.abs(wert) < 100 && wert % 1 !== 0 ? 4 : 0;
+    return new Intl.NumberFormat("de-DE", { maximumFractionDigits: nachkomma }).format(wert) +
+      (einheit ? " " + einheit : "");
+  }
+
+  function kopieren(text, meldung) {
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) { /* nicht unterstützt */ }
+      ta.remove();
+      toast(meldung || "In die Zwischenablage kopiert.", "ok");
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        toast(meldung || "In die Zwischenablage kopiert.", "ok");
+      }, fallback);
+    } else {
+      fallback();
+    }
+  }
+
   /* ---------- Toasts ---------- */
   function toast(text, art, aktion) {
     var host = document.getElementById("toasts");
@@ -184,6 +225,11 @@
   /* ---------- Formular-Bausteine ---------- */
   function feld(label, inner, breit) {
     return '<label class="field' + (breit ? " full" : "") + '"><span>' + esc(label) + "</span>" + inner + "</label>";
+  }
+
+  /* wie feld(), aber die Beschriftung darf Markup enthalten (z. B. austauschbare Labels) */
+  function feldRaw(labelHtml, inner, breit) {
+    return '<label class="field' + (breit ? " full" : "") + '"><span>' + labelHtml + "</span>" + inner + "</label>";
   }
 
   function input(name, wert, opts) {
@@ -318,8 +364,9 @@
     datum: datum, datumZeit: datumZeit, relativ: relativ,
     tageBis: tageBis, faelligText: faelligText,
     esc: esc, initialen: initialen, icon: icon, stagePill: stagePill,
+    kategoriePill: kategoriePill, statusPill: statusPill, menge: menge, kopieren: kopieren,
     toast: toast, modal: modal, schliessen: schliessen, frage: frage,
-    feld: feld, input: input, textarea: textarea, select: select,
+    feld: feld, feldRaw: feldRaw, input: input, textarea: textarea, select: select,
     formWerte: formWerte, markiereFehler: markiereFehler,
     balken: balken, donut: donut, saeulen: saeulen, trichter: trichter,
     download: download

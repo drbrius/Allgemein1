@@ -1,18 +1,21 @@
-/* OffMarket CRM — Datenhaltung (localStorage), CRUD und Kennzahlen */
+/* Deal CRM — Datenhaltung (localStorage), CRUD und Kennzahlen */
 (function (global) {
   "use strict";
 
-  var KEY = "offmarket-crm-v1";
+  var KEY = "offmarket-crm-v2";
+  var KEY_ALT = "offmarket-crm-v1";   /* Immobilien-Version, wird einmalig migriert */
   var D = global.CRMData;
 
   var state = {
-    objekte: [], kontakte: [], aufgaben: [], aktivitaeten: [],
+    deals: [], kontakte: [], aufgaben: [], protokolle: [], aktivitaeten: [],
     einstellungen: {
       firma: "OffMarket Partners",
       nutzer: "Anna Berger",
+      assistenz: "Lena Sommer",
       waehrung: "EUR",
       theme: "auto",
-      zielFaktor: 20
+      zielMarge: 2,
+      aufgabenAusProtokoll: true
     }
   };
 
@@ -24,16 +27,73 @@
     try { raw = localStorage.getItem(KEY); } catch (e) { /* Speicher gesperrt */ }
     if (raw) {
       try {
-        var parsed = JSON.parse(raw);
-        state.objekte = parsed.objekte || [];
-        state.kontakte = parsed.kontakte || [];
-        state.aufgaben = parsed.aufgaben || [];
-        state.aktivitaeten = parsed.aktivitaeten || [];
-        state.einstellungen = Object.assign(state.einstellungen, parsed.einstellungen || {});
+        uebernehmen(JSON.parse(raw));
         return;
-      } catch (e) { /* defekter Datensatz → Demo laden */ }
+      } catch (e) { /* defekter Datensatz → weiter unten Demo laden */ }
     }
+
+    var alt = null;
+    try { alt = localStorage.getItem(KEY_ALT); } catch (e) { /* ignorieren */ }
+    if (alt) {
+      try {
+        uebernehmen(migriereV1(JSON.parse(alt)));
+        save();
+        return;
+      } catch (e) { /* Migration fehlgeschlagen → Demo laden */ }
+    }
+
     resetDemo(true);
+  }
+
+  function uebernehmen(parsed) {
+    state.deals = parsed.deals || [];
+    state.kontakte = parsed.kontakte || [];
+    state.aufgaben = parsed.aufgaben || [];
+    state.protokolle = parsed.protokolle || [];
+    state.aktivitaeten = parsed.aktivitaeten || [];
+    state.einstellungen = Object.assign(state.einstellungen, parsed.einstellungen || {});
+  }
+
+  /* Immobilien-Datenbestand der ersten Version in das Deal-Modell überführen */
+  function migriereV1(alt) {
+    var typMap = {
+      eigentuemer: "verkaeufer", makler: "vermittler", investor: "kaeufer",
+      verwalter: "dienstleister", tippgeber: "tippgeber", sonstige: "sonstige"
+    };
+    var stageMap = { gespraech: "pruefung", notar: "closing" };
+
+    return {
+      deals: (alt.objekte || []).map(function (o) {
+        return {
+          id: o.id, titel: o.titel, kategorie: "immobilie",
+          volumen: o.kaufpreis || 0,
+          menge: o.wohnflaeche || 0, einheit: "m²",
+          ertragJahr: o.mieteJahr || 0, marge: 0,
+          ort: [o.strasse, (o.plz || "") + " " + (o.ort || "")].filter(function (t) { return String(t).trim(); }).join(", "),
+          land: "Deutschland",
+          stage: stageMap[o.stage] || o.stage,
+          wahrscheinlichkeit: o.wahrscheinlichkeit,
+          quelle: o.quelle, kontaktId: o.kontaktId, betreuer: o.betreuer,
+          notizen: o.notizen, tags: o.tags || [],
+          details: {
+            objektart: o.typ, wohneinheiten: o.einheiten, baujahr: o.baujahr,
+            zustand: o.zustand, grundstueck: o.grundstueck
+          },
+          createdAt: o.createdAt, updatedAt: o.updatedAt
+        };
+      }),
+      kontakte: (alt.kontakte || []).map(function (k) {
+        return Object.assign({}, k, { typ: typMap[k.typ] || "sonstige", land: "Deutschland" });
+      }),
+      aufgaben: (alt.aufgaben || []).map(function (t) {
+        return Object.assign({}, t, { dealId: t.objektId || "" });
+      }),
+      protokolle: [],
+      aktivitaeten: (alt.aktivitaeten || []).map(function (a) {
+        return Object.assign({}, a, { dealId: a.objektId || "" });
+      }),
+      einstellungen: alt.einstellungen || {}
+    };
   }
 
   function save() {
@@ -42,18 +102,20 @@
 
   function resetDemo(silent) {
     var s = D.seed();
-    state.objekte = s.objekte;
+    state.deals = s.deals;
     state.kontakte = s.kontakte;
     state.aufgaben = s.aufgaben;
+    state.protokolle = s.protokolle;
     state.aktivitaeten = s.aktivitaeten;
     save();
     if (!silent) emit();
   }
 
   function clearAll() {
-    state.objekte = [];
+    state.deals = [];
     state.kontakte = [];
     state.aufgaben = [];
+    state.protokolle = [];
     state.aktivitaeten = [];
     save();
     emit();
@@ -71,26 +133,40 @@
     return D.STAGES.filter(function (s) { return s.id === id; })[0] || D.STAGES[0];
   }
 
-  function isOffen(ob) { return ob.stage !== "gewonnen" && ob.stage !== "verloren"; }
+  function kategorie(id) {
+    return D.KATEGORIEN.filter(function (k) { return k.id === id; })[0] ||
+      D.KATEGORIEN[D.KATEGORIEN.length - 1];
+  }
 
-  function faktor(ob) {
-    return ob.mieteJahr > 0 ? ob.kaufpreis / ob.mieteJahr : 0;
+  function isOffen(d) { return d.stage !== "gewonnen" && d.stage !== "verloren"; }
+
+  function faktor(d) {
+    return d.ertragJahr > 0 && d.volumen > 0 ? d.volumen / d.ertragJahr : 0;
   }
-  function rendite(ob) {
-    return ob.kaufpreis > 0 && ob.mieteJahr > 0 ? (ob.mieteJahr / ob.kaufpreis) * 100 : 0;
+  function rendite(d) {
+    return d.volumen > 0 && d.ertragJahr > 0 ? (d.ertragJahr / d.volumen) * 100 : 0;
   }
-  function preisProQm(ob) {
-    return ob.wohnflaeche > 0 ? ob.kaufpreis / ob.wohnflaeche : 0;
+  function preisProEinheit(d) {
+    return d.menge > 0 && d.volumen > 0 ? d.volumen / d.menge : 0;
   }
-  function gewichtet(ob) {
-    return ob.kaufpreis * (Number(ob.wahrscheinlichkeit) || 0) / 100;
+  function margeProzent(d) {
+    return d.volumen > 0 && d.marge > 0 ? (d.marge / d.volumen) * 100 : 0;
+  }
+  function gewichtet(d) {
+    return (d.volumen || 0) * (Number(d.wahrscheinlichkeit) || 0) / 100;
+  }
+  function gewichteteMarge(d) {
+    return (d.marge || 0) * (Number(d.wahrscheinlichkeit) || 0) / 100;
   }
 
   function kontakt(id) {
     return state.kontakte.filter(function (k) { return k.id === id; })[0] || null;
   }
-  function objekt(id) {
-    return state.objekte.filter(function (o) { return o.id === id; })[0] || null;
+  function deal(id) {
+    return state.deals.filter(function (d) { return d.id === id; })[0] || null;
+  }
+  function protokoll(id) {
+    return state.protokolle.filter(function (p) { return p.id === id; })[0] || null;
   }
   function kontaktName(k) {
     if (!k) return "";
@@ -98,70 +174,71 @@
   }
 
   /* ---------- Aktivitäten ---------- */
-  function log(typ, text, objektId, kontaktId) {
+  function log(typ, text, dealId, kontaktId) {
     state.aktivitaeten.unshift({
       id: uid("a"), ts: new Date().toISOString(), typ: typ,
-      text: text, objektId: objektId || "", kontaktId: kontaktId || ""
+      text: text, dealId: dealId || "", kontaktId: kontaktId || ""
     });
     if (state.aktivitaeten.length > 400) state.aktivitaeten.length = 400;
   }
 
   function aktivitaetenFuer(filter) {
     return state.aktivitaeten.filter(function (a) {
-      if (filter.objektId) return a.objektId === filter.objektId;
+      if (filter.dealId) return a.dealId === filter.dealId;
       if (filter.kontaktId) return a.kontaktId === filter.kontaktId;
       return true;
     });
   }
 
-  /* ---------- CRUD Objekte ---------- */
-  function saveObjekt(data) {
+  /* ---------- CRUD Deals ---------- */
+  function saveDeal(data) {
     var now = new Date().toISOString();
     if (data.id) {
-      var vorhanden = objekt(data.id);
+      var vorhanden = deal(data.id);
       if (!vorhanden) return null;
       var alteStage = vorhanden.stage;
       Object.assign(vorhanden, data, { updatedAt: now });
       if (alteStage !== vorhanden.stage) {
         log("stage", "Phase auf „" + stage(vorhanden.stage).label + "“ geändert", vorhanden.id);
       } else {
-        log("edit", "Objektdaten aktualisiert", vorhanden.id);
+        log("edit", "Deal-Daten aktualisiert", vorhanden.id);
       }
       save(); emit();
       return vorhanden;
     }
     var neu = Object.assign({
-      id: uid("o"), tags: [], notizen: "", createdAt: now, updatedAt: now
+      id: uid("d"), tags: [], details: {}, notizen: "", createdAt: now, updatedAt: now
     }, data);
-    state.objekte.unshift(neu);
-    log("create", "Objekt angelegt", neu.id, neu.kontaktId);
+    state.deals.unshift(neu);
+    log("create", "Deal angelegt", neu.id, neu.kontaktId);
     save(); emit();
     return neu;
   }
 
   function setStage(id, stageId) {
-    var ob = objekt(id);
-    if (!ob || ob.stage === stageId) return;
-    ob.stage = stageId;
-    ob.wahrscheinlichkeit = stage(stageId).prob;
-    ob.updatedAt = new Date().toISOString();
+    var d = deal(id);
+    if (!d || d.stage === stageId) return;
+    d.stage = stageId;
+    d.wahrscheinlichkeit = stage(stageId).prob;
+    d.updatedAt = new Date().toISOString();
     log("stage", "Phase auf „" + stage(stageId).label + "“ geändert", id);
     save(); emit();
   }
 
-  function deleteObjekt(id) {
-    var ob = objekt(id);
-    if (!ob) return null;
-    var index = state.objekte.indexOf(ob);
-    state.objekte.splice(index, 1);
-    state.aufgaben.forEach(function (t) { if (t.objektId === id) t.objektId = ""; });
+  function deleteDeal(id) {
+    var d = deal(id);
+    if (!d) return null;
+    var index = state.deals.indexOf(d);
+    state.deals.splice(index, 1);
+    state.aufgaben.forEach(function (t) { if (t.dealId === id) t.dealId = ""; });
+    state.protokolle.forEach(function (p) { if (p.dealId === id) p.dealId = ""; });
     save(); emit();
-    return { eintrag: ob, index: index };
+    return { eintrag: d, index: index };
   }
 
-  function restoreObjekt(snapshot) {
+  function restoreDeal(snapshot) {
     if (!snapshot) return;
-    state.objekte.splice(snapshot.index, 0, snapshot.eintrag);
+    state.deals.splice(snapshot.index, 0, snapshot.eintrag);
     save(); emit();
   }
 
@@ -189,8 +266,9 @@
     if (!k) return null;
     var index = state.kontakte.indexOf(k);
     state.kontakte.splice(index, 1);
-    state.objekte.forEach(function (o) { if (o.kontaktId === id) o.kontaktId = ""; });
+    state.deals.forEach(function (d) { if (d.kontaktId === id) d.kontaktId = ""; });
     state.aufgaben.forEach(function (t) { if (t.kontaktId === id) t.kontaktId = ""; });
+    state.protokolle.forEach(function (p) { if (p.kontaktId === id) p.kontaktId = ""; });
     save(); emit();
     return { eintrag: k, index: index };
   }
@@ -211,7 +289,7 @@
       return vorhanden;
     }
     var neu = Object.assign({
-      id: uid("t"), erledigt: false, objektId: "", kontaktId: "", notiz: "",
+      id: uid("t"), erledigt: false, dealId: "", kontaktId: "", notiz: "",
       createdAt: new Date().toISOString()
     }, data);
     state.aufgaben.unshift(neu);
@@ -223,7 +301,7 @@
     var t = state.aufgaben.filter(function (x) { return x.id === id; })[0];
     if (!t) return;
     t.erledigt = !t.erledigt;
-    if (t.erledigt) log("task", "Aufgabe erledigt: " + t.titel, t.objektId, t.kontaktId);
+    if (t.erledigt) log("task", "Aufgabe erledigt: " + t.titel, t.dealId, t.kontaktId);
     save(); emit();
   }
 
@@ -242,10 +320,161 @@
     save(); emit();
   }
 
-  function aufgabenFuer(objektId, kontaktId) {
+  function aufgabenFuer(dealId, kontaktId) {
     return state.aufgaben.filter(function (t) {
-      return (objektId && t.objektId === objektId) || (kontaktId && t.kontaktId === kontaktId);
+      return (dealId && t.dealId === dealId) || (kontaktId && t.kontaktId === kontaktId);
     });
+  }
+
+  /* ---------- CRUD Protokolle ---------- */
+  function naechsteNummer() {
+    var jahr = new Date().getFullYear();
+    var praefix = "P-" + jahr + "-";
+    var hoechste = 0;
+    state.protokolle.forEach(function (p) {
+      if (p.nummer && p.nummer.indexOf(praefix) === 0) {
+        var n = parseInt(p.nummer.slice(praefix.length), 10);
+        if (!isNaN(n) && n > hoechste) hoechste = n;
+      }
+    });
+    return praefix + String(hoechste + 1).padStart(4, "0");
+  }
+
+  function saveProtokoll(data, aufgabenErzeugen) {
+    var now = new Date().toISOString();
+    var p;
+    if (data.id) {
+      p = protokoll(data.id);
+      if (!p) return null;
+      var alterStatus = p.status;
+      Object.assign(p, data, { updatedAt: now });
+      if (alterStatus !== p.status && p.status !== "entwurf") {
+        log("protokoll", "Protokoll " + p.nummer + " " +
+          (p.status === "freigegeben" ? "freigegeben" : "finalisiert") + ": " + p.betreff, p.dealId, p.kontaktId);
+      }
+    } else {
+      p = Object.assign({
+        id: uid("p"),
+        nummer: naechsteNummer(),
+        status: "entwurf",
+        vertraulich: false,
+        naechsteSchritte: [],
+        createdAt: now,
+        updatedAt: now
+      }, data);
+      state.protokolle.unshift(p);
+      log("protokoll", "Protokoll " + p.nummer + " erstellt: " + p.betreff, p.dealId, p.kontaktId);
+    }
+
+    var erzeugt = 0;
+    if (aufgabenErzeugen) erzeugt = aufgabenAusProtokoll(p);
+
+    save(); emit();
+    return { protokoll: p, aufgaben: erzeugt };
+  }
+
+  /* Aus den nächsten Schritten eines Protokolls Aufgaben anlegen.
+     Bereits übernommene Schritte werden anhand von uebernommen übersprungen. */
+  function aufgabenAusProtokoll(p) {
+    var erzeugt = 0;
+    (p.naechsteSchritte || []).forEach(function (schritt) {
+      if (!schritt.text || schritt.uebernommen) return;
+      state.aufgaben.unshift({
+        id: uid("t"),
+        titel: schritt.text,
+        typ: "todo",
+        faellig: schritt.faellig || "",
+        prioritaet: "mittel",
+        erledigt: false,
+        dealId: p.dealId || "",
+        kontaktId: p.kontaktId || "",
+        notiz: "aus Protokoll " + p.nummer +
+          (schritt.verantwortlich ? " · verantwortlich: " + schritt.verantwortlich : ""),
+        protokollId: p.id,
+        createdAt: new Date().toISOString()
+      });
+      schritt.uebernommen = true;
+      erzeugt++;
+    });
+    return erzeugt;
+  }
+
+  function setProtokollStatus(id, status) {
+    var p = protokoll(id);
+    if (!p || p.status === status) return;
+    p.status = status;
+    p.updatedAt = new Date().toISOString();
+    log("protokoll", "Protokoll " + p.nummer + " → " +
+      (D.PROTOKOLL_STATUS.filter(function (s) { return s.id === status; })[0] || {}).label,
+      p.dealId, p.kontaktId);
+    save(); emit();
+  }
+
+  function deleteProtokoll(id) {
+    var p = protokoll(id);
+    if (!p) return null;
+    var index = state.protokolle.indexOf(p);
+    state.protokolle.splice(index, 1);
+    save(); emit();
+    return { eintrag: p, index: index };
+  }
+
+  function restoreProtokoll(snapshot) {
+    if (!snapshot) return;
+    state.protokolle.splice(snapshot.index, 0, snapshot.eintrag);
+    save(); emit();
+  }
+
+  function protokolleFuer(dealId, kontaktId) {
+    return state.protokolle.filter(function (p) {
+      return (dealId && p.dealId === dealId) || (kontaktId && p.kontaktId === kontaktId);
+    }).sort(function (a, b) { return String(b.datum).localeCompare(String(a.datum)); });
+  }
+
+  /* Protokoll als reiner Text — für Zwischenablage, E-Mail oder Ablage */
+  function protokollText(p) {
+    var kanal = (D.KANAELE.filter(function (k) { return k.id === p.kanal; })[0] || {}).label || p.kanal;
+    var d = p.dealId ? deal(p.dealId) : null;
+    var k = p.kontaktId ? kontakt(p.kontaktId) : null;
+    var zeilen = [];
+
+    zeilen.push("GESPRÄCHSPROTOKOLL " + p.nummer);
+    zeilen.push(state.einstellungen.firma);
+    zeilen.push("");
+    zeilen.push("Betreff:       " + p.betreff);
+    zeilen.push("Datum:         " + p.datum + (p.uhrzeit ? ", " + p.uhrzeit + " Uhr" : "") +
+      (p.dauer ? " (" + p.dauer + " Min.)" : ""));
+    zeilen.push("Art:           " + kanal);
+    if (d) zeilen.push("Deal:          " + d.titel + " (" + kategorie(d.kategorie).label + ")");
+    if (k) zeilen.push("Kontakt:       " + kontaktName(k) + (k.firma ? ", " + k.firma : ""));
+    zeilen.push("Teilnehmer:    " + (p.teilnehmer || "—"));
+    zeilen.push("Protokoll:     " + (p.verfasser || "—"));
+    if (p.freigeber) zeilen.push("Freigabe:      " + p.freigeber);
+    if (p.vertraulich) zeilen.push("Hinweis:       VERTRAULICH");
+    zeilen.push("");
+    zeilen.push("BESPROCHENE PUNKTE");
+    zeilen.push(p.themen || "—");
+    zeilen.push("");
+    zeilen.push("ERGEBNISSE UND VEREINBARUNGEN");
+    zeilen.push(p.ergebnisse || "—");
+    if (p.offenePunkte) {
+      zeilen.push("");
+      zeilen.push("OFFENE PUNKTE");
+      zeilen.push(p.offenePunkte);
+    }
+    if ((p.naechsteSchritte || []).length) {
+      zeilen.push("");
+      zeilen.push("NÄCHSTE SCHRITTE");
+      p.naechsteSchritte.forEach(function (s, i) {
+        zeilen.push((i + 1) + ". " + s.text +
+          (s.verantwortlich ? " — " + s.verantwortlich : "") +
+          (s.faellig ? " — bis " + s.faellig : ""));
+      });
+    }
+    zeilen.push("");
+    zeilen.push("Erstellt am " + new Date(p.createdAt).toLocaleDateString("de-DE") +
+      " · Status: " + (D.PROTOKOLL_STATUS.filter(function (s) { return s.id === p.status; })[0] || {}).label);
+    return zeilen.join("\n");
   }
 
   /* ---------- Einstellungen ---------- */
@@ -258,58 +487,82 @@
   function heuteISO() { return new Date().toISOString().slice(0, 10); }
 
   function kpis() {
-    var offen = state.objekte.filter(isOffen);
-    var gewonnen = state.objekte.filter(function (o) { return o.stage === "gewonnen"; });
-    var verloren = state.objekte.filter(function (o) { return o.stage === "verloren"; });
-    var volumen = offen.reduce(function (s, o) { return s + (o.kaufpreis || 0); }, 0);
-    var forecast = offen.reduce(function (s, o) { return s + gewichtet(o); }, 0);
-    var mitMiete = offen.filter(function (o) { return o.mieteJahr > 0; });
-    var avgFaktor = mitMiete.length
-      ? mitMiete.reduce(function (s, o) { return s + faktor(o); }, 0) / mitMiete.length
+    var offen = state.deals.filter(isOffen);
+    var gewonnen = state.deals.filter(function (d) { return d.stage === "gewonnen"; });
+    var verloren = state.deals.filter(function (d) { return d.stage === "verloren"; });
+    var volumen = offen.reduce(function (s, d) { return s + (d.volumen || 0); }, 0);
+    var forecast = offen.reduce(function (s, d) { return s + gewichtet(d); }, 0);
+    var marge = offen.reduce(function (s, d) { return s + (d.marge || 0); }, 0);
+    var margeGew = offen.reduce(function (s, d) { return s + gewichteteMarge(d); }, 0);
+    var mitErtrag = offen.filter(function (d) { return d.ertragJahr > 0; });
+    var avgFaktor = mitErtrag.length
+      ? mitErtrag.reduce(function (s, d) { return s + faktor(d); }, 0) / mitErtrag.length
       : 0;
     var entschieden = gewonnen.length + verloren.length;
     var heute = heuteISO();
     var offeneAufgaben = state.aufgaben.filter(function (t) { return !t.erledigt; });
 
     return {
-      objekteGesamt: state.objekte.length,
+      dealsGesamt: state.deals.length,
       aktiveDeals: offen.length,
       volumen: volumen,
       forecast: forecast,
+      marge: marge,
+      margeGewichtet: margeGew,
       avgFaktor: avgFaktor,
       gewonnen: gewonnen.length,
       verloren: verloren.length,
-      ankaufsvolumen: gewonnen.reduce(function (s, o) { return s + (o.kaufpreis || 0); }, 0),
+      abschlussvolumen: gewonnen.reduce(function (s, d) { return s + (d.volumen || 0); }, 0),
       quote: entschieden ? (gewonnen.length / entschieden) * 100 : 0,
       kontakte: state.kontakte.length,
+      protokolle: state.protokolle.length,
+      protokolleEntwurf: state.protokolle.filter(function (p) { return p.status === "entwurf"; }).length,
       aufgabenOffen: offeneAufgaben.length,
       aufgabenHeute: offeneAufgaben.filter(function (t) { return t.faellig === heute; }).length,
       aufgabenUeberfaellig: offeneAufgaben.filter(function (t) { return t.faellig && t.faellig < heute; }).length,
-      neu30Tage: state.objekte.filter(function (o) {
-        return (Date.now() - new Date(o.createdAt).getTime()) < 30 * 864e5;
+      neu30Tage: state.deals.filter(function (d) {
+        return (Date.now() - new Date(d.createdAt).getTime()) < 30 * 864e5;
       }).length
     };
   }
 
   function proStage() {
     return D.STAGES.map(function (s) {
-      var liste = state.objekte.filter(function (o) { return o.stage === s.id; });
+      var liste = state.deals.filter(function (d) { return d.stage === s.id; });
       return {
         stage: s,
         anzahl: liste.length,
-        volumen: liste.reduce(function (sum, o) { return sum + (o.kaufpreis || 0); }, 0),
-        objekte: liste
+        volumen: liste.reduce(function (sum, d) { return sum + (d.volumen || 0); }, 0),
+        deals: liste
       };
     });
   }
 
+  function proKategorie() {
+    return D.KATEGORIEN.map(function (k) {
+      var liste = state.deals.filter(function (d) { return d.kategorie === k.id; });
+      var offen = liste.filter(isOffen);
+      return {
+        kategorie: k,
+        anzahl: liste.length,
+        aktiv: offen.length,
+        volumen: liste.reduce(function (s, d) { return s + (d.volumen || 0); }, 0),
+        volumenOffen: offen.reduce(function (s, d) { return s + (d.volumen || 0); }, 0),
+        marge: liste.reduce(function (s, d) { return s + (d.marge || 0); }, 0),
+        gewonnen: liste.filter(function (d) { return d.stage === "gewonnen"; }).length,
+        verloren: liste.filter(function (d) { return d.stage === "verloren"; }).length
+      };
+    }).filter(function (row) { return row.anzahl > 0; });
+  }
+
   function gruppiereNach(feld) {
     var map = {};
-    state.objekte.forEach(function (o) {
-      var key = o[feld] || "Ohne Angabe";
-      if (!map[key]) map[key] = { key: key, anzahl: 0, volumen: 0 };
+    state.deals.forEach(function (d) {
+      var key = d[feld] || "Ohne Angabe";
+      if (!map[key]) map[key] = { key: key, anzahl: 0, volumen: 0, marge: 0 };
       map[key].anzahl++;
-      map[key].volumen += o.kaufpreis || 0;
+      map[key].volumen += d.volumen || 0;
+      map[key].marge += d.marge || 0;
     });
     return Object.keys(map).map(function (k) { return map[k]; })
       .sort(function (a, b) { return b.volumen - a.volumen; });
@@ -321,15 +574,30 @@
     for (var i = monate - 1; i >= 0; i--) {
       var d = new Date(jetzt.getFullYear(), jetzt.getMonth() - i, 1);
       var next = new Date(d.getFullYear(), d.getMonth() + 1, 1);
-      var liste = state.objekte.filter(function (o) {
-        var t = new Date(o.createdAt).getTime();
+      var liste = state.deals.filter(function (x) {
+        var t = new Date(x.createdAt).getTime();
         return t >= d.getTime() && t < next.getTime();
       });
       out.push({
         label: d.toLocaleDateString("de-DE", { month: "short" }),
         anzahl: liste.length,
-        volumen: liste.reduce(function (s, o) { return s + (o.kaufpreis || 0); }, 0)
+        volumen: liste.reduce(function (s, x) { return s + (x.volumen || 0); }, 0)
       });
+    }
+    return out;
+  }
+
+  function protokolleProMonat(monate) {
+    var out = [];
+    var jetzt = new Date();
+    for (var i = monate - 1; i >= 0; i--) {
+      var d = new Date(jetzt.getFullYear(), jetzt.getMonth() - i, 1);
+      var next = new Date(d.getFullYear(), d.getMonth() + 1, 1);
+      var anzahl = state.protokolle.filter(function (p) {
+        var t = new Date(p.datum + "T12:00:00").getTime();
+        return t >= d.getTime() && t < next.getTime();
+      }).length;
+      out.push({ label: d.toLocaleDateString("de-DE", { month: "short" }), anzahl: anzahl });
     }
     return out;
   }
@@ -338,10 +606,11 @@
   function exportJSON() {
     return JSON.stringify({
       exportiert: new Date().toISOString(),
-      version: 1,
-      objekte: state.objekte,
+      version: 2,
+      deals: state.deals,
       kontakte: state.kontakte,
       aufgaben: state.aufgaben,
+      protokolle: state.protokolle,
       aktivitaeten: state.aktivitaeten,
       einstellungen: state.einstellungen
     }, null, 2);
@@ -350,19 +619,17 @@
   function importJSON(text) {
     var parsed = JSON.parse(text);
     if (!parsed || typeof parsed !== "object") throw new Error("Ungültiges Format");
-    if (!Array.isArray(parsed.objekte) && !Array.isArray(parsed.kontakte)) {
+    if (parsed.objekte && !parsed.deals) parsed = migriereV1(parsed);
+    if (!Array.isArray(parsed.deals) && !Array.isArray(parsed.kontakte)) {
       throw new Error("Keine CRM-Daten gefunden");
     }
-    state.objekte = parsed.objekte || [];
-    state.kontakte = parsed.kontakte || [];
-    state.aufgaben = parsed.aufgaben || [];
-    state.aktivitaeten = parsed.aktivitaeten || [];
-    if (parsed.einstellungen) Object.assign(state.einstellungen, parsed.einstellungen);
+    uebernehmen(parsed);
     save(); emit();
     return {
-      objekte: state.objekte.length,
+      deals: state.deals.length,
       kontakte: state.kontakte.length,
-      aufgaben: state.aufgaben.length
+      aufgaben: state.aufgaben.length,
+      protokolle: state.protokolle.length
     };
   }
 
@@ -382,16 +649,22 @@
     state: state,
     load: load, save: save, emit: emit, subscribe: subscribe,
     resetDemo: resetDemo, clearAll: clearAll,
-    uid: uid, stage: stage, isOffen: isOffen,
-    faktor: faktor, rendite: rendite, preisProQm: preisProQm, gewichtet: gewichtet,
-    kontakt: kontakt, objekt: objekt, kontaktName: kontaktName,
+    uid: uid, stage: stage, kategorie: kategorie, isOffen: isOffen,
+    faktor: faktor, rendite: rendite, preisProEinheit: preisProEinheit,
+    margeProzent: margeProzent, gewichtet: gewichtet, gewichteteMarge: gewichteteMarge,
+    kontakt: kontakt, deal: deal, protokoll: protokoll, kontaktName: kontaktName,
     log: log, aktivitaetenFuer: aktivitaetenFuer,
-    saveObjekt: saveObjekt, setStage: setStage, deleteObjekt: deleteObjekt, restoreObjekt: restoreObjekt,
+    saveDeal: saveDeal, setStage: setStage, deleteDeal: deleteDeal, restoreDeal: restoreDeal,
     saveKontakt: saveKontakt, deleteKontakt: deleteKontakt, restoreKontakt: restoreKontakt,
     saveAufgabe: saveAufgabe, toggleAufgabe: toggleAufgabe, deleteAufgabe: deleteAufgabe,
     restoreAufgabe: restoreAufgabe, aufgabenFuer: aufgabenFuer,
+    saveProtokoll: saveProtokoll, setProtokollStatus: setProtokollStatus,
+    deleteProtokoll: deleteProtokoll, restoreProtokoll: restoreProtokoll,
+    protokolleFuer: protokolleFuer, protokollText: protokollText,
+    aufgabenAusProtokoll: aufgabenAusProtokoll, naechsteNummer: naechsteNummer,
     setEinstellung: setEinstellung,
-    kpis: kpis, proStage: proStage, gruppiereNach: gruppiereNach, neuProMonat: neuProMonat,
+    kpis: kpis, proStage: proStage, proKategorie: proKategorie,
+    gruppiereNach: gruppiereNach, neuProMonat: neuProMonat, protokolleProMonat: protokolleProMonat,
     heuteISO: heuteISO,
     exportJSON: exportJSON, importJSON: importJSON, toCSV: toCSV
   };

@@ -1,4 +1,4 @@
-/* OffMarket CRM — Router, Layout-Shell und globale Interaktionen */
+/* Deal CRM — Router, Layout-Shell und globale Interaktionen */
 (function (global) {
   "use strict";
 
@@ -7,9 +7,10 @@
   var NAV = [
     { hash: "#/dashboard",     label: "Übersicht",     icon: "dashboard" },
     { hash: "#/pipeline",      label: "Pipeline",      icon: "kanban" },
-    { hash: "#/objekte",       label: "Objekte",       icon: "building", count: function () { return S.state.objekte.length; } },
-    { hash: "#/kontakte",      label: "Kontakte",      icon: "users",    count: function () { return S.state.kontakte.length; } },
-    { hash: "#/aufgaben",      label: "Aufgaben",      icon: "check",    count: function () {
+    { hash: "#/deals",         label: "Deals",         icon: "briefcase", count: function () { return S.state.deals.length; } },
+    { hash: "#/kontakte",      label: "Kontakte",      icon: "users",     count: function () { return S.state.kontakte.length; } },
+    { hash: "#/protokolle",    label: "Protokolle",    icon: "protokoll", count: function () { return S.state.protokolle.length; } },
+    { hash: "#/aufgaben",      label: "Aufgaben",      icon: "check",     count: function () {
         return S.state.aufgaben.filter(function (t) { return !t.erledigt; }).length; } },
     { hash: "#/berichte",      label: "Auswertungen",  icon: "chart" },
     { hash: "#/einstellungen", label: "Einstellungen", icon: "settings" }
@@ -39,14 +40,16 @@
   /* ---------- Navigation ---------- */
   function zeichneNav() {
     var basis = (location.hash || "#/dashboard").split("/").slice(0, 2).join("/");
-    if (basis === "#/objekt") basis = "#/objekte";
-    if (basis === "#/kontakt") basis = "#/kontakte";
+    var alias = { "#/deal": "#/deals", "#/kontakt": "#/kontakte", "#/protokoll": "#/protokolle" };
+    if (alias[basis]) basis = alias[basis];
 
     document.getElementById("nav").innerHTML =
       '<div class="nav-label">Vertrieb</div>' +
-      NAV.slice(0, 5).map(navLink.bind(null, basis)).join("") +
+      NAV.slice(0, 4).map(navLink.bind(null, basis)).join("") +
+      '<div class="nav-label">Dokumentation</div>' +
+      NAV.slice(4, 6).map(navLink.bind(null, basis)).join("") +
       '<div class="nav-label">Analyse &amp; System</div>' +
-      NAV.slice(5).map(navLink.bind(null, basis)).join("");
+      NAV.slice(6).map(navLink.bind(null, basis)).join("");
 
     var e = S.state.einstellungen;
     document.getElementById("who").innerHTML =
@@ -72,11 +75,13 @@
     switch (name) {
       case "":
       case "dashboard":     return V.dashboard();
-      case "objekte":       return V.objekte();
-      case "objekt":        return V.objektDetail(param);
+      case "deals":         return V.deals();
+      case "deal":          return V.dealDetail(param);
       case "pipeline":      return V.pipeline();
       case "kontakte":      return V.kontakte();
       case "kontakt":       return V.kontaktDetail(param);
+      case "protokolle":    return V.protokolle();
+      case "protokoll":     return V.protokollDetail(param);
       case "aufgaben":      return V.aufgaben();
       case "berichte":      return V.berichte();
       case "einstellungen": return V.einstellungen();
@@ -116,14 +121,16 @@
   }
 
   /* ---------- Aktionen, die in mehreren Ansichten vorkommen ---------- */
+  function neu(art) {
+    if (art === "deal") F.deal(null, function (d) { location.hash = "#/deal/" + d.id; });
+    if (art === "kontakt") F.kontakt(null);
+    if (art === "aufgabe") F.aufgabe(null);
+    if (art === "protokoll") F.protokoll(null, null, function (p) { location.hash = "#/protokoll/" + p.id; });
+  }
+
   function bindeGlobaleAktionen(root) {
     root.querySelectorAll("[data-neu]").forEach(function (b) {
-      b.addEventListener("click", function () {
-        var art = b.getAttribute("data-neu");
-        if (art === "objekt") F.objekt(null, function (o) { location.hash = "#/objekt/" + o.id; });
-        if (art === "kontakt") F.kontakt(null);
-        if (art === "aufgabe") F.aufgabe(null);
-      });
+      b.addEventListener("click", function () { neu(b.getAttribute("data-neu")); });
     });
     root.querySelectorAll("[data-csv]").forEach(function (b) {
       b.addEventListener("click", function () { exportCSV(b.getAttribute("data-csv")); });
@@ -131,33 +138,43 @@
   }
 
   function exportCSV(art) {
-    if (art === "objekte") {
-      var liste = V.gefilterteObjekte();
+    if (art === "deals") {
+      var liste = V.gefilterteDeals();
       var spalten = [
-        { label: "Bezeichnung", get: function (o) { return o.titel; } },
-        { label: "Straße", get: function (o) { return o.strasse; } },
-        { label: "PLZ", get: function (o) { return o.plz; } },
-        { label: "Ort", get: function (o) { return o.ort; } },
-        { label: "Objektart", get: function (o) { return o.typ; } },
-        { label: "Baujahr", get: function (o) { return o.baujahr || ""; } },
-        { label: "Einheiten", get: function (o) { return o.einheiten || ""; } },
-        { label: "Fläche m²", get: function (o) { return o.wohnflaeche || ""; } },
-        { label: "Kaufpreis", get: function (o) { return o.kaufpreis || ""; } },
-        { label: "Jahresmiete", get: function (o) { return o.mieteJahr || ""; } },
-        { label: "Faktor", get: function (o) { return S.faktor(o) ? S.faktor(o).toFixed(1).replace(".", ",") : ""; } },
-        { label: "Rendite %", get: function (o) { return S.rendite(o) ? S.rendite(o).toFixed(1).replace(".", ",") : ""; } },
-        { label: "Phase", get: function (o) { return S.stage(o.stage).label; } },
-        { label: "Wahrscheinlichkeit %", get: function (o) { return o.wahrscheinlichkeit; } },
-        { label: "Quelle", get: function (o) { return o.quelle; } },
-        { label: "Betreuer", get: function (o) { return o.betreuer; } },
-        { label: "Eigentümer", get: function (o) { return o.kontaktId ? S.kontaktName(S.kontakt(o.kontaktId)) : ""; } },
-        { label: "Schlagwörter", get: function (o) { return (o.tags || []).join(", "); } },
-        { label: "Aktualisiert", get: function (o) { return U.datum(o.updatedAt); } }
+        { label: "Bezeichnung", get: function (d) { return d.titel; } },
+        { label: "Kategorie", get: function (d) { return S.kategorie(d.kategorie).label; } },
+        { label: "Phase", get: function (d) { return S.stage(d.stage).label; } },
+        { label: "Volumen", get: function (d) { return d.volumen || ""; } },
+        { label: "Menge", get: function (d) { return d.menge || ""; } },
+        { label: "Einheit", get: function (d) { return d.einheit || ""; } },
+        { label: "Preis je Einheit", get: function (d) {
+            return S.preisProEinheit(d) ? Math.round(S.preisProEinheit(d)) : ""; } },
+        { label: "Marge", get: function (d) { return d.marge || ""; } },
+        { label: "Marge %", get: function (d) {
+            return S.margeProzent(d) ? S.margeProzent(d).toFixed(1).replace(".", ",") : ""; } },
+        { label: "Ertrag p. a.", get: function (d) { return d.ertragJahr || ""; } },
+        { label: "Faktor", get: function (d) {
+            return S.faktor(d) ? S.faktor(d).toFixed(1).replace(".", ",") : ""; } },
+        { label: "Wahrscheinlichkeit %", get: function (d) { return d.wahrscheinlichkeit; } },
+        { label: "Gewichtet", get: function (d) { return Math.round(S.gewichtet(d)); } },
+        { label: "Ort", get: function (d) { return d.ort; } },
+        { label: "Land", get: function (d) { return d.land; } },
+        { label: "Quelle", get: function (d) { return d.quelle; } },
+        { label: "Betreuer", get: function (d) { return d.betreuer; } },
+        { label: "Gegenpartei", get: function (d) {
+            return d.kontaktId ? S.kontaktName(S.kontakt(d.kontaktId)) : ""; } },
+        { label: "Fachdaten", get: function (d) {
+            return Object.keys(d.details || {}).map(function (key) {
+              return key + ": " + d.details[key];
+            }).join(" | "); } },
+        { label: "Schlagwörter", get: function (d) { return (d.tags || []).join(", "); } },
+        { label: "Geändert", get: function (d) { return U.datum(d.updatedAt); } }
       ];
-      U.download("objekte-" + S.heuteISO() + ".csv", S.toCSV(liste, spalten), "text/csv");
-      U.toast(liste.length + " Objekte exportiert.", "ok");
+      U.download("deals-" + S.heuteISO() + ".csv", S.toCSV(liste, spalten), "text/csv");
+      U.toast(liste.length + " Deals exportiert.", "ok");
       return;
     }
+
     if (art === "kontakte") {
       var spaltenK = [
         { label: "Vorname", get: function (k) { return k.vorname; } },
@@ -171,12 +188,49 @@
         { label: "Straße", get: function (k) { return k.strasse; } },
         { label: "PLZ", get: function (k) { return k.plz; } },
         { label: "Ort", get: function (k) { return k.ort; } },
-        { label: "Objekte", get: function (k) {
-            return S.state.objekte.filter(function (o) { return o.kontaktId === k.id; }).length; } },
+        { label: "Land", get: function (k) { return k.land || ""; } },
+        { label: "Deals", get: function (k) {
+            return S.state.deals.filter(function (d) { return d.kontaktId === k.id; }).length; } },
+        { label: "Protokolle", get: function (k) { return S.protokolleFuer(null, k.id).length; } },
         { label: "Notizen", get: function (k) { return k.notizen; } }
       ];
       U.download("kontakte-" + S.heuteISO() + ".csv", S.toCSV(S.state.kontakte, spaltenK), "text/csv");
       U.toast(S.state.kontakte.length + " Kontakte exportiert.", "ok");
+      return;
+    }
+
+    if (art === "protokolle") {
+      var listeP = V.gefilterteProtokolle();
+      var spaltenP = [
+        { label: "Nummer", get: function (p) { return p.nummer; } },
+        { label: "Datum", get: function (p) { return p.datum; } },
+        { label: "Uhrzeit", get: function (p) { return p.uhrzeit; } },
+        { label: "Dauer (Min.)", get: function (p) { return p.dauer || ""; } },
+        { label: "Art", get: function (p) {
+            var kn = D.KANAELE.filter(function (x) { return x.id === p.kanal; })[0];
+            return kn ? kn.label : p.kanal; } },
+        { label: "Betreff", get: function (p) { return p.betreff; } },
+        { label: "Deal", get: function (p) { return p.dealId ? (S.deal(p.dealId) || {}).titel || "" : ""; } },
+        { label: "Kontakt", get: function (p) {
+            return p.kontaktId ? S.kontaktName(S.kontakt(p.kontaktId)) : ""; } },
+        { label: "Teilnehmer", get: function (p) { return p.teilnehmer; } },
+        { label: "Protokollführung", get: function (p) { return p.verfasser; } },
+        { label: "Freigabe", get: function (p) { return p.freigeber || ""; } },
+        { label: "Status", get: function (p) {
+            var s = D.PROTOKOLL_STATUS.filter(function (x) { return x.id === p.status; })[0];
+            return s ? s.label : p.status; } },
+        { label: "Vertraulich", get: function (p) { return p.vertraulich ? "ja" : "nein"; } },
+        { label: "Besprochene Punkte", get: function (p) { return p.themen; } },
+        { label: "Ergebnisse", get: function (p) { return p.ergebnisse; } },
+        { label: "Offene Punkte", get: function (p) { return p.offenePunkte || ""; } },
+        { label: "Nächste Schritte", get: function (p) {
+            return (p.naechsteSchritte || []).map(function (s) {
+              return s.text + (s.verantwortlich ? " (" + s.verantwortlich + ")" : "") +
+                (s.faellig ? " bis " + s.faellig : "");
+            }).join(" | "); } }
+      ];
+      U.download("protokolle-" + S.heuteISO() + ".csv", S.toCSV(listeP, spaltenP), "text/csv");
+      U.toast(listeP.length + " Protokolle exportiert.", "ok");
     }
   }
 
@@ -204,9 +258,8 @@
       setTheme(dunkel ? "light" : "dark");
     });
 
-    document.getElementById("neues-objekt").addEventListener("click", function () {
-      F.objekt(null, function (o) { location.hash = "#/objekt/" + o.id; });
-    });
+    document.getElementById("neues-protokoll").addEventListener("click", function () { neu("protokoll"); });
+    document.getElementById("neuer-deal").addEventListener("click", function () { neu("deal"); });
 
     document.getElementById("burger").addEventListener("click", function () {
       document.body.classList.toggle("nav-open");
@@ -226,16 +279,16 @@
 
     document.addEventListener("keydown", function (e) {
       var imFeld = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
-      if (e.key === "/" && !imFeld) {
+      if (imFeld || e.metaKey || e.ctrlKey || e.altKey) return;
+      if (document.querySelector(".modal-backdrop")) return;
+
+      if (e.key === "/") {
         e.preventDefault();
         suchfeld.focus();
         suchfeld.select();
       }
-      if ((e.key === "n" || e.key === "N") && !imFeld && !e.metaKey && !e.ctrlKey) {
-        if (document.querySelector(".modal-backdrop")) return;
-        e.preventDefault();
-        F.objekt(null, function (o) { location.hash = "#/objekt/" + o.id; });
-      }
+      if (e.key === "n" || e.key === "N") { e.preventDefault(); neu("deal"); }
+      if (e.key === "p" || e.key === "P") { e.preventDefault(); neu("protokoll"); }
     });
   }
 
