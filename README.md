@@ -1,3 +1,7 @@
+> **Also in this repository:** [`/crm/`](crm/) — **OffMarket CRM**, a self-contained CRM for
+> off-market real estate acquisition (pipeline kanban, properties, contacts, tasks, reports).
+> Same philosophy: static files, no build step, no backend. See [crm/README.md](crm/README.md).
+
 # CalcMate – Multilingual Online Calculators
 
 A modern, free calculator website inspired by [rechneronline.de](https://rechneronline.de/) — no login, no dependencies, no build step. Just static HTML, CSS and vanilla JavaScript.
